@@ -1,4 +1,4 @@
-package com.jibo.rom.sdk.model.api;
+package com.jibo.atk.api;
 
 /**
  * Created by calvinator on 1/26/18.

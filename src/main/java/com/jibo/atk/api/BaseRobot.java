@@ -1,4 +1,4 @@
-package com.jibo.rom.sdk.model.api;
+package com.jibo.atk.api;
 
 /**
  * Created by calvinator on 1/26/18.
@@ -16,7 +16,7 @@ public class BaseRobot {
     /**
      * Information about the authenticated robot
      * @param id Unique ID of the robot
-     * @param name Loop name. Usually `<OwnerFirstName>'s Jibo`
+     * @param name Loop name. Usually Owner's Jibo
      * @param robotName My-Friendly-Robot-Name, found on the underside of the robot's base
      */
     public BaseRobot(String id, String name, String robotName) {

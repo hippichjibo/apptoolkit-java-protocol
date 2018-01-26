@@ -1,4 +1,4 @@
-package com.jibo.rom.sdk.model;
+package com.jibo.atk.model;
 
 /**
  * Created by alexz on 11.10.17.
@@ -26,10 +26,10 @@ abstract public class Header {
     }
 
     /**
-     * 128bit hexidecimal number that must be unique every transaction issued 
-     * by the particular Server. The Command Library supplied by Jibo does a 
-     * 128 bit hash on the Server IP address and the current time. 
-     * Because this is a hash this ID cannot be treated as a sequence number 
+     * 128bit hexidecimal number that must be unique every transaction issued
+     * by the particular Server. The Command Library supplied by Jibo does a
+     * 128 bit hash on the Server IP address and the current time.
+     * Because this is a hash this ID cannot be treated as a sequence number
      * for Command serialization.
      * @return TransactionID
      */
@@ -55,9 +55,9 @@ abstract public class Header {
         /**
          * Request header information
          * @param transactionID See {@link #getTransactionID}
-         * @param sessionID  The session identifier that was assigned for this connection between 
+         * @param sessionID  The session identifier that was assigned for this connection between
          * the Server and Controller. Is only allowed to be null for a `StartSession` command.
-         * @param version Version that is required on the robot in order to handle the request. 
+         * @param version Version that is required on the robot in order to handle the request.
          * Requesting a Protocol version that is greater than the supported version on the Robot is an error.
          */
         public RequestHeader(String transactionID, String sessionID, String version) {
@@ -67,13 +67,13 @@ abstract public class Header {
 
         /**
          * Request header information
-         * @param sessionID  The session identifier that was assigned for this connection between 
+         * @param sessionID  The session identifier that was assigned for this connection between
          * the Server and Controller. Is only allowed to be null for a `StartSession` command.
          * @param transactionID See {@link #getTransactionID}
-         * @param appID The reverse domain assigned name for the application provided by 
+         * @param appID The reverse domain assigned name for the application provided by
          * Jibo, Inc. to the application developer.
          * @param credentials Currently unsupported
-         * @param version Version that is required on the robot in order to handle the request. 
+         * @param version Version that is required on the robot in order to handle the request.
          * Requesting a Protocol version that is greater than the supported version on the Robot is an error.
          */
         public RequestHeader(String sessionID, String transactionID, String appID, String credentials, String version) {

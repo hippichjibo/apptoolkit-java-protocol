@@ -1,4 +1,4 @@
-package com.jibo.rom.sdk.model;
+package com.jibo.atk.model;
 
 import com.google.gson.annotations.SerializedName;
 

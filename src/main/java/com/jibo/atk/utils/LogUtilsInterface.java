@@ -1,4 +1,4 @@
-package com.jibo.rom.sdk.util;
+package com.jibo.atk.utils;
 
 /**
  * Created by calvinator on 1/26/18.

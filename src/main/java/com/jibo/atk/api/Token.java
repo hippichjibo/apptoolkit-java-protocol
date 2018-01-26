@@ -1,11 +1,11 @@
-package com.jibo.rom.sdk.model.api;
+package com.jibo.atk.api;
 
 /**
  * Created by alexz on 30.10.17.
  */
 
 public class Token {
-    
+
     private String token_type;
     private String access_token;
     private String refresh_token;

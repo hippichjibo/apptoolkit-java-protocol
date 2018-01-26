@@ -1,4 +1,4 @@
-package com.jibo.rom.sdk.model;
+package com.jibo.atk.model;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -58,8 +58,6 @@ public class Command {
     public BaseCommand getCommand() {
         return Command;
     }
-
-    /************DEFINING COMMANDS HERE**************/
 
     static public class BaseCommand {
         private CommandType Type;
@@ -335,7 +333,7 @@ public class Command {
             private Long Entity;
 
             /**
-             * Currently unsupported. 
+             * Currently unsupported.
              * When target is a face that's being tracked.
              * @param entity An integer that refers to an entity that is known and available in Jibo’s LPS
              * system. An error will be returned if that entity is no longer being tracked.
@@ -573,7 +571,7 @@ public class Command {
 
              /**
               * Display information
-              * @param type See {@link #DisplayViewType}
+              * @param type See {@link DisplayViewType}
               * @param name Unique name of view
               */
             public DisplayView(DisplayViewType type, String name){
@@ -604,7 +602,7 @@ public class Command {
             /**
              * Info for displaying an image on Jibo's screen
              * @param name Unique name of view
-             * @param data See {@link #ImageData}
+             * @param data See {@link ImageData}
              */
             public ImageView(String name, ImageData data) {
                 super(DisplayViewType.Image, name);

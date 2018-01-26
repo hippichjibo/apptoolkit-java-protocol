@@ -1,4 +1,4 @@
-package com.jibo.rom.sdk.util;
+package com.jibo.atk.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
