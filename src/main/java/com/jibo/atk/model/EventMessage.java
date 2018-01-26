@@ -14,7 +14,7 @@ import static com.jibo.atk.model.EventMessage.EventType.*;
 /**
  * Created by alexz on 10.10.17.
  */
-
+/** Information returned with command messages */
 public class EventMessage extends BaseResponse {
 
     public enum EventType {
@@ -124,7 +124,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /**
-     * Class for face tracking events
+     * Class for face tracking events. Currently unsupported.
      */
     static public class EntityTrackEvent extends BaseEvent {
 
@@ -156,28 +156,41 @@ public class EventMessage extends BaseResponse {
             private int[] WorldCoords;
             private int[] ScreenCoords;
 
-            /** get the ID of the tracked face */
+            /**
+             * Get the ID of the tracked face
+             * @return EntityID
+             */
             public Long getEntityID() {
                 return EntityID;
             }
-            /** Get the type of track (loop member or unknown) */
+
+            /**
+             * Get the type of track (loop member or unknown)
+             * @return Type
+             * */
             public EntityType getType() {
                 return Type;
             }
-            /** Get Jibo's confidence in his identifcation of the person */
+
+            /**
+             * Get Jibo's confidence in his identifcation of the person
+             * @return Confidence `int` [0,1]
+             */
             public int getConfidence() {
                 return Confidence;
             }
+
             /**
              * 3-number array in space where the face exists
-             * `[x: meters forward, y: meters left, z: meters up]`
+             * @return WorldCoords `[x: meters forward, y: meters left, z: meters up]`
              */
             public int[] getWorldCoords() {
                 return WorldCoords;
             }
+
             /**
              * Point in Jibo's field of vision where face currently exists
-             * `[x,y]`
+             * @return ScreenCoords`[x,y]`
              */
             public int[] getScreenCoords() {
                 return ScreenCoords;

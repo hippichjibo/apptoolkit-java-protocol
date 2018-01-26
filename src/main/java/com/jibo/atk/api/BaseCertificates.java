@@ -47,6 +47,9 @@ public class BaseCertificates {
         return payload;
     }
 
+    /**
+    * Get the IP address of the robot to connect to.
+    */
     public String getIpAddress() {
         return payload.ipAddress;
     }
