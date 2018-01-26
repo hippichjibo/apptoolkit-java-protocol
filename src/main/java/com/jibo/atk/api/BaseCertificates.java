@@ -35,6 +35,14 @@ public class BaseCertificates {
         return cert;
     }
 
+    public String getPublicKey() {
+        return publicKey;
+    }
+
+    public String getPrivateKey() {
+        return privateKey;
+    }
+
     public IpPayload getPayload() {
         return payload;
     }
@@ -45,6 +53,10 @@ public class BaseCertificates {
 
     public String getFingerprint() {
         return fingerprint;
+    }
+
+    public Long getCreated(){
+      return created;
     }
 
     public String getP12() {
