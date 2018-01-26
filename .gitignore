@@ -1,0 +1,12 @@
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+
+.gradle/
+gradle/
+build/
+
+.DS_Store
