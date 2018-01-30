@@ -34,6 +34,10 @@ def getReleaseRepositoryUrl() {
 targetCompatibility = '1.7'
 sourceCompatibility = '1.7'
 
+configurations {
+    doclava
+}
+
 dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
@@ -44,6 +48,16 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    doclava 'com.google.doclava:doclava:1.0.6'
+}
+
+task generateJavadoc(type: Javadoc, dependsOn: project.configurations.doclava) {
+    failOnError = true
+    title = null
+    source = sourceSets.main.allJava
+    options.doclet = "com.google.doclava.Doclava"
+    options.docletpath = configurations.doclava.files.asType(List)
+    destinationDir = file("./javadocs/")
 }
 
 

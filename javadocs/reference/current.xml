@@ -1,0 +1,4200 @@
+<api>
+<package name="com.jibo.atk.api"
+>
+<class name="BaseCertificates"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BaseCertificates"
+ type="com.jibo.atk.api.BaseCertificates"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="BaseCertificates"
+ type="com.jibo.atk.api.BaseCertificates"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cert" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getCert"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCreated"
+ return="java.lang.Long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFingerprint"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getIpAddress"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getP12"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPayload"
+ return="com.jibo.atk.api.IpPayload"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPrivateKey"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPublicKey"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="BaseRobot"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BaseRobot"
+ type="com.jibo.atk.api.BaseRobot"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="BaseRobot"
+ type="com.jibo.atk.api.BaseRobot"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+<parameter name="name" type="java.lang.String">
+</parameter>
+<parameter name="robotName" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRobotName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="CertData"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="CertData"
+ type="com.jibo.atk.api.CertData"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getCreated"
+ return="java.lang.Long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Errors"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Errors"
+ type="com.jibo.atk.api.Errors"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getErrors"
+ return="java.util.List&lt;com.jibo.atk.api.Errors.ResponseError&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="ERROR_CERTIFICATES_NOT_DEPLOYED"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;Certificate not deployed&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="Errors.ResponseError"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ResponseError"
+ type="com.jibo.atk.api.Errors.ResponseError"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getMessage"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="IpPayload"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="IpPayload"
+ type="com.jibo.atk.api.IpPayload"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<field name="ipAddress"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="Request"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Request"
+ type="com.jibo.atk.api.Request"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Request.CertificatesRequest"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="CertificatesRequest"
+ type="com.jibo.atk.api.Request.CertificatesRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="friendlyId" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getFriendlyId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Request.TokenExchangeRequest"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="TokenExchangeRequest"
+ type="com.jibo.atk.api.Request.TokenExchangeRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="client_id" type="java.lang.String">
+</parameter>
+<parameter name="client_secret" type="java.lang.String">
+</parameter>
+<parameter name="redirect_uri" type="java.lang.String">
+</parameter>
+<parameter name="code" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getClientId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getClientSecret"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCode"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getGrantType"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRedirectUri"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Request.TokenRefreshRequest"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="TokenRefreshRequest"
+ type="com.jibo.atk.api.Request.TokenRefreshRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="client_id" type="java.lang.String">
+</parameter>
+<parameter name="client_secret" type="java.lang.String">
+</parameter>
+<parameter name="refresh_token" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getClientId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getClientSecret"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getGrantType"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRefreshToken"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="RobotData"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="RobotData"
+ type="com.jibo.atk.api.RobotData"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getRobots"
+ return="java.util.List&lt;com.jibo.atk.api.BaseRobot&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Token"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Token"
+ type="com.jibo.atk.api.Token"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getAccessToken"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRefreshToken"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTimestamp"
+ return="long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTokenType"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setTimestamp"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="timestamp" type="long">
+</parameter>
+</method>
+</class>
+<class name="UserInfo"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="UserInfo"
+ type="com.jibo.atk.api.UserInfo"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getEmail"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getId"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+</package>
+<package name="com.jibo.atk.model"
+>
+<class name="Acknowledgment"
+ extends="com.jibo.atk.model.BaseResponse"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Acknowledgment"
+ type="com.jibo.atk.model.Acknowledgment"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="responseHeader" type="com.jibo.atk.model.Header.ResponseHeader">
+</parameter>
+<parameter name="response" type="com.jibo.atk.model.Acknowledgment.AcknowledgementBody">
+</parameter>
+</constructor>
+<method name="getResponse"
+ return="com.jibo.atk.model.Acknowledgment.AcknowledgementBody"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getResponseHeader"
+ return="com.jibo.atk.model.Header.ResponseHeader"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setResponse"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="response" type="com.jibo.atk.model.Acknowledgment.AcknowledgementBody">
+</parameter>
+</method>
+</class>
+<class name="Acknowledgment.AcknowledgementBody"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="AcknowledgementBody"
+ type="com.jibo.atk.model.Acknowledgment.AcknowledgementBody"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getResponseCode"
+ return="com.jibo.atk.model.Acknowledgment.ResponseCode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getResponseString"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getValue"
+ return="com.jibo.atk.model.Acknowledgment.ValueResult"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Acknowledgment.CancelResponse"
+ extends="com.jibo.atk.model.Acknowledgment.AcknowledgementBody"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="CancelResponse"
+ type="com.jibo.atk.model.Acknowledgment.CancelResponse"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getResponseBody"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Acknowledgment.ErrorResponseBody"
+ extends="com.jibo.atk.model.Acknowledgment.AcknowledgementBody"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ErrorResponseBody"
+ type="com.jibo.atk.model.Acknowledgment.ErrorResponseBody"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getErrorDetail"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Acknowledgment.GetConfigResponse"
+ extends="com.jibo.atk.model.Acknowledgment.AcknowledgementBody"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="GetConfigResponse"
+ type="com.jibo.atk.model.Acknowledgment.GetConfigResponse"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getResponseBody"
+ return="com.jibo.atk.model.Acknowledgment.GetConfigResponse.ConfigInfo"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Acknowledgment.GetConfigResponse.ConfigInfo"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ConfigInfo"
+ type="com.jibo.atk.model.Acknowledgment.GetConfigResponse.ConfigInfo"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getVersion"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Acknowledgment.ListenErrorResponse"
+ extends="com.jibo.atk.model.Acknowledgment.ErrorResponseBody"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ListenErrorResponse"
+ type="com.jibo.atk.model.Acknowledgment.ListenErrorResponse"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Acknowledgment.LookAtErrorResponse"
+ extends="com.jibo.atk.model.Acknowledgment.ErrorResponseBody"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="LookAtErrorResponse"
+ type="com.jibo.atk.model.Acknowledgment.LookAtErrorResponse"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Acknowledgment.ResponseCode"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.Acknowledgment.ResponseCode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.Acknowledgment.ResponseCode[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Acknowledgment.SayErrorResponse"
+ extends="com.jibo.atk.model.Acknowledgment.ErrorResponseBody"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SayErrorResponse"
+ type="com.jibo.atk.model.Acknowledgment.SayErrorResponse"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Acknowledgment.SessionResponse"
+ extends="com.jibo.atk.model.Acknowledgment.AcknowledgementBody"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SessionResponse"
+ type="com.jibo.atk.model.Acknowledgment.SessionResponse"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="responseBody" type="com.jibo.atk.model.Acknowledgment.SessionResponse.SessionInfo">
+</parameter>
+</constructor>
+<method name="getResponseBody"
+ return="com.jibo.atk.model.Acknowledgment.SessionResponse.SessionInfo"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Acknowledgment.SessionResponse.SessionInfo"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SessionInfo"
+ type="com.jibo.atk.model.Acknowledgment.SessionResponse.SessionInfo"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionID" type="java.lang.String">
+</parameter>
+<parameter name="version" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getSessionID"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getVersion"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Acknowledgment.ValueResult"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.Acknowledgment.ValueResult"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.Acknowledgment.ValueResult[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="BaseResponse"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BaseResponse"
+ type="com.jibo.atk.model.BaseResponse"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Command"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Command"
+ type="com.jibo.atk.model.Command"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="clientHeader" type="com.jibo.atk.model.Header.RequestHeader">
+</parameter>
+<parameter name="command" type="com.jibo.atk.model.Command.BaseCommand">
+</parameter>
+</constructor>
+<method name="getClientHeader"
+ return="com.jibo.atk.model.Header.RequestHeader"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCommand"
+ return="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<interface name="Command.AtomicCommand"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</interface>
+<class name="Command.AttentionRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.Command.AtomicCommand">
+</implements>
+<constructor name="AttentionRequest"
+ type="com.jibo.atk.model.Command.AttentionRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="type" type="com.jibo.atk.model.Command.CommandType">
+</parameter>
+<parameter name="mode" type="com.jibo.atk.model.Command.AttentionRequest.AttentionMode">
+</parameter>
+</constructor>
+<method name="getMode"
+ return="com.jibo.atk.model.Command.AttentionRequest.AttentionMode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.AttentionRequest.AttentionMode"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.Command.AttentionRequest.AttentionMode"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.Command.AttentionRequest.AttentionMode[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.BaseCommand"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getType"
+ return="com.jibo.atk.model.Command.CommandType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.BaseSubscribeCommand"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BaseSubscribeCommand"
+ type="com.jibo.atk.model.Command.BaseSubscribeCommand"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getStreamFilter"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getStreamType"
+ return="com.jibo.atk.model.Command.StreamTypes"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setStreamFilter"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="filter" type="java.lang.String">
+</parameter>
+</method>
+<method name="setStreamType"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="type" type="com.jibo.atk.model.Command.StreamTypes">
+</parameter>
+</method>
+<field name="StreamFilter"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="StreamType"
+ type="com.jibo.atk.model.Command.StreamTypes"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="Command.CancelRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.Command.AtomicCommand">
+</implements>
+<constructor name="CancelRequest"
+ type="com.jibo.atk.model.Command.CancelRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getID"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.CommandType"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.Command.CommandType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.Command.CommandType[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.DisplayRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DisplayRequest"
+ type="com.jibo.atk.model.Command.DisplayRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="displayView" type="com.jibo.atk.model.Command.DisplayRequest.DisplayView">
+</parameter>
+</constructor>
+<method name="getView"
+ return="com.jibo.atk.model.Command.DisplayRequest.DisplayView"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.DisplayRequest.DisplayView"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="DisplayView"
+ type="com.jibo.atk.model.Command.DisplayRequest.DisplayView"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="type" type="com.jibo.atk.model.Command.DisplayRequest.DisplayViewType">
+</parameter>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<class name="Command.DisplayRequest.DisplayViewType"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.Command.DisplayRequest.DisplayViewType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.Command.DisplayRequest.DisplayViewType[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.DisplayRequest.EyeView"
+ extends="com.jibo.atk.model.Command.DisplayRequest.DisplayView"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EyeView"
+ type="com.jibo.atk.model.Command.DisplayRequest.EyeView"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<class name="Command.DisplayRequest.ImageData"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ImageData"
+ type="com.jibo.atk.model.Command.DisplayRequest.ImageData"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Command.DisplayRequest.ImageView"
+ extends="com.jibo.atk.model.Command.DisplayRequest.DisplayView"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ImageView"
+ type="com.jibo.atk.model.Command.DisplayRequest.ImageView"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+<parameter name="data" type="com.jibo.atk.model.Command.DisplayRequest.ImageData">
+</parameter>
+</constructor>
+</class>
+<class name="Command.DisplayRequest.TextView"
+ extends="com.jibo.atk.model.Command.DisplayRequest.DisplayView"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="TextView"
+ type="com.jibo.atk.model.Command.DisplayRequest.TextView"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+<parameter name="text" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<class name="Command.EntityRequest"
+ extends="com.jibo.atk.model.Command.BaseSubscribeCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EntityRequest"
+ type="com.jibo.atk.model.Command.EntityRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Command.FetchAssetRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="FetchAssetRequest"
+ type="com.jibo.atk.model.Command.FetchAssetRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="uri" type="java.lang.String">
+</parameter>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getUri"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.GetConfigRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.Command.AtomicCommand">
+</implements>
+<constructor name="GetConfigRequest"
+ type="com.jibo.atk.model.Command.GetConfigRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Command.HeadTouchRequest"
+ extends="com.jibo.atk.model.Command.BaseSubscribeCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="HeadTouchRequest"
+ type="com.jibo.atk.model.Command.HeadTouchRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Command.ListenRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.Command.AtomicCommand">
+</implements>
+<constructor name="ListenRequest"
+ type="com.jibo.atk.model.Command.ListenRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="maxSpeechTimeout" type="java.lang.Long">
+</parameter>
+<parameter name="maxNoSpeechTimeout" type="java.lang.Long">
+</parameter>
+<parameter name="languageCode" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<class name="Command.LookAtRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="LookAtRequest"
+ type="com.jibo.atk.model.Command.LookAtRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lookAtTarget" type="com.jibo.atk.model.Command.LookAtRequest.BaseLookAtTarget">
+</parameter>
+<parameter name="trackFlag" type="java.lang.Boolean">
+</parameter>
+</constructor>
+<method name="getLookAtTarget"
+ return="com.jibo.atk.model.Command.LookAtRequest.BaseLookAtTarget"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTrackFlag"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.LookAtRequest.AngleTarget"
+ extends="com.jibo.atk.model.Command.LookAtRequest.BaseLookAtTarget"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="AngleTarget"
+ type="com.jibo.atk.model.Command.LookAtRequest.AngleTarget"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="angle" type="int[]">
+</parameter>
+</constructor>
+<method name="getAngle"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.LookAtRequest.BaseLookAtTarget"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BaseLookAtTarget"
+ type="com.jibo.atk.model.Command.LookAtRequest.BaseLookAtTarget"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Command.LookAtRequest.CameraTarget"
+ extends="com.jibo.atk.model.Command.LookAtRequest.BaseLookAtTarget"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="CameraTarget"
+ type="com.jibo.atk.model.Command.LookAtRequest.CameraTarget"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="screenCoords" type="int[]">
+</parameter>
+</constructor>
+<method name="getScreenCoords"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.LookAtRequest.EntityTarget"
+ extends="com.jibo.atk.model.Command.LookAtRequest.BaseLookAtTarget"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EntityTarget"
+ type="com.jibo.atk.model.Command.LookAtRequest.EntityTarget"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="entity" type="java.lang.Long">
+</parameter>
+</constructor>
+<method name="getEntity"
+ return="java.lang.Long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.LookAtRequest.PositionTarget"
+ extends="com.jibo.atk.model.Command.LookAtRequest.BaseLookAtTarget"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="PositionTarget"
+ type="com.jibo.atk.model.Command.LookAtRequest.PositionTarget"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="position" type="int[]">
+</parameter>
+</constructor>
+<method name="getPosition"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.LookAtRequestExt"
+ extends="com.jibo.atk.model.Command.LookAtRequest"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="LookAtRequestExt"
+ type="com.jibo.atk.model.Command.LookAtRequestExt"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lookAtTarget" type="com.jibo.atk.model.Command.LookAtRequest.BaseLookAtTarget">
+</parameter>
+<parameter name="trackFlag" type="java.lang.Boolean">
+</parameter>
+<parameter name="levelHeadFlag" type="java.lang.Boolean">
+</parameter>
+</constructor>
+<method name="getLevelHeadFlag"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.MotionRequest"
+ extends="com.jibo.atk.model.Command.BaseSubscribeCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="MotionRequest"
+ type="com.jibo.atk.model.Command.MotionRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Command.SayRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SayRequest"
+ type="com.jibo.atk.model.Command.SayRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="esml" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getESML"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.ScreenGestureRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ScreenGestureRequest"
+ type="com.jibo.atk.model.Command.ScreenGestureRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="filter" type="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter">
+</parameter>
+</constructor>
+<method name="getScreenGestureFilter"
+ return="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getStreamType"
+ return="com.jibo.atk.model.Command.StreamTypes"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.ScreenGestureRequest.ScreenGestureFilter"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ScreenGestureFilter"
+ type="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="type" type="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter.ScreenGestureType">
+</parameter>
+<parameter name="area" type="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter.Area">
+</parameter>
+</constructor>
+</class>
+<class name="Command.ScreenGestureRequest.ScreenGestureFilter.Area"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Area"
+ type="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter.Area"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="x" type="float">
+</parameter>
+<parameter name="y" type="float">
+</parameter>
+</constructor>
+</class>
+<class name="Command.ScreenGestureRequest.ScreenGestureFilter.Circle"
+ extends="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter.Area"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Circle"
+ type="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter.Circle"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="x" type="float">
+</parameter>
+<parameter name="y" type="float">
+</parameter>
+<parameter name="radius" type="float">
+</parameter>
+</constructor>
+</class>
+<class name="Command.ScreenGestureRequest.ScreenGestureFilter.Rectangle"
+ extends="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter.Area"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Rectangle"
+ type="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter.Rectangle"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="x" type="float">
+</parameter>
+<parameter name="y" type="float">
+</parameter>
+<parameter name="width" type="float">
+</parameter>
+<parameter name="height" type="float">
+</parameter>
+</constructor>
+</class>
+<class name="Command.ScreenGestureRequest.ScreenGestureFilter.ScreenGestureType"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter.ScreenGestureType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.Command.ScreenGestureRequest.ScreenGestureFilter.ScreenGestureType[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.SessionRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.Command.AtomicCommand">
+</implements>
+<constructor name="SessionRequest"
+ type="com.jibo.atk.model.Command.SessionRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="Command.SetConfigRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.Command.AtomicCommand">
+</implements>
+<constructor name="SetConfigRequest"
+ type="com.jibo.atk.model.Command.SetConfigRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="options" type="com.jibo.atk.model.Command.SetConfigRequest.SetConfigOptions">
+</parameter>
+</constructor>
+</class>
+<class name="Command.SetConfigRequest.SetConfigOptions"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SetConfigOptions"
+ type="com.jibo.atk.model.Command.SetConfigRequest.SetConfigOptions"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mixer" type="float">
+</parameter>
+</constructor>
+</class>
+<class name="Command.SpeechRequest"
+ extends="com.jibo.atk.model.Command.BaseSubscribeCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SpeechRequest"
+ type="com.jibo.atk.model.Command.SpeechRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listen" type="boolean">
+</parameter>
+</constructor>
+</class>
+<class name="Command.StreamTypes"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.Command.StreamTypes"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.Command.StreamTypes[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.TakePhotoRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="TakePhotoRequest"
+ type="com.jibo.atk.model.Command.TakePhotoRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="camera" type="com.jibo.atk.model.Command.TakePhotoRequest.Camera">
+</parameter>
+<parameter name="resolution" type="com.jibo.atk.model.Command.TakePhotoRequest.CameraResolution">
+</parameter>
+<parameter name="distortion" type="java.lang.Boolean">
+</parameter>
+</constructor>
+<method name="getCamera"
+ return="com.jibo.atk.model.Command.TakePhotoRequest.Camera"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDistortion"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getResolution"
+ return="com.jibo.atk.model.Command.TakePhotoRequest.CameraResolution"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.TakePhotoRequest.Camera"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.Command.TakePhotoRequest.Camera"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.Command.TakePhotoRequest.Camera[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.TakePhotoRequest.CameraResolution"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.Command.TakePhotoRequest.CameraResolution"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.Command.TakePhotoRequest.CameraResolution[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.VideoRequest"
+ extends="com.jibo.atk.model.Command.BaseCommand"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="VideoRequest"
+ type="com.jibo.atk.model.Command.VideoRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="videoType" type="com.jibo.atk.model.Command.VideoRequest.VideoType">
+</parameter>
+</constructor>
+<constructor name="VideoRequest"
+ type="com.jibo.atk.model.Command.VideoRequest"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="videoType" type="com.jibo.atk.model.Command.VideoRequest.VideoType">
+</parameter>
+<parameter name="duration" type="java.lang.Long">
+</parameter>
+</constructor>
+<method name="getDuration"
+ return="java.lang.Long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getVideoType"
+ return="com.jibo.atk.model.Command.VideoRequest.VideoType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Command.VideoRequest.VideoType"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.Command.VideoRequest.VideoType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.Command.VideoRequest.VideoType[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage"
+ extends="com.jibo.atk.model.BaseResponse"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EventMessage"
+ type="com.jibo.atk.model.EventMessage"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="eventHeader" type="com.jibo.atk.model.EventMessage.EventHeader">
+</parameter>
+<parameter name="eventBody" type="com.jibo.atk.model.EventMessage.BaseEvent">
+</parameter>
+</constructor>
+<method name="getEventBody"
+ return="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getEventHeader"
+ return="com.jibo.atk.model.EventMessage.EventHeader"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setEventBody"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="eventBody" type="com.jibo.atk.model.EventMessage.BaseEvent">
+</parameter>
+</method>
+</class>
+<class name="EventMessage.BaseEvent"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="BaseEvent"
+ type="com.jibo.atk.model.EventMessage.BaseEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getEvent"
+ return="com.jibo.atk.model.EventMessage.EventType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="Event"
+ type="com.jibo.atk.model.EventMessage.EventType"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="EventMessage.EntityTrackEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EntityTrackEvent"
+ type="com.jibo.atk.model.EventMessage.EntityTrackEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getTracks"
+ return="com.jibo.atk.model.EventMessage.EntityTrackEvent.TrackedEntity[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.EntityTrackEvent.EntityType"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.EventMessage.EntityTrackEvent.EntityType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.EventMessage.EntityTrackEvent.EntityType[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.EntityTrackEvent.TrackedEntity"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="TrackedEntity"
+ type="com.jibo.atk.model.EventMessage.EntityTrackEvent.TrackedEntity"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getConfidence"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getEntityID"
+ return="java.lang.Long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getScreenCoords"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getType"
+ return="com.jibo.atk.model.EventMessage.EntityTrackEvent.EntityType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getWorldCoords"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.ErrorEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.EventMessage.FinalisingEvent">
+</implements>
+<constructor name="ErrorEvent"
+ type="com.jibo.atk.model.EventMessage.ErrorEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getEventError"
+ return="com.jibo.atk.model.EventMessage.ErrorEvent.ErrorData"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.ErrorEvent.ErrorData"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ErrorData"
+ type="com.jibo.atk.model.EventMessage.ErrorEvent.ErrorData"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getErrorCode"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getErrorString"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.EventFactory"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EventFactory"
+ type="com.jibo.atk.model.EventMessage.EventFactory"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="parseEventMessage"
+ return="com.jibo.atk.model.EventMessage"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<class name="EventMessage.EventHeader"
+ extends="com.jibo.atk.model.Header.ResponseHeader"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="EventHeader"
+ type="com.jibo.atk.model.EventMessage.EventHeader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getTimestamp"
+ return="float"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.EventType"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.EventMessage.EventType"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.EventMessage.EventType[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.FetchAssetEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="FetchAssetEvent"
+ type="com.jibo.atk.model.EventMessage.FetchAssetEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getDetail"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getFetchEvent"
+ return="com.jibo.atk.model.EventMessage.FetchAssetEvent.FetchAssetEvents"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.FetchAssetEvent.FetchAssetEvents"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.EventMessage.FetchAssetEvent.FetchAssetEvents"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.EventMessage.FetchAssetEvent.FetchAssetEvents[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<interface name="EventMessage.FinalisingEvent"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</interface>
+<class name="EventMessage.HeadTouchEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="HeadTouchEvent"
+ type="com.jibo.atk.model.EventMessage.HeadTouchEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getDetail"
+ return="boolean[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getHeadTouchEvent"
+ return="com.jibo.atk.model.EventMessage.HeadTouchEvent.HeadTouchEvents"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.HeadTouchEvent.HeadTouchEvents"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.EventMessage.HeadTouchEvent.HeadTouchEvents"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.EventMessage.HeadTouchEvent.HeadTouchEvents[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.HeadTouchEvent.HeadTouchPads"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.EventMessage.HeadTouchEvent.HeadTouchPads"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.EventMessage.HeadTouchEvent.HeadTouchPads[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.HotWordHeardEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="HotWordHeardEvent"
+ type="com.jibo.atk.model.EventMessage.HotWordHeardEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getSpeaker"
+ return="com.jibo.atk.model.EventMessage.HotWordHeardEvent.Speaker"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.HotWordHeardEvent.LPSPosition"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="LPSPosition"
+ type="com.jibo.atk.model.EventMessage.HotWordHeardEvent.LPSPosition"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="EventMessage.HotWordHeardEvent.Speaker"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Speaker"
+ type="com.jibo.atk.model.EventMessage.HotWordHeardEvent.Speaker"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="EventMessage.HotWordHeardEvent.SpeakerId"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SpeakerId"
+ type="com.jibo.atk.model.EventMessage.HotWordHeardEvent.SpeakerId"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="EventMessage.ListenResultEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ListenResultEvent"
+ type="com.jibo.atk.model.EventMessage.ListenResultEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getLanguageCode"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getResult"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSpeech"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.ListenStopEvent"
+ extends="com.jibo.atk.model.EventMessage.StopEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ListenStopEvent"
+ type="com.jibo.atk.model.EventMessage.ListenStopEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="reason" type="com.jibo.atk.model.EventMessage.ListenStopEvent.ListenStopReason">
+</parameter>
+</constructor>
+</class>
+<class name="EventMessage.ListenStopEvent.ListenStopReason"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.EventMessage.ListenStopEvent.ListenStopReason"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.EventMessage.ListenStopEvent.ListenStopReason[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.LookAtAchievedEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.EventMessage.FinalisingEvent">
+</implements>
+<constructor name="LookAtAchievedEvent"
+ type="com.jibo.atk.model.EventMessage.LookAtAchievedEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getAngleTarget"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPositionTarget"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.LookAtTrackLostEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.EventMessage.FinalisingEvent">
+</implements>
+<constructor name="LookAtTrackLostEvent"
+ type="com.jibo.atk.model.EventMessage.LookAtTrackLostEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getAngleTarget"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getEntityTarget"
+ return="long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPositionTarget"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.MotionEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="MotionEvent"
+ type="com.jibo.atk.model.EventMessage.MotionEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getMotions"
+ return="com.jibo.atk.model.EventMessage.MotionEvent.MotionEntity[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.MotionEvent.MotionEntity"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="MotionEntity"
+ type="com.jibo.atk.model.EventMessage.MotionEvent.MotionEntity"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="EventMessage.ScreenGestureEvents"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.EventMessage.ScreenGestureEvents"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.EventMessage.ScreenGestureEvents[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.StartEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.EventMessage.FinalisingEvent">
+</implements>
+<constructor name="StartEvent"
+ type="com.jibo.atk.model.EventMessage.StartEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="EventMessage.StopEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.EventMessage.FinalisingEvent">
+</implements>
+<constructor name="StopEvent"
+ type="com.jibo.atk.model.EventMessage.StopEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="EventMessage.SwipeEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SwipeEvent"
+ type="com.jibo.atk.model.EventMessage.SwipeEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getGestureEvent"
+ return="com.jibo.atk.model.EventMessage.ScreenGestureEvents"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSwipeDirection"
+ return="com.jibo.atk.model.EventMessage.SwipeEvent.SwipeDirection"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.SwipeEvent.SwipeDirection"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="valueOf"
+ return="com.jibo.atk.model.EventMessage.SwipeEvent.SwipeDirection"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.jibo.atk.model.EventMessage.SwipeEvent.SwipeDirection[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.TakePhotoEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.EventMessage.FinalisingEvent">
+</implements>
+<constructor name="TakePhotoEvent"
+ type="com.jibo.atk.model.EventMessage.TakePhotoEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getAngleTarget"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPositionTarget"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getURI"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.TapEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="TapEvent"
+ type="com.jibo.atk.model.EventMessage.TapEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getCoordinate"
+ return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getGestureEvent"
+ return="com.jibo.atk.model.EventMessage.ScreenGestureEvents"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.VideoReadyEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.jibo.atk.model.EventMessage.FinalisingEvent">
+</implements>
+<constructor name="VideoReadyEvent"
+ type="com.jibo.atk.model.EventMessage.VideoReadyEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getURI"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Header"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Header"
+ type="com.jibo.atk.model.Header"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="Header"
+ type="com.jibo.atk.model.Header"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="transactionID" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="Header"
+ type="com.jibo.atk.model.Header"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="transactionID" type="java.lang.String">
+</parameter>
+<parameter name="sessionID" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getSessionID"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTransactionID"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="Header.RequestHeader"
+ extends="com.jibo.atk.model.Header"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="RequestHeader"
+ type="com.jibo.atk.model.Header.RequestHeader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="transactionID" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="RequestHeader"
+ type="com.jibo.atk.model.Header.RequestHeader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="transactionID" type="java.lang.String">
+</parameter>
+<parameter name="sessionID" type="java.lang.String">
+</parameter>
+<parameter name="version" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="RequestHeader"
+ type="com.jibo.atk.model.Header.RequestHeader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sessionID" type="java.lang.String">
+</parameter>
+<parameter name="transactionID" type="java.lang.String">
+</parameter>
+<parameter name="appID" type="java.lang.String">
+</parameter>
+<parameter name="credentials" type="java.lang.String">
+</parameter>
+<parameter name="version" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getAppID"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getCredentials"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getVersion"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<field name="VER_1"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;1.0&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="Header.ResponseHeader"
+ extends="com.jibo.atk.model.Header"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ResponseHeader"
+ type="com.jibo.atk.model.Header.ResponseHeader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="ResponseHeader"
+ type="com.jibo.atk.model.Header.ResponseHeader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="transactionID" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="ResponseHeader"
+ type="com.jibo.atk.model.Header.ResponseHeader"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="transactionID" type="java.lang.String">
+</parameter>
+<parameter name="sessionID" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getRobotID"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+</package>
+<package name="com.jibo.atk.utils"
+>
+<class name="Commons"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Commons"
+ type="com.jibo.atk.utils.Commons"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="setRootEndpoint"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="endpoint" type="java.lang.String">
+</parameter>
+<exception name="Commons.InvalidParameterValueException" type="com.jibo.atk.utils.Commons.InvalidParameterValueException">
+</exception>
+</method>
+<field name="ALLOWED_ENDPOINTS"
+ type="java.lang.String[]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEFAULT_DOMAIN"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;jibo.com&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEV_ENDPOINT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;dev-customer-portal.jibo.com&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PREPROD_ENDPOINT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;preprod-customer-portal.jibo.com&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="PROD_ENDPOINT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;portal.jibo.com&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="ROOT_ENDPOINT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="STG_ENDPOINT"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;stg-customer-portal.jibo.com&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<interface name="Commons.AsyncCallback"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onError"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="exception" type="java.lang.Throwable">
+</parameter>
+</method>
+<method name="onSuccess"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="result" type="T">
+</parameter>
+</method>
+</interface>
+<class name="Commons.InvalidParameterValueException"
+ extends="java.lang.Throwable"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="InvalidParameterValueException"
+ type="com.jibo.atk.utils.Commons.InvalidParameterValueException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="s" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+<interface name="LogUtilsInterface"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="LOGD"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="LOGD"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</method>
+<method name="LOGE"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="LOGE"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</method>
+<method name="LOGI"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="LOGI"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</method>
+<method name="LOGV"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="LOGV"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</method>
+<method name="LOGW"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</method>
+<method name="LOGW"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="tag" type="java.lang.String">
+</parameter>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</method>
+<method name="makeLogTag"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="str" type="java.lang.String">
+</parameter>
+</method>
+<method name="makeLogTag"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cls" type="java.lang.Class">
+</parameter>
+</method>
+</interface>
+<class name="Util"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Util"
+ type="com.jibo.atk.utils.Util"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="byte2hex"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="b" type="byte">
+</parameter>
+<parameter name="buf" type="java.lang.StringBuffer">
+</parameter>
+</method>
+<method name="md5"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dataString" type="java.lang.String">
+</parameter>
+</method>
+<method name="sha1"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="input" type="java.lang.String">
+</parameter>
+<exception name="NoSuchAlgorithmException" type="java.security.NoSuchAlgorithmException">
+</exception>
+</method>
+<method name="toHexString"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="block" type="byte[]">
+</parameter>
+</method>
+<method name="unquote"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="s" type="java.lang.String">
+</parameter>
+</method>
+</class>
+</package>
+</api>
