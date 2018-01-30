@@ -3,7 +3,7 @@ package com.jibo.atk.utils;
 /*
  * Created by calvinator on 1/26/18.
  */
-
+/** hide */
 public interface LogUtilsInterface {
     public String makeLogTag(String str);
     public String makeLogTag(Class cls);

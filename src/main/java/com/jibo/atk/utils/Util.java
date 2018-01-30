@@ -6,6 +6,7 @@ import java.security.NoSuchAlgorithmException;
 /*
  * Created by alexz on 23.10.17.
  */
+/** hide */
 public class Util {
    /*
     * This String util method removes single or double quotes
