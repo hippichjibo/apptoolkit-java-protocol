@@ -7,10 +7,11 @@ import com.google.gson.annotations.SerializedName;
  */
 
 /**
- * Class for all Android command
+ * Additional information and objects for working with the java protocol
  */
 public class Command {
 
+    /** @hide */
     public enum CommandType {
         @SerializedName("StartSession")
         StartSession,
@@ -49,29 +50,29 @@ public class Command {
     private Header.RequestHeader ClientHeader;
     private BaseCommand Command;
 
-    /** hide */
+    /** @hide */
     public Command(Header.RequestHeader clientHeader, BaseCommand command) {
         ClientHeader = clientHeader;
         Command = command;
     }
-    /** hide */
+    /** @hide */
     public Header.RequestHeader getClientHeader() {
         return ClientHeader;
     }
 
-    /** hide */
+    /** @hide */
     public BaseCommand getCommand() {
         return Command;
     }
 
-    /** hide */
+    /** @hide */
     static public class BaseCommand {
         private CommandType Type;
 
         private BaseCommand(CommandType type) {
             this.Type = type;
         }
-
+        /** @hide */
         public CommandType getType() {
             return Type;
         }
@@ -107,7 +108,7 @@ public class Command {
         ScreenGesture;
     }
 
-    /** hide */
+    /** @hide */
     static public class BaseSubscribeCommand extends BaseCommand {
 
         protected StreamTypes StreamType;
@@ -134,7 +135,7 @@ public class Command {
         }
     }
 
-    /** hide */
+    /** @hide */
     static public class MotionRequest extends BaseSubscribeCommand {
 
         public MotionRequest() {
@@ -142,7 +143,7 @@ public class Command {
         }
     }
 
-    /** hide */
+    /** @hide */
     static public class SpeechRequest extends BaseSubscribeCommand {
         @SerializedName("Listen")
         boolean listen;
@@ -153,7 +154,7 @@ public class Command {
         }
     }
 
-    /** hide */
+    /** @hide */
     static public class HeadTouchRequest extends BaseSubscribeCommand {
 
         public HeadTouchRequest() {
@@ -166,10 +167,10 @@ public class Command {
      * This will allow us release their listeners as soon as acknowledgment arrives
      *
      */
-    /** hide */
+    /** @hide */
     public interface AtomicCommand {}
 
-    /** hide */
+    /** @hide */
     static public class AttentionRequest extends BaseCommand implements AtomicCommand {
 
         public enum AttentionMode {
@@ -205,7 +206,7 @@ public class Command {
         }
     }
 
-    /** hide */
+    /** @hide */
     static public class CancelRequest extends BaseCommand implements AtomicCommand {
         private String ID;
 
@@ -219,7 +220,7 @@ public class Command {
         }
     }
 
-    /** hide */
+    /** @hide */
     static public class EntityRequest extends BaseSubscribeCommand {
 
         public EntityRequest() {
@@ -228,14 +229,14 @@ public class Command {
         }
     }
 
-    /** hide */
+    /** @hide */
     static public class GetConfigRequest extends BaseCommand implements AtomicCommand {
         public GetConfigRequest() {
             super(CommandType.GetConfig);
         }
     }
 
-    /** hide */
+    /** @hide */
     static public class SetConfigRequest extends BaseCommand implements AtomicCommand {
         public static class SetConfigOptions {
             @SerializedName("Mixer")
@@ -255,7 +256,7 @@ public class Command {
         }
     }
 
-    /** hide */
+    /** @hide */
     static public class ListenRequest extends BaseCommand implements AtomicCommand {
 
         @SerializedName("MaxSpeechTimeout")
@@ -273,24 +274,24 @@ public class Command {
         }
     }
 
-    /** Additional information for the lookAt command */
+    /** Additional information for lookats */
     static public class LookAtRequest extends BaseCommand {
         private BaseLookAtTarget LookAtTarget;
         private Boolean TrackFlag;
 
-        /** hide */
+        /** @hide */
         public LookAtRequest(LookAtRequest.BaseLookAtTarget lookAtTarget, Boolean trackFlag) {
             super(CommandType.LookAt);
             LookAtTarget = lookAtTarget;
             TrackFlag = trackFlag;
         }
 
-        /** hide */
+        /** @hide */
         public BaseLookAtTarget getLookAtTarget() {
             return LookAtTarget;
         }
 
-        /** hide */
+        /** @hide */
         public Boolean getTrackFlag() {
             return TrackFlag;
         }
@@ -391,7 +392,7 @@ public class Command {
 
     }
 
-    /** hide */
+    /** @hide */
     static public class LookAtRequestExt extends LookAtRequest {
         private Boolean LevelHeadFlag;
 
@@ -405,7 +406,7 @@ public class Command {
         }
     }
 
-    /** hide */
+    /** @hide */
     static public class SayRequest extends BaseCommand {
         private String ESML;
 
@@ -419,14 +420,14 @@ public class Command {
         }
     }
 
-    /** hide */
+    /** @hide */
     static public class SessionRequest extends BaseCommand implements AtomicCommand {
         public SessionRequest() {
             super(CommandType.StartSession);
         }
     }
 
-    /** Additional information for the takePhoto command */
+    /** Additional information for taking photos */
     static public class TakePhotoRequest extends BaseCommand {
 
         /**
@@ -439,7 +440,7 @@ public class Command {
             @SerializedName("left")
             Left,
             /**
-             * `right` reserved for face tracking
+             * `right` Unsupported
              */
             @SerializedName("right")
             Right;
@@ -475,28 +476,28 @@ public class Command {
         private CameraResolution Resolution;
         private Boolean Distortion;
 
-        /** hide */
+        /** @hide */
         public TakePhotoRequest(TakePhotoRequest.Camera camera, TakePhotoRequest.CameraResolution resolution, Boolean distortion) {
             super(CommandType.TakePhoto);
             Camera = camera;
             Resolution = resolution;
             Distortion = distortion;
         }
-        /** hide */
+        /** @hide */
         public TakePhotoRequest.Camera getCamera() {
             return Camera;
         }
-        /** hide */
+        /** @hide */
         public TakePhotoRequest.CameraResolution getResolution() {
             return Resolution;
         }
-        /** hide */
+        /** @hide */
         public Boolean getDistortion() {
             return Distortion;
         }
     }
 
-    /** Additional information for the video command */
+    /** Additional information for capturing video */
     static public class VideoRequest extends BaseCommand {
 
         /**
@@ -517,31 +518,31 @@ public class Command {
 
         private VideoType VideoType;
         private Long Duration;
-        /** hide */
+        /** @hide */
         public VideoRequest(VideoRequest.VideoType videoType) {
             super(CommandType.Video);
             VideoType = videoType;
             Duration = 0L;
         }
 
-        /** hide */
+        /** @hide */
         public VideoRequest(VideoRequest.VideoType videoType, Long duration) {
             super(CommandType.Video);
             VideoType = videoType;
             Duration = duration;
         }
 
-        /** hide */
+        /** @hide */
         public VideoRequest.VideoType getVideoType() {
             return VideoType;
         }
-        /** hide */
+        /** @hide */
         public Long getDuration() {
             return Duration;
         }
     }
 
-    /** Additional information for the display command */
+    /** Additional information for displaying info on Jibo's screen */
     static public class DisplayRequest extends BaseCommand {
 
         /**
@@ -554,12 +555,12 @@ public class Command {
             @SerializedName("Eye")
             Eye,
             /**
-             * `Eye` Display text
+             * `Text` Display text
              */
             @SerializedName("Text")
             Text,
             /**
-             * `Eye` Display an image
+             * `Image` Display an image
              */
             @SerializedName("Image")
             Image;
@@ -569,14 +570,9 @@ public class Command {
          * Data object for image info
          */
         static public class ImageData {
-            /**
-             * Name of asset in local cache
-             */
+
             @SerializedName("name")
             String name;
-            /**
-             * URL to the image
-             */
             @SerializedName("src")
             String src;
             @SerializedName("set")
@@ -584,7 +580,9 @@ public class Command {
         }
 
 
-        /** do we need this? */
+        /**
+         * View to display on Jibo's screen
+         */
         public static class DisplayView {
 
             @SerializedName("Type")
@@ -592,17 +590,18 @@ public class Command {
             @SerializedName("Name")
             String name;
 
-             /**
-              * Display information
-              * @param type See {@link DisplayViewType}
-              * @param name Unique name of view
-              */
+           /**
+            * Display information
+            * @param type See {@link DisplayViewType}
+            * @param name Unique name of view
+            */
             public DisplayView(DisplayViewType type, String name){
                 this.type = type;
                 this.name = name;
             }
         }
 
+        /** Display text on Jibo's screen */
         static public class TextView extends DisplayView {
             @SerializedName("Text")
             String text;
@@ -618,6 +617,7 @@ public class Command {
             }
         }
 
+        /** Display an image on Jibo's screen */
         static public class ImageView extends DisplayView {
             @SerializedName("Image")
             ImageData image;
@@ -633,6 +633,7 @@ public class Command {
             }
         }
 
+        /** Display the eye on Jibo's screen */
         static public class EyeView extends DisplayView {
             /**
              * Info for displaying Jibo's eye
@@ -651,13 +652,14 @@ public class Command {
             return view;
         }
 
+        /** @hide */
         public DisplayRequest(DisplayView displayView) {
             super(CommandType.Display);
             this.view = displayView;
         }
     }
 
-    /** hide */
+    /** @hide */
     static public class FetchAssetRequest extends BaseCommand {
 
         @SerializedName("URI")
@@ -712,27 +714,28 @@ public class Command {
                 SwipeLeft;
             }
 
+            /** Define an area on Jibo's screen */
             public static class Area {
                 float x;
                 float y;
                 /**
                  * Pixel on the screen in which to listen for screen gesture.
-                 * See also `Rectangle` and `Circle`
-                 * `[x, y]`
                  */
                 public Area(float x, float y){
+                    /** horizontal coordinate */
                     this.x = x;
+                    /** vertical coordinate */
                     this.y = y;
                 }
             }
 
-
+            /** Define a rectangular area on Jibo's screen */
             public static class Rectangle extends Area{
                 float width;
                 float height;
 
                 /**
-                 * Rectanglar area on the screen in which to listen for screen gesture
+                 * Rectangular area on the screen in which to listen for screen gesture
                  * `[x, y, width, height]`
                  */
                 public Rectangle(float x, float y, float width, float height) {
@@ -742,6 +745,7 @@ public class Command {
                 }
             }
 
+            /** Define a circular area on Jibo's screen */
             public static class Circle extends Area{
                 float radius;
 
@@ -780,13 +784,15 @@ public class Command {
         @SerializedName("StreamFilter")
         private ScreenGestureFilter streamFilter;
 
+        /** @hide */
         public ScreenGestureRequest(ScreenGestureFilter filter) {
             super(CommandType.ScreenGesture);
             this.streamType = StreamTypes.ScreenGesture;
             this.streamFilter = filter;
         }
-
+        /** @hide */
         public StreamTypes getStreamType() {return streamType;}
+        /** @hide */
         public ScreenGestureFilter getScreenGestureFilter() {return streamFilter;}
     }
 

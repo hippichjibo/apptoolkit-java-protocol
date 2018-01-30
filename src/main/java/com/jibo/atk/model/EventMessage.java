@@ -78,26 +78,26 @@ public class EventMessage extends BaseResponse {
     private EventMessage.EventHeader EventHeader;
     private BaseEvent EventBody;
 
-    /** hide */
+    /** @hide */
     public EventMessage(EventMessage.EventHeader eventHeader, BaseEvent eventBody) {
         EventHeader = eventHeader;
         EventBody = eventBody;
     }
-    /** hide */
+    /** @hide */
     public EventMessage.EventHeader getEventHeader() {
         return EventHeader;
     }
-    /** hide */
+    /** @hide */
     public BaseEvent getEventBody() {
         return EventBody;
     }
-    /** hide */
+    /** @hide */
     public void setEventBody(BaseEvent eventBody) {
         EventBody = eventBody;
     }
 
     /****************DEFINING EVENT PARTS HERE****************/
-    /** hide */
+    /** @hide */
     public class EventHeader extends Header.ResponseHeader {
         private float Timestamp;
 
@@ -108,7 +108,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /****************DEFINING EVENT TYPES HERE****************/
-    /** hide */
+    /** @hide */
     static public class BaseEvent {
         protected EventType Event;
 
@@ -116,13 +116,13 @@ public class EventMessage extends BaseResponse {
             return Event;
         }
     }
-    /** hide */
+    /** @hide */
     public interface FinalisingEvent {}
-    /** hide */
+    /** @hide */
     static public class StartEvent extends BaseEvent implements FinalisingEvent {}
-    /** hide */
+    /** @hide */
     static public class StopEvent extends BaseEvent implements FinalisingEvent {}
-    /** hide */
+    /** @hide */
     static public class ErrorEvent extends BaseEvent implements FinalisingEvent {
         private ErrorData EventError;
 
@@ -436,7 +436,7 @@ public class EventMessage extends BaseResponse {
         public String getSpeech() {
             return speech;
         }
-        /** hide */
+        /** @hide */
         public String getResult() {
             return result;
         }
@@ -467,7 +467,7 @@ public class EventMessage extends BaseResponse {
         }
     }
 
-    /** Currently unsupported */
+    /** @hide */
     public static class HotWordHeardEvent extends BaseEvent {
 
         public static class LPSPosition {
@@ -586,7 +586,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /****************THIS IS THE CLASS THAT MAPS RECEIVED JSON INTO FINAL EVENTMESSAGE****************/
-    /** hide */
+    /** @hide */
     static public class EventFactory {
 
         private static final String TAG = EventFactory.class.getSimpleName();

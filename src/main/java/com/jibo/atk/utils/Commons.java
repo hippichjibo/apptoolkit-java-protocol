@@ -3,7 +3,7 @@ package com.jibo.atk.utils;
 /*
  * Created by alexz on 10.10.17.
  */
-/** hide */
+/** @hide */
 public class Commons {
     public static final String DEFAULT_DOMAIN = "jibo.com";
 

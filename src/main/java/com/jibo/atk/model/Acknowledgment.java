@@ -55,7 +55,7 @@ import com.google.gson.annotations.SerializedName;
         @SerializedName("505")
         VersionNotSupported;
     }
-
+     /** @hide */
      public enum ValueResult {
          @SerializedName("Success")
          Success,
@@ -65,26 +65,26 @@ import com.google.gson.annotations.SerializedName;
 
      private Header.ResponseHeader ResponseHeader;
      private AcknowledgementBody Response;
-
+     /** @hide */
      public Acknowledgment(Header.ResponseHeader responseHeader, AcknowledgementBody response) {
          ResponseHeader = responseHeader;
          Response = response;
      }
-
+     /** @hide */
      public Header.ResponseHeader getResponseHeader() {
          return ResponseHeader;
      }
-
+     /** @hide */
      public AcknowledgementBody getResponse() {
          return Response;
      }
-
+     /** @hide */
      public void setResponse(AcknowledgementBody response) {
          Response = response;
      }
 
      /*******************DEFINING RESPONSE PARTS HERE*********************/
-
+     /** @hide */
      static public class AcknowledgementBody {
          private ValueResult Value;
          private ResponseCode ResponseCode;
@@ -104,6 +104,7 @@ import com.google.gson.annotations.SerializedName;
      }
 
      //TODO not sure if we really need this one, but lets keep it for now
+     /** @hide */
      static public class ErrorResponseBody extends AcknowledgementBody {
          private String ErrorDetail;
 
@@ -113,7 +114,7 @@ import com.google.gson.annotations.SerializedName;
      }
 
      /*******************DEFINING RESPONSES HERE*********************/
-
+     /** @hide */
      static public class CancelResponse extends AcknowledgementBody {
          private String ResponseBody;
 
@@ -121,7 +122,7 @@ import com.google.gson.annotations.SerializedName;
              return ResponseBody;
          }
      }
-
+     /** @hide */
      static public class GetConfigResponse extends AcknowledgementBody {
          private ConfigInfo ResponseBody;
 
@@ -137,13 +138,13 @@ import com.google.gson.annotations.SerializedName;
              }
          }
      }
-
+     /** @hide */
      static public class ListenErrorResponse extends ErrorResponseBody {}
-
+     /** @hide */
      static public class LookAtErrorResponse extends ErrorResponseBody {}
-
+     /** @hide */
      static public class SayErrorResponse extends ErrorResponseBody {}
-
+     /** @hide */
      static public class SessionResponse extends AcknowledgementBody {
          private SessionInfo ResponseBody;
 
