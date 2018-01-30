@@ -3,17 +3,17 @@ package com.jibo.atk.utils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
+/*
  * Created by alexz on 23.10.17.
  */
 public class Util {
-    /*
-        * This String util method removes single or double quotes
+   /*
+    * This String util method removes single or double quotes
     * from a string if its quoted.
     * for input string = "mystr1" output will be = mystr1
     * for input string = 'mystr2' output will be = mystr2
     *
-        * @param String value to be unquoted.
+    * @param String value to be unquoted.
     * @return value unquoted, null if input is null.
     *
     */

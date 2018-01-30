@@ -2,10 +2,13 @@ package com.jibo.atk.model;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
+/*
  * Created by alexz on 13.10.17.
  */
 
+/**
+ * Class for all Android command
+ */
 public class Command {
 
     public enum CommandType {
@@ -128,6 +131,7 @@ public class Command {
     }
 
     static public class MotionRequest extends BaseSubscribeCommand {
+
         public MotionRequest() {
             this.StreamType = StreamTypes.Motion;
         }
@@ -275,6 +279,7 @@ public class Command {
             return TrackFlag;
         }
 
+        /** Base class for LookAt Targets */
         static public class BaseLookAtTarget {
         }
 
@@ -284,10 +289,6 @@ public class Command {
         static public class PositionTarget extends BaseLookAtTarget{
             private int[] Position;
 
-            /**
-             * Vector that provides a location in space in the base coordinate frame of the robot.
-             * @param position 3-number array for location, defined as `[x: meters forward, y: meters left, z: meters up]`
-             */
             public PositionTarget(int[] position) {
                 Position = position;
             }
@@ -307,12 +308,6 @@ public class Command {
         static public class AngleTarget extends BaseLookAtTarget{
             private int[] Angle;
 
-            /**
-             * These angles are relative to Jibo's current orientation
-             * vector that provides a twist angle (theta) and vertical angle (psi) in
-             * the base coordinate from of the robot to look at.
-             * @param angle `[theta, psi]` where `theta` = twist/horizontal angle and `psi` = vertical angle.
-             */
             public AngleTarget(int[] angle) {
                 Angle = angle;
             }
@@ -332,12 +327,6 @@ public class Command {
         static public class EntityTarget extends BaseLookAtTarget{
             private Long Entity;
 
-            /**
-             * Currently unsupported.
-             * When target is a face that's being tracked.
-             * @param entity An integer that refers to an entity that is known and available in Jibo’s LPS
-             * system. An error will be returned if that entity is no longer being tracked.
-             */
             public EntityTarget(Long entity) {
                 Entity = entity;
             }
@@ -359,10 +348,6 @@ public class Command {
         static public class CameraTarget extends BaseLookAtTarget{
             private int[] ScreenCoords;
 
-            /**
-             * Target for where on Jibo's screen the camera should target.
-             * @param screenCoords 2-number array for location on Jibo's screen
-             */
             public CameraTarget(int[] screenCoords) {
                 ScreenCoords = screenCoords;
             }

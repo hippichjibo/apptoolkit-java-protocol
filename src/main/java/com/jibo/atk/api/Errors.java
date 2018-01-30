@@ -2,7 +2,7 @@ package com.jibo.atk.api;
 
 import java.util.List;
 
-/**
+/*
  * Created by alexz on 30.10.17.
  */
 

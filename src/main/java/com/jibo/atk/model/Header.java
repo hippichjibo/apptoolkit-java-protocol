@@ -1,6 +1,6 @@
 package com.jibo.atk.model;
 
-/**
+/*
  * Created by alexz on 11.10.17.
  */
 

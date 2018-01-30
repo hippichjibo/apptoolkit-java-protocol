@@ -2,7 +2,7 @@ package com.jibo.atk.api;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
+/*
  * Created by calvinator on 1/26/18.
  */
 
