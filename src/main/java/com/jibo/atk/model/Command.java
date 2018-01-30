@@ -49,19 +49,22 @@ public class Command {
     private Header.RequestHeader ClientHeader;
     private BaseCommand Command;
 
+    /** hide */
     public Command(Header.RequestHeader clientHeader, BaseCommand command) {
         ClientHeader = clientHeader;
         Command = command;
     }
-
+    /** hide */
     public Header.RequestHeader getClientHeader() {
         return ClientHeader;
     }
 
+    /** hide */
     public BaseCommand getCommand() {
         return Command;
     }
 
+    /** hide */
     static public class BaseCommand {
         private CommandType Type;
 
@@ -104,6 +107,7 @@ public class Command {
         ScreenGesture;
     }
 
+    /** hide */
     static public class BaseSubscribeCommand extends BaseCommand {
 
         protected StreamTypes StreamType;
@@ -130,6 +134,7 @@ public class Command {
         }
     }
 
+    /** hide */
     static public class MotionRequest extends BaseSubscribeCommand {
 
         public MotionRequest() {
@@ -137,6 +142,7 @@ public class Command {
         }
     }
 
+    /** hide */
     static public class SpeechRequest extends BaseSubscribeCommand {
         @SerializedName("Listen")
         boolean listen;
@@ -147,6 +153,7 @@ public class Command {
         }
     }
 
+    /** hide */
     static public class HeadTouchRequest extends BaseSubscribeCommand {
 
         public HeadTouchRequest() {
@@ -159,8 +166,10 @@ public class Command {
      * This will allow us release their listeners as soon as acknowledgment arrives
      *
      */
+    /** hide */
     public interface AtomicCommand {}
 
+    /** hide */
     static public class AttentionRequest extends BaseCommand implements AtomicCommand {
 
         public enum AttentionMode {
@@ -196,6 +205,7 @@ public class Command {
         }
     }
 
+    /** hide */
     static public class CancelRequest extends BaseCommand implements AtomicCommand {
         private String ID;
 
@@ -209,6 +219,7 @@ public class Command {
         }
     }
 
+    /** hide */
     static public class EntityRequest extends BaseSubscribeCommand {
 
         public EntityRequest() {
@@ -217,13 +228,14 @@ public class Command {
         }
     }
 
-
+    /** hide */
     static public class GetConfigRequest extends BaseCommand implements AtomicCommand {
         public GetConfigRequest() {
             super(CommandType.GetConfig);
         }
     }
 
+    /** hide */
     static public class SetConfigRequest extends BaseCommand implements AtomicCommand {
         public static class SetConfigOptions {
             @SerializedName("Mixer")
@@ -243,6 +255,7 @@ public class Command {
         }
     }
 
+    /** hide */
     static public class ListenRequest extends BaseCommand implements AtomicCommand {
 
         @SerializedName("MaxSpeechTimeout")
@@ -260,21 +273,24 @@ public class Command {
         }
     }
 
-
+    /** Additional information for the lookAt command */
     static public class LookAtRequest extends BaseCommand {
         private BaseLookAtTarget LookAtTarget;
         private Boolean TrackFlag;
 
+        /** hide */
         public LookAtRequest(LookAtRequest.BaseLookAtTarget lookAtTarget, Boolean trackFlag) {
             super(CommandType.LookAt);
             LookAtTarget = lookAtTarget;
             TrackFlag = trackFlag;
         }
 
+        /** hide */
         public BaseLookAtTarget getLookAtTarget() {
             return LookAtTarget;
         }
 
+        /** hide */
         public Boolean getTrackFlag() {
             return TrackFlag;
         }
@@ -289,6 +305,9 @@ public class Command {
         static public class PositionTarget extends BaseLookAtTarget{
             private int[] Position;
 
+            /**
+             * Class for 3D position targets
+             */
             public PositionTarget(int[] position) {
                 Position = position;
             }
@@ -308,6 +327,9 @@ public class Command {
         static public class AngleTarget extends BaseLookAtTarget{
             private int[] Angle;
 
+            /**
+             * Class for 2D angle targets
+             */
             public AngleTarget(int[] angle) {
                 Angle = angle;
             }
@@ -327,6 +349,9 @@ public class Command {
         static public class EntityTarget extends BaseLookAtTarget{
             private Long Entity;
 
+            /**
+             * Class for entity (face) targets. Currently unsupported
+             */
             public EntityTarget(Long entity) {
                 Entity = entity;
             }
@@ -348,6 +373,9 @@ public class Command {
         static public class CameraTarget extends BaseLookAtTarget{
             private int[] ScreenCoords;
 
+            /**
+             * Class for camera targets
+             */
             public CameraTarget(int[] screenCoords) {
                 ScreenCoords = screenCoords;
             }
@@ -363,6 +391,7 @@ public class Command {
 
     }
 
+    /** hide */
     static public class LookAtRequestExt extends LookAtRequest {
         private Boolean LevelHeadFlag;
 
@@ -376,6 +405,7 @@ public class Command {
         }
     }
 
+    /** hide */
     static public class SayRequest extends BaseCommand {
         private String ESML;
 
@@ -389,12 +419,14 @@ public class Command {
         }
     }
 
+    /** hide */
     static public class SessionRequest extends BaseCommand implements AtomicCommand {
         public SessionRequest() {
             super(CommandType.StartSession);
         }
     }
 
+    /** Additional information for the takePhoto command */
     static public class TakePhotoRequest extends BaseCommand {
 
         /**
@@ -443,26 +475,28 @@ public class Command {
         private CameraResolution Resolution;
         private Boolean Distortion;
 
+        /** hide */
         public TakePhotoRequest(TakePhotoRequest.Camera camera, TakePhotoRequest.CameraResolution resolution, Boolean distortion) {
             super(CommandType.TakePhoto);
             Camera = camera;
             Resolution = resolution;
             Distortion = distortion;
         }
-
+        /** hide */
         public TakePhotoRequest.Camera getCamera() {
             return Camera;
         }
-
+        /** hide */
         public TakePhotoRequest.CameraResolution getResolution() {
             return Resolution;
         }
-
+        /** hide */
         public Boolean getDistortion() {
             return Distortion;
         }
     }
 
+    /** Additional information for the video command */
     static public class VideoRequest extends BaseCommand {
 
         /**
@@ -483,28 +517,31 @@ public class Command {
 
         private VideoType VideoType;
         private Long Duration;
-
+        /** hide */
         public VideoRequest(VideoRequest.VideoType videoType) {
             super(CommandType.Video);
             VideoType = videoType;
             Duration = 0L;
         }
 
+        /** hide */
         public VideoRequest(VideoRequest.VideoType videoType, Long duration) {
             super(CommandType.Video);
             VideoType = videoType;
             Duration = duration;
         }
 
+        /** hide */
         public VideoRequest.VideoType getVideoType() {
             return VideoType;
         }
-
+        /** hide */
         public Long getDuration() {
             return Duration;
         }
     }
 
+    /** Additional information for the display command */
     static public class DisplayRequest extends BaseCommand {
 
         /**
@@ -547,6 +584,7 @@ public class Command {
         }
 
 
+        /** do we need this? */
         public static class DisplayView {
 
             @SerializedName("Type")
@@ -619,6 +657,7 @@ public class Command {
         }
     }
 
+    /** hide */
     static public class FetchAssetRequest extends BaseCommand {
 
         @SerializedName("URI")
@@ -641,8 +680,10 @@ public class Command {
 
     }
 
+    /** Additional info for screen gestures **/
     static public class ScreenGestureRequest extends BaseCommand {
 
+        /** Filters options for screen gestures */
         public static class ScreenGestureFilter {
 
             /**
@@ -676,6 +717,7 @@ public class Command {
                 float y;
                 /**
                  * Pixel on the screen in which to listen for screen gesture.
+                 * See also `Rectangle` and `Circle`
                  * `[x, y]`
                  */
                 public Area(float x, float y){

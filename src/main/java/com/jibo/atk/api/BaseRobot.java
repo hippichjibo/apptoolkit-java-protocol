@@ -3,7 +3,7 @@ package com.jibo.atk.api;
 /*
  * Created by calvinator on 1/26/18.
  */
-
+/** Robot information */
 public class BaseRobot {
 
     String id;

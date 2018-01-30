@@ -2,7 +2,7 @@ package com.jibo.atk.api;
 /**
  * Created by alexz on 30.10.17.
  */
-
+/** @hide */
 public class Token {
 
     private String token_type;
