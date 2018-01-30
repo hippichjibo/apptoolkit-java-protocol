@@ -1,6 +1,6 @@
 package com.jibo.atk.utils;
 
-/**
+/*
  * Created by alexz on 10.10.17.
  */
 public class Commons {

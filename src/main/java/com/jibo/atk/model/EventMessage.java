@@ -11,7 +11,7 @@ import java.util.Map;
 
 import static com.jibo.atk.model.EventMessage.EventType.*;
 
-/**
+/*
  * Created by alexz on 10.10.17.
  */
 /** Information returned with command messages */
@@ -142,6 +142,10 @@ public class EventMessage extends BaseResponse {
             Unknown;
         }
 
+        /** 
+         * Get the tracks in Jibo's perceptual space
+         * @return Tracks
+         */
         public TrackedEntity[] getTracks() {
             return Tracks;
         }
@@ -198,6 +202,7 @@ public class EventMessage extends BaseResponse {
         }
     }
 
+    /** Jibo achieved his lookat command */
     static public class LookAtAchievedEvent extends BaseEvent implements FinalisingEvent {
         private int[] PositionTarget;
         private int[] AngleTarget;
@@ -214,6 +219,7 @@ public class EventMessage extends BaseResponse {
         }
     }
 
+    /** Jibo lost sight of the thing he was tracking */
     static public class LookAtTrackLostEvent extends BaseEvent implements FinalisingEvent {
         private int[] PositionTarget;
         private int[] AngleTarget;
@@ -235,44 +241,74 @@ public class EventMessage extends BaseResponse {
         }
     }
 
+    /** The video stream is ready to capture */
     static public class VideoReadyEvent extends BaseEvent implements FinalisingEvent {
         private String URI;
 
+        /** 
+         * Get the location of the video
+         * @return  URI The URI to the video
+         */
         public String getURI() {
             return URI;
         }
     }
 
+    /**
+     * Jibo took a photo
+     */
     static public class TakePhotoEvent extends BaseEvent implements FinalisingEvent {
         private String URI;
         private String Name;
         private int[] PositionTarget;
         private int[] AngleTarget;
 
+        /**
+         * Get the location of the photo
+         * @return URI to the photo
+         */
         public String getURI() {
             return URI;
         }
 
+        /**
+         * Get the name of the photo
+         * @return Name Unique name of the photo in local cache
+         */
         public String getName() {
             return Name;
         }
 
+        /**
+         * Get the location of what Jibo photographed
+         * @return PositionTarget 3-number array for location, defined as `[x: meters forward, y: meters left, z: meters up]`
+         */
         public int[] getPositionTarget() {
             return PositionTarget;
         }
 
+        /** 
+         * Get the location of what Jibo photographed
+         * @return AngleTarget 2-number array, defined as `[theta: twist/horiz angle, psi: vert angle]`
+         */
         public int[] getAngleTarget() {
             return AngleTarget;
         }
     }
 
+    /** 
+     * Enum of screen gesture events
+     */
     public enum ScreenGestureEvents {
+        /** `onTap` for tap events */
         @SerializedName("onTap")
         Tap,
+        /** `onSwipe` for swipe events */
         @SerializedName("onSwipe")
         Swipe
     }
 
+    /** Someone tapped Jibo's screen */
     static public class TapEvent extends BaseEvent {
 
         @SerializedName("Event")
@@ -281,20 +317,34 @@ public class EventMessage extends BaseResponse {
         @SerializedName("Coordinate")
         private int[] coordinate;
 
+        /** 
+         * Get the tap event info
+         * @return event 
+         */
         public ScreenGestureEvents getGestureEvent() {
             return event;
         }
+        /** 
+         * Get location of the tap
+         * @return coorindate `(x,y)`
+         */
         public int[] getCoordinate() {
             return coordinate;
         }
 
     }
 
+    /** Someone swiped on Jibo's screen */
     static public class SwipeEvent extends BaseEvent {
+        /** Enum of swipe directions */
         public enum SwipeDirection {
+            /** someone swiped from bottom to top */
             Up,
+            /** someone swiped from top to bottom*/
             Down,
+            /** someone swiped from user left to user right */
             Right,
+            /** someone swiped from user right to user left */
             Left;
         }
 
@@ -304,9 +354,17 @@ public class EventMessage extends BaseResponse {
         @SerializedName("Direction")
         private SwipeDirection direction;
 
+        /** 
+         * Get the swipe event info
+         * @return event 
+         */
         public ScreenGestureEvents getGestureEvent() {
             return event;
         }
+        /** 
+         * Get the swipe direction
+         * @return direction
+         */
         public SwipeDirection getSwipeDirection() {
             return direction;
         }
