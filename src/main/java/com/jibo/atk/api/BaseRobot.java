@@ -25,26 +25,17 @@ public class BaseRobot {
         this.robotName = robotName;
     }
 
-    /**
-     * Get the authenticated robot's unique ID.
-     * @return id
-     */
+    /** @hide */
     public String getId() {
         return id;
     }
 
-    /**
-     * Get the authenticated robot's Loop name.
-     * @return name
-     */
+    /** @hide */
     public String getName() {
         return name;
     }
 
-    /**
-     * Get the authenticated robot's serial name.
-     * @return robotName
-     */
+    /** @hide */
     public String getRobotName() {
         return robotName;
     }

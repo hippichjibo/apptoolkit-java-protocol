@@ -17,8 +17,10 @@ public class RobotData {
     private List<BaseRobot> robots;
 
     /**
-     * Get the list of robots in this user's account
-     * @return robots
+     * Get a list of all robots associated with the user’s authenticated account.
+     * It is suggested that you prompt users to select which robot they would
+     * like to connect to use your app in the event that they own multiple robots.
+     * @return robots Robots for whom this user is the owner.
      */
     public List<BaseRobot> getRobots() {
         return robots;

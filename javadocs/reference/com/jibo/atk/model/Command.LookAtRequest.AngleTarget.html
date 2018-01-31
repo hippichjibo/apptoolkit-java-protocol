@@ -172,9 +172,12 @@
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Area.html">Command.ScreenGestureRequest.ScreenGestureFilter.Area</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Circle.html">Command.ScreenGestureRequest.ScreenGestureFilter.Circle</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Rectangle.html">Command.ScreenGestureRequest.ScreenGestureFilter.Rectangle</a></li>
+          <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.SetConfigRequest.html">Command.SetConfigRequest</a></li>
+          <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.SetConfigRequest.SetConfigOptions.html">Command.SetConfigRequest.SetConfigOptions</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.TakePhotoRequest.html">Command.TakePhotoRequest</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.VideoRequest.html">Command.VideoRequest</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.html">EventMessage</a></li>
+          <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.BaseEvent.html">EventMessage.BaseEvent</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.EntityTrackEvent.html">EventMessage.EntityTrackEvent</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.EntityTrackEvent.TrackedEntity.html">EventMessage.EntityTrackEvent.TrackedEntity</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.FetchAssetEvent.html">EventMessage.FetchAssetEvent</a></li>
@@ -281,9 +284,6 @@ Summary:
   
 
 
-
-  &#124; <a href="#pubmethods">Methods</a>
-  
 
 
 
@@ -443,8 +443,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../com/jibo/atk/model/Command.LookAtRequest.AngleTarget.html#AngleTarget(int[])">AngleTarget</a></span>(int[] angle)
         
-        <div class="jd-descrdiv">Class for 2D angle targets
-</div>
+        <div class="jd-descrdiv">Angles relative to Jibo’s current orientation.</div>
   
   </td></tr>
 
@@ -455,33 +454,6 @@ Summary:
 
 
 
-
-
-<!-- ========== METHOD SUMMARY =========== -->
-<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
-
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
-            int[]
-        </td>
-        <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../com/jibo/atk/model/Command.LookAtRequest.AngleTarget.html#getAngle()">getAngle</a></span>()
-        
-        <div class="jd-descrdiv">Get the look at location relative to Jibo's current position.</div>
-  
-  </td></tr>
-
-
-
-</table>
 
 
 
@@ -757,7 +729,8 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Class for 2D angle targets
+  <div class="jd-tagdata jd-tagdescr"><p>Angles relative to Jibo’s current orientation.
+ Defined as <code>[theta: twist/horiz angle, psi: vert angle]</code>
 </p></div>
 
     </div>
@@ -774,47 +747,6 @@ From class
 
 <!-- ========= METHOD DETAIL ======== -->
 <!-- Public methdos -->
-
-<h2>Public Methods</h2>
-
-
-
-<a id="getAngle()"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        int[]
-      </span>
-      <span class="sympad">getAngle</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Get the look at location relative to Jibo's current position.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>Angle 2-number array, defined as `[theta: twist/horiz angle, psi: vert angle]`
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
 
 
 

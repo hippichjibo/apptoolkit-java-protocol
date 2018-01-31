@@ -172,9 +172,12 @@
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Area.html">Command.ScreenGestureRequest.ScreenGestureFilter.Area</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Circle.html">Command.ScreenGestureRequest.ScreenGestureFilter.Circle</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Rectangle.html">Command.ScreenGestureRequest.ScreenGestureFilter.Rectangle</a></li>
+          <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.SetConfigRequest.html">Command.SetConfigRequest</a></li>
+          <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.SetConfigRequest.SetConfigOptions.html">Command.SetConfigRequest.SetConfigOptions</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.TakePhotoRequest.html">Command.TakePhotoRequest</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.VideoRequest.html">Command.VideoRequest</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.html">EventMessage</a></li>
+          <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.BaseEvent.html">EventMessage.BaseEvent</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.EntityTrackEvent.html">EventMessage.EntityTrackEvent</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.EntityTrackEvent.TrackedEntity.html">EventMessage.EntityTrackEvent.TrackedEntity</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.FetchAssetEvent.html">EventMessage.FetchAssetEvent</a></li>
@@ -281,9 +284,6 @@ Summary:
   
 
 
-
-  &#124; <a href="#pubmethods">Methods</a>
-  
 
 
 
@@ -443,37 +443,6 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../com/jibo/atk/model/Command.LookAtRequest.EntityTarget.html#EntityTarget(java.lang.Long)">EntityTarget</a></span>(Long entity)
         
-        <div class="jd-descrdiv">Class for entity (face) targets.</div>
-  
-  </td></tr>
-
-
-
-</table>
-
-
-
-
-
-
-<!-- ========== METHOD SUMMARY =========== -->
-<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
-
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
-            Long
-        </td>
-        <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../com/jibo/atk/model/Command.LookAtRequest.EntityTarget.html#getEntity()">getEntity</a></span>()
-        
         <div class="jd-descrdiv">Currently unsupported.</div>
   
   </td></tr>
@@ -481,6 +450,10 @@ Summary:
 
 
 </table>
+
+
+
+
 
 
 
@@ -756,7 +729,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Class for entity (face) targets. Currently unsupported
+  <div class="jd-tagdata jd-tagdescr"><p>Currently unsupported.
+ An integer that refers to an entity that is known and available in Jibo’s LPS
+ system. An error will be returned if that entity is no longer being tracked.
 </p></div>
 
     </div>
@@ -773,49 +748,6 @@ From class
 
 <!-- ========= METHOD DETAIL ======== -->
 <!-- Public methdos -->
-
-<h2>Public Methods</h2>
-
-
-
-<a id="getEntity()"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        Long
-      </span>
-      <span class="sympad">getEntity</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Currently unsupported.
- Get the id of the face being tracked.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>Entity An integer that refers to an entity that is known and available in Jibo’s LPS
- system. An error will be returned if that entity is no longer being tracked.
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
 
 
 

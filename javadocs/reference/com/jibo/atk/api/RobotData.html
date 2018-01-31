@@ -153,6 +153,7 @@
               
     <li><h2>Classes</h2>
       <ul>
+          <li class="api apilevel-"><a href="../../../../com/jibo/atk/api/BaseCertificates.html">BaseCertificates</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/api/BaseRobot.html">BaseRobot</a></li>
           <li class="selected api apilevel-"><a href="../../../../com/jibo/atk/api/RobotData.html">RobotData</a></li>
       </ul>
@@ -400,7 +401,7 @@ Summary:
         <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../com/jibo/atk/api/RobotData.html#getRobots()">getRobots</a></span>()
         
-        <div class="jd-descrdiv">Get the list of robots in this user's account</div>
+        <div class="jd-descrdiv">Get a list of all robots associated with the user’s authenticated account.</div>
   
   </td></tr>
 
@@ -726,10 +727,12 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Get the list of robots in this user's account</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Get a list of all robots associated with the user’s authenticated account.
+ It is suggested that you prompt users to select which robot they would
+ like to connect to use your app in the event that they own multiple robots.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>robots
+      <ul class="nolist"><li>robots Robots for whom this user is the owner.
 </li></ul>
   </div>
 

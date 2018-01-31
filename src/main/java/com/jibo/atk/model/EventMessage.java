@@ -78,7 +78,9 @@ public class EventMessage extends BaseResponse {
     private EventMessage.EventHeader EventHeader;
     private BaseEvent EventBody;
 
-    /** @hide */
+    /**
+     * @hide
+     */
     public EventMessage(EventMessage.EventHeader eventHeader, BaseEvent eventBody) {
         EventHeader = eventHeader;
         EventBody = eventBody;
@@ -97,10 +99,11 @@ public class EventMessage extends BaseResponse {
     }
 
     /****************DEFINING EVENT PARTS HERE****************/
+
     /** @hide */
     public class EventHeader extends Header.ResponseHeader {
         private float Timestamp;
-
+        /** @hide */
         public float getTimestamp() {
             return Timestamp;
         }
@@ -108,10 +111,10 @@ public class EventMessage extends BaseResponse {
     }
 
     /****************DEFINING EVENT TYPES HERE****************/
-    /** @hide */
+    /** Generic event information */
     static public class BaseEvent {
         protected EventType Event;
-
+        /** @hide */
         public EventType getEvent() {
             return Event;
         }
@@ -223,19 +226,27 @@ public class EventMessage extends BaseResponse {
         }
     }
 
-    /** Jibo achieved his lookat command */
+    /**
+     * Jibo achieved his lookat command. </br>
+     *
+     * {@link EventMessage.EventType} = {@code onLookAtAchieved}
+     */
     static public class LookAtAchievedEvent extends BaseEvent implements FinalisingEvent {
         private int[] PositionTarget;
         private int[] AngleTarget;
 
         /**
-         * Returns the location that was achieved in absolute space.
+         * Returns the location that was achieved in absolute space. </br>
+         * {@code [x: meters forward, y: meters left, Z: meters forward}
          */
         public int[] getPositionTarget() {
             return PositionTarget;
         }
 
-        /** Returns the location that was achieved in angle space */
+        /**
+         * Returns the location that was achieved in angle space </br>
+         *  {@code [theta: horizontal/twist angle, psi: vertical angle}
+         */
         public int[] getAngleTarget() {
             return AngleTarget;
         }
@@ -302,16 +313,16 @@ public class EventMessage extends BaseResponse {
         }
 
         /**
-         * Get the location of what Jibo photographed
-         * @return PositionTarget 3-number array for location, defined as `[x: meters forward, y: meters left, z: meters up]`
+         * Get the location of what Jibo photographed relative to Jibo's global position.
+         * @return PositionTarget {@code [x: meters forward, y: meters left, z: meters up]}
          */
         public int[] getPositionTarget() {
             return PositionTarget;
         }
 
         /** 
-         * Get the location of what Jibo photographed
-         * @return AngleTarget 2-number array, defined as `[theta: twist/horiz angle, psi: vert angle]`
+         * Get the angle location of what Jibo photographed relative to Jibo's orientation.
+         * @return AngleTarget {@code [theta: twist/horiz angle, psi: vert angle]}
          */
         public int[] getAngleTarget() {
             return AngleTarget;
@@ -322,10 +333,10 @@ public class EventMessage extends BaseResponse {
      * Enum of screen gesture events
      */
     public enum ScreenGestureEvents {
-        /** `onTap` for tap events */
+        /** `onTap` for tap events. See {@link TapEvent} */
         @SerializedName("onTap")
         Tap,
-        /** `onSwipe` for swipe events */
+        /** `onSwipe` for swipe events. See {@link SwipeEvent} */
         @SerializedName("onSwipe")
         Swipe
     }
@@ -340,8 +351,8 @@ public class EventMessage extends BaseResponse {
         private int[] coordinate;
 
         /** 
-         * Get the tap event info
-         * @return event 
+         * Get the tap event info.
+         * @return event See {@link ScreenGestureEvents}
          */
         public ScreenGestureEvents getGestureEvent() {
             return event;
@@ -349,7 +360,7 @@ public class EventMessage extends BaseResponse {
 
         /** 
          * Get location of the tap
-         * @return coorindate `(x,y)`
+         * @return coordinate {@code [x: horz coord, y: vert coord]} in pixels
          */
         public int[] getCoordinate() {
             return coordinate;
@@ -362,13 +373,13 @@ public class EventMessage extends BaseResponse {
 
         /** Enum of swipe directions */
         public enum SwipeDirection {
-            /** someone swiped from bottom to top */
+            /** Someone swiped from bottom to top */
             Up,
-            /** someone swiped from top to bottom*/
+            /** Someone swiped from top to bottom */
             Down,
-            /** someone swiped from user left to user right */
+            /** Someone swiped from user left to user right */
             Right,
-            /** someone swiped from user right to user left */
+            /** Someone swiped from user right to user left */
             Left;
         }
 
@@ -379,15 +390,15 @@ public class EventMessage extends BaseResponse {
         private SwipeDirection direction;
 
         /** 
-         * Get the swipe event info
-         * @return event 
+         * Get the swipe event info.
+         * @return event See {@link ScreenGestureEvents}
          */
         public ScreenGestureEvents getGestureEvent() {
             return event;
         }
         /** 
          * Get the swipe direction
-         * @return direction
+         * @return direction See {@link SwipeDirection}
          */
         public SwipeDirection getSwipeDirection() {
             return direction;
@@ -449,19 +460,24 @@ public class EventMessage extends BaseResponse {
         public static class MotionEntity {
             /** Intensity of the motion from 0-1 */
             @SerializedName("Intensity")
-            float intensity;
-            /** 3D global position of the motion */
+            public float intensity;
+            /** 3D global position of the motion
+             * </br> {@code [x: meters forward, y: meters left, z: meters up]}
+             */
             @SerializedName("WorldCoords")
-            float[] worldCoords;
-            /** 2D screen position of the motion */
+            public float[] worldCoords;
+            /** 2D screen position of the motion
+             * </br> {@code [x: horiz coord, y: vert coord]}
+             */
             @SerializedName("ScreenCoords")
-            float[] ScreenCoords;
+            public float[] ScreenCoords;
         }
 
         @SerializedName("Motions")
         private MotionEntity[] motions;
 
-        /** Get into for any motion Jibo sees */
+        /** Get into for any motion Jibo sees
+         * @return motions {@link MotionEntity} info for all motions seen.*/
         public MotionEntity[] getMotions() {
             return motions;
         }
@@ -520,7 +536,7 @@ public class EventMessage extends BaseResponse {
 
         /**
          * Get the fetch event
-         * @return event
+         * @return event See {@link EventMessage.FetchAssetEvent.FetchAssetEvents}
          */
         public FetchAssetEvents getFetchEvent() {
             return event;
@@ -537,15 +553,18 @@ public class EventMessage extends BaseResponse {
     /** Info for head touch events */
     static public class HeadTouchEvent extends BaseEvent {
 
-        /** Emits `onHeadTouch` if any one of Jibo's head touch sensors is touched */
+        /** Events fired if any one of Jibo's head touch sensors is touched */
         public enum HeadTouchEvents {
+            /** `onHeadTouch` */
             @SerializedName("onHeadTouch")
             HeadTouched
         }
 
         /**
-         * Head touch sensor info. Head touch pads run down the back
-         * of Jibo's head, three on a side.
+         * There are 6 touch sensors on the back of Jibo’s head.
+         * Three run down each side of his head.
+         * Left is Jibo’s left and right is Jibo’s right.
+         * See <a href="https://app-toolkit.jibo.com/images/JiboHeadSensors.png">Head Touch Sensors</a> for a diagram.
          */
         public enum HeadTouchPads {
             /** front left pad */
@@ -570,7 +589,7 @@ public class EventMessage extends BaseResponse {
         private boolean[] pads;
 
         /** Get the info for any head touches Jibo gets
-         * @return event Head touch event
+         * @return event `onHeadTouch`
          */
         public HeadTouchEvents getHeadTouchEvent() {
             return event;

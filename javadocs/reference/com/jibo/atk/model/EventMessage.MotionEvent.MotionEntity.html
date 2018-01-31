@@ -172,9 +172,12 @@
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Area.html">Command.ScreenGestureRequest.ScreenGestureFilter.Area</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Circle.html">Command.ScreenGestureRequest.ScreenGestureFilter.Circle</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Rectangle.html">Command.ScreenGestureRequest.ScreenGestureFilter.Rectangle</a></li>
+          <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.SetConfigRequest.html">Command.SetConfigRequest</a></li>
+          <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.SetConfigRequest.SetConfigOptions.html">Command.SetConfigRequest.SetConfigOptions</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.TakePhotoRequest.html">Command.TakePhotoRequest</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/Command.VideoRequest.html">Command.VideoRequest</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.html">EventMessage</a></li>
+          <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.BaseEvent.html">EventMessage.BaseEvent</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.EntityTrackEvent.html">EventMessage.EntityTrackEvent</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.EntityTrackEvent.TrackedEntity.html">EventMessage.EntityTrackEvent.TrackedEntity</a></li>
           <li class="api apilevel-"><a href="../../../../com/jibo/atk/model/EventMessage.FetchAssetEvent.html">EventMessage.FetchAssetEvent</a></li>
@@ -270,9 +273,12 @@ Summary:
 
 
 
+  <a href="#lfields">Fields</a>
+  
 
 
-  <a href="#pubctors">Ctors</a>
+
+  &#124; <a href="#pubctors">Ctors</a>
   
 
 
@@ -395,6 +401,52 @@ Summary:
 
 
 
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol">
+          public
+          
+          
+          float[]</td>
+          <td class="jd-linkcol"><a href="../../../../com/jibo/atk/model/EventMessage.MotionEvent.MotionEntity.html#ScreenCoords">ScreenCoords</a></td>
+          <td class="jd-descrcol" width="100%">2D screen position of the motion
+ </br> <code>[x: horiz coord, y: vert coord]</code>
+</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol">
+          public
+          
+          
+          float</td>
+          <td class="jd-linkcol"><a href="../../../../com/jibo/atk/model/EventMessage.MotionEvent.MotionEntity.html#intensity">intensity</a></td>
+          <td class="jd-descrcol" width="100%">Intensity of the motion from 0-1 </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol">
+          public
+          
+          
+          float[]</td>
+          <td class="jd-linkcol"><a href="../../../../com/jibo/atk/model/EventMessage.MotionEvent.MotionEntity.html#worldCoords">worldCoords</a></td>
+          <td class="jd-descrcol" width="100%">3D global position of the motion
+ </br> <code>[x: meters forward, y: meters left, z: meters up]</code>
+</td>
+      </tr>
+      
+    
+
+</table>
 
 
 
@@ -667,6 +719,107 @@ From class
 
 
 <!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<a id="ScreenCoords"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        float[]
+      </span>
+        ScreenCoords
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>2D screen position of the motion
+ </br> <code>[x: horiz coord, y: vert coord]</code>
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="intensity"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        float
+      </span>
+        intensity
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Intensity of the motion from 0-1 </p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="worldCoords"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        float[]
+      </span>
+        worldCoords
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>3D global position of the motion
+ </br> <code>[x: meters forward, y: meters left, z: meters up]</code>
+</p></div>
+
+    
+    </div>
+</div>
+
+
 
 
 <!-- Public ctors -->

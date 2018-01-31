@@ -236,12 +236,16 @@ public class Command {
         }
     }
 
-    /** @hide */
+    /** Additional information for setting config options */
     static public class SetConfigRequest extends BaseCommand implements AtomicCommand {
+        /** Class for robot config options */
         public static class SetConfigOptions {
             @SerializedName("Mixer")
             private float mixer;
 
+            /**
+             * Robot configuration options that can be set by your app
+             * @param mixer Robot volume between 0 (mute) and 1 (loudest) */
             public SetConfigOptions(float mixer){
                 this.mixer = mixer;
             }
@@ -249,7 +253,7 @@ public class Command {
 
         @SerializedName("Options")
         private SetConfigOptions options;
-
+        /** @hide */
         public SetConfigRequest(SetConfigOptions options) {
             super(CommandType.SetConfig);
             this.options = options;
@@ -307,16 +311,15 @@ public class Command {
             private int[] Position;
 
             /**
-             * Class for 3D position targets
+             * Location for the base coordinate frame of the robot.
+             *
+             * Defined as {@code [x: meters forward, y: meters left, z: meters up]}
              */
             public PositionTarget(int[] position) {
                 Position = position;
             }
 
-            /**
-             * Get the location for the base coordinate frame of the robot.
-             * @return Position 3-number array for location, defined as `[x: meters forward, y: meters left, z: meters up]`
-             */
+            /** @hide */
             public int[] getPosition() {
                 return Position;
             }
@@ -329,16 +332,14 @@ public class Command {
             private int[] Angle;
 
             /**
-             * Class for 2D angle targets
+             * Angles relative to Jibo’s current orientation.
+             * Defined as {@code [theta: twist/horiz angle, psi: vert angle]}
              */
             public AngleTarget(int[] angle) {
                 Angle = angle;
             }
 
-            /**
-             * Get the look at location relative to Jibo's current position.
-             * @return Angle 2-number array, defined as `[theta: twist/horiz angle, psi: vert angle]`
-             */
+            /** @hide */
             public int[] getAngle() {
                 return Angle;
             }
@@ -351,17 +352,16 @@ public class Command {
             private Long Entity;
 
             /**
-             * Class for entity (face) targets. Currently unsupported
+             * Currently unsupported.
+             * An integer that refers to an entity that is known and available in Jibo’s LPS
+             * system. An error will be returned if that entity is no longer being tracked.
              */
             public EntityTarget(Long entity) {
                 Entity = entity;
             }
 
             /**
-             * Currently unsupported.
-             * Get the id of the face being tracked.
-             * @return Entity An integer that refers to an entity that is known and available in Jibo’s LPS
-             * system. An error will be returned if that entity is no longer being tracked.
+             * @hide
              */
             public Long getEntity() {
                 return Entity;
@@ -375,15 +375,14 @@ public class Command {
             private int[] ScreenCoords;
 
             /**
-             * Class for camera targets
+             * Location on Jibo's screen that the camera is targeting
              */
             public CameraTarget(int[] screenCoords) {
                 ScreenCoords = screenCoords;
             }
 
             /**
-             * Get the location on Jibo's screen that the camera is targeting
-             * @return ScreenCoords 2-number array for location on Jibo's screen
+             * @hide
              */
             public int[] getScreenCoords() {
                 return ScreenCoords;
@@ -546,21 +545,24 @@ public class Command {
     static public class DisplayRequest extends BaseCommand {
 
         /**
-         * Type of thing to display on Jibo's screen
+         * What to display on Jibo's screen
          */
         public enum DisplayViewType {
             /**
-             * `Eye` Display Jibo's eye
+             * Display Jibo's eye.
+             * See {@link EyeView}
              */
             @SerializedName("Eye")
             Eye,
             /**
-             * `Text` Display text
+             * Display text.
+             * See {@link TextView}
              */
             @SerializedName("Text")
             Text,
             /**
-             * `Image` Display an image
+             * Display an image.
+             * See {@link ImageView}
              */
             @SerializedName("Image")
             Image;
@@ -571,10 +573,12 @@ public class Command {
          */
         static public class ImageData {
 
+            /** Name of asset in local cache */
             @SerializedName("name")
-            String name;
+            public String name;
+            /** URL to the image */
             @SerializedName("src")
-            String src;
+            public String src;
             @SerializedName("set")
             String set;
         }
@@ -697,24 +701,24 @@ public class Command {
                  */
                 Tap,
                 /**
-                 * SwipeDown
+                 * Swipe from top to bottom
                  */
                 SwipeDown,
                 /**
-                 * SwipeUp
+                 * Swipe from bottom to top
                  */
                 SwipeUp,
                 /**
-                 * SwipeRight
+                 * Swipe from left to right
                  */
                 SwipeRight,
                 /**
-                 * SwipeLeft
+                 * Swipe from right to left
                  */
                 SwipeLeft;
             }
 
-            /** Define an area on Jibo's screen */
+            /** Define an area on Jibo's screen. See {@link Rectangle} and {@link Circle} */
             public static class Area {
                 float x;
                 float y;
@@ -736,7 +740,8 @@ public class Command {
 
                 /**
                  * Rectangular area on the screen in which to listen for screen gesture
-                 * `[x, y, width, height]`
+                 * where {@code (x,y) } is the top-left corner of the rectangle.
+                 *  All params in pixels.
                  */
                 public Rectangle(float x, float y, float width, float height) {
                     super(x, y);
@@ -751,7 +756,8 @@ public class Command {
 
                 /**
                  * Circular area in which to listen for screen gesture
-                 * `[x, y, radius]` Where `(x,y)` is the center of the circle
+                 *  where {@code (x,y) } is the center of the circle.
+                 *  All params in pixels.
                  */
                 public Circle(float x, float y, float radius) {
                     super(x, y);
