@@ -4,10 +4,10 @@
 # Generated files
 bin/
 gen/
-javadocs/
 
 .gradle/
 gradle/
 build/
+javadocs/
 
 .DS_Store
