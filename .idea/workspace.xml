@@ -2,76 +2,191 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="821871e3-8b0a-4d34-8a7a-579cd885cecc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/assets/navtree_data.js" afterPath="$PROJECT_DIR$/javadocs/assets/navtree_data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/classes.html" afterPath="$PROJECT_DIR$/javadocs/reference/classes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/BaseRobot.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/BaseRobot.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/RobotData.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/RobotData.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/package-summary.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.ResponseCode.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.ResponseCode.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.DisplayView.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.DisplayView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.DisplayViewType.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.DisplayViewType.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.EyeView.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.EyeView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.ImageData.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.ImageData.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.ImageView.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.ImageView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.TextView.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.TextView.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.AngleTarget.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.AngleTarget.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.BaseLookAtTarget.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.BaseLookAtTarget.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.CameraTarget.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.CameraTarget.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.EntityTarget.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.EntityTarget.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.PositionTarget.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.PositionTarget.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Area.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Area.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Circle.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Circle.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Rectangle.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Rectangle.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.ScreenGestureType.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.ScreenGestureType.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.SetConfigRequest.SetConfigOptions.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.SetConfigRequest.SetConfigOptions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.SetConfigRequest.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.SetConfigRequest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.StreamTypes.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.StreamTypes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.TakePhotoRequest.Camera.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.TakePhotoRequest.Camera.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.TakePhotoRequest.CameraResolution.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.TakePhotoRequest.CameraResolution.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.TakePhotoRequest.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.TakePhotoRequest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.VideoRequest.VideoType.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.VideoRequest.VideoType.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.VideoRequest.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.VideoRequest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.BaseEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.BaseEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EntityTrackEvent.EntityType.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EntityTrackEvent.EntityType.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EntityTrackEvent.TrackedEntity.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EntityTrackEvent.TrackedEntity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EntityTrackEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EntityTrackEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ErrorEvent.ErrorData.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ErrorEvent.ErrorData.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ErrorEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ErrorEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EventType.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EventType.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.FetchAssetEvent.FetchAssetEvents.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.FetchAssetEvent.FetchAssetEvents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.FetchAssetEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.FetchAssetEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HeadTouchEvent.HeadTouchEvents.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HeadTouchEvent.HeadTouchEvents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HeadTouchEvent.HeadTouchPads.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HeadTouchEvent.HeadTouchPads.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HeadTouchEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HeadTouchEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ListenResultEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ListenResultEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ListenStopEvent.ListenStopReason.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ListenStopEvent.ListenStopReason.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ListenStopEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ListenStopEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.LookAtAchievedEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.LookAtAchievedEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.LookAtTrackLostEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.LookAtTrackLostEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.MotionEvent.MotionEntity.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.MotionEvent.MotionEntity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.MotionEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.MotionEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ScreenGestureEvents.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ScreenGestureEvents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.SwipeEvent.SwipeDirection.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.SwipeEvent.SwipeDirection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.SwipeEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.SwipeEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.TakePhotoEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.TakePhotoEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.TapEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.TapEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.VideoReadyEvent.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.VideoReadyEvent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/package-descr.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/package-descr.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/package-summary.html" afterPath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/current.xml" afterPath="$PROJECT_DIR$/javadocs/reference/current.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/hierarchy.html" afterPath="$PROJECT_DIR$/javadocs/reference/hierarchy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javadocs/reference/lists.js" afterPath="$PROJECT_DIR$/javadocs/reference/lists.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jibo/atk/api/BaseRobot.java" afterPath="$PROJECT_DIR$/src/main/java/com/jibo/atk/api/BaseRobot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jibo/atk/api/RobotData.java" afterPath="$PROJECT_DIR$/src/main/java/com/jibo/atk/api/RobotData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jibo/atk/model/EventMessage.java" afterPath="$PROJECT_DIR$/src/main/java/com/jibo/atk/model/EventMessage.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/app-toolkit-java.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_commons_commons_math3_3_6_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_json_json_20171018.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/commons_math3_3_6_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/json_20171018.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/customizations.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/customizations.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/doclava-developer-core.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/doclava-developer-docs.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/doclava-developer-docs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/doclava-developer-reference.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/bg_fade.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/bg_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/body-gradient-tab.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/body-gradient.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/grad-rule-qv.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/hr_gray_main.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/hr_gray_side.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/left_off.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/left_on.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/preliminary.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/resizable-e.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/resizable-e2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/resizable-eg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/resizable-s.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/resizable-s2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/resizable-sg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/right_off.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/right_on.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/sidenav-rule.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/spacer.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/triangle-closed-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/triangle-closed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/triangle-opened-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/images/triangle-opened.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/jquery-history.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/jquery-resizable.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/navtree_data.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/search_autocomplete.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/assets/triangle-none.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/classes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/BaseCertificates.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/BaseRobot.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/CertData.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/Errors.ResponseError.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/Errors.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/IpPayload.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/Request.CertificatesRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/Request.TokenExchangeRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/Request.TokenRefreshRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/Request.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/RobotData.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/Token.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/UserInfo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/package-descr.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/api/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.AcknowledgementBody.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.CancelResponse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.ErrorResponseBody.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.GetConfigResponse.ConfigInfo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.GetConfigResponse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.ListenErrorResponse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.LookAtErrorResponse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.ResponseCode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.SayErrorResponse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.SessionResponse.SessionInfo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.SessionResponse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.ValueResult.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Acknowledgment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/BaseResponse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.AtomicCommand.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.AttentionRequest.AttentionMode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.AttentionRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.BaseCommand.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.BaseSubscribeCommand.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.CancelRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.CommandType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.DisplayView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.DisplayViewType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.EyeView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.ImageData.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.ImageView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.TextView.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.DisplayRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.EntityRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.FetchAssetRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.GetConfigRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.HeadTouchRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ListenRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.AngleTarget.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.BaseLookAtTarget.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.CameraTarget.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.EntityTarget.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.PositionTarget.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.LookAtRequestExt.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.MotionRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.SayRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Area.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Circle.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.Rectangle.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.ScreenGestureType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.ScreenGestureFilter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.ScreenGestureRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.SessionRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.SetConfigRequest.SetConfigOptions.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.SetConfigRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.SpeechRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.StreamTypes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.TakePhotoRequest.Camera.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.TakePhotoRequest.CameraResolution.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.TakePhotoRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.VideoRequest.VideoType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.VideoRequest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Command.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.BaseEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EntityTrackEvent.EntityType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EntityTrackEvent.TrackedEntity.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EntityTrackEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ErrorEvent.ErrorData.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ErrorEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EventFactory.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EventHeader.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.EventType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.FetchAssetEvent.FetchAssetEvents.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.FetchAssetEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.FinalisingEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HeadTouchEvent.HeadTouchEvents.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HeadTouchEvent.HeadTouchPads.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HeadTouchEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HotWordHeardEvent.LPSPosition.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HotWordHeardEvent.Speaker.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HotWordHeardEvent.SpeakerId.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.HotWordHeardEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ListenResultEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ListenStopEvent.ListenStopReason.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ListenStopEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.LookAtAchievedEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.LookAtTrackLostEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.MotionEvent.MotionEntity.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.MotionEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.ScreenGestureEvents.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.StartEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.StopEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.SwipeEvent.SwipeDirection.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.SwipeEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.TakePhotoEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.TapEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.VideoReadyEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/EventMessage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Header.RequestHeader.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Header.ResponseHeader.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/Header.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/package-descr.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/model/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/utils/Commons.AsyncCallback.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/utils/Commons.InvalidParameterValueException.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/utils/Commons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/utils/LogUtilsInterface.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/utils/Util.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/utils/package-descr.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/com/jibo/atk/utils/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/current.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/hierarchy.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/lists.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/package-list" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/javadocs/reference/packages.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/local.properties" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,33 +209,17 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="RobotData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/api/RobotData.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
               <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/api/UserInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Acknowledgment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/model/Acknowledgment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="103" column="6" lean-forward="false" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="6" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#462#463#0" expanded="false" />
+                <element signature="e#491#492#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,18 +234,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventMessage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventMessage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/model/EventMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="148" column="42" lean-forward="false" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
+            <state relative-caret-position="378">
+              <caret line="146" column="13" lean-forward="false" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
               <folding>
-                <element signature="e#2883#2884#0" expanded="true" />
-                <element signature="e#2923#2924#0" expanded="true" />
-                <element signature="e#3162#3163#0" expanded="true" />
-                <element signature="e#3198#3199#0" expanded="true" />
-                <element signature="e#3766#3767#0" expanded="true" />
-                <element signature="e#3807#3808#0" expanded="true" />
+                <element signature="e#4050#4051#0" expanded="true" />
+                <element signature="e#4098#4099#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,7 +252,14 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-              <folding />
+              <folding>
+                <element signature="e#689#690#0" expanded="false" />
+                <element signature="e#714#715#0" expanded="false" />
+                <element signature="e#762#763#0" expanded="false" />
+                <element signature="e#789#790#0" expanded="false" />
+                <element signature="e#842#843#0" expanded="false" />
+                <element signature="e#874#875#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,13 +267,77 @@
       <file leaf-file-name="Command.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/model/Command.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
+            <state relative-caret-position="1215">
               <caret line="89" column="18" lean-forward="false" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="18" />
               <folding>
-                <element signature="e#5327#5328#0" expanded="true" />
-                <element signature="e#5360#5361#0" expanded="true" />
-                <element signature="e#5711#5712#0" expanded="true" />
-                <element signature="e#5763#5764#0" expanded="true" />
+                <element signature="e#1457#1458#0" expanded="false" />
+                <element signature="e#1492#1493#0" expanded="false" />
+                <element signature="e#1548#1549#0" expanded="false" />
+                <element signature="e#1578#1579#0" expanded="false" />
+                <element signature="e#1717#1718#0" expanded="false" />
+                <element signature="e#1757#1758#0" expanded="false" />
+                <element signature="e#1817#1818#0" expanded="false" />
+                <element signature="e#1852#1853#0" expanded="false" />
+                <element signature="e#2741#2742#0" expanded="false" />
+                <element signature="e#2793#2794#0" expanded="false" />
+                <element signature="e#2839#2840#0" expanded="false" />
+                <element signature="e#2880#2881#0" expanded="false" />
+                <element signature="e#2923#2924#0" expanded="false" />
+                <element signature="e#2966#2967#0" expanded="false" />
+                <element signature="e#3021#3022#0" expanded="false" />
+                <element signature="e#3067#3068#0" expanded="false" />
+                <element signature="e#3121#3122#0" expanded="false" />
+                <element signature="e#3171#3172#0" expanded="false" />
+                <element signature="e#3298#3299#0" expanded="false" />
+                <element signature="e#3358#3359#0" expanded="false" />
+                <element signature="e#3784#3785#0" expanded="false" />
+                <element signature="e#3847#3848#0" expanded="false" />
+                <element signature="e#5005#5006#0" expanded="false" />
+                <element signature="e#5040#5041#0" expanded="false" />
+                <element signature="e#6297#6298#0" expanded="false" />
+                <element signature="e#6347#6348#0" expanded="false" />
+                <element signature="e#7756#7757#0" expanded="false" />
+                <element signature="e#7799#7800#0" expanded="false" />
+                <element signature="e#7861#7862#0" expanded="false" />
+                <element signature="e#7901#7902#0" expanded="false" />
+                <element signature="e#8427#8428#0" expanded="false" />
+                <element signature="e#8478#8479#0" expanded="false" />
+                <element signature="e#8545#8546#0" expanded="false" />
+                <element signature="e#8592#8593#0" expanded="false" />
+                <element signature="e#8983#8984#0" expanded="false" />
+                <element signature="e#9028#9029#0" expanded="false" />
+                <element signature="e#9092#9093#0" expanded="false" />
+                <element signature="e#9136#9137#0" expanded="false" />
+                <element signature="e#9640#9641#0" expanded="false" />
+                <element signature="e#9687#9688#0" expanded="false" />
+                <element signature="e#9779#9780#0" expanded="false" />
+                <element signature="e#9824#9825#0" expanded="false" />
+                <element signature="e#10159#10160#0" expanded="false" />
+                <element signature="e#10218#10219#0" expanded="false" />
+                <element signature="e#10317#10318#0" expanded="false" />
+                <element signature="e#10368#10369#0" expanded="false" />
+                <element signature="e#10771#10772#0" expanded="false" />
+                <element signature="e#10815#10816#0" expanded="false" />
+                <element signature="e#11078#11079#0" expanded="false" />
+                <element signature="e#11113#11114#0" expanded="false" />
+                <element signature="e#11257#11258#0" expanded="false" />
+                <element signature="e#11312#11313#0" expanded="false" />
+                <element signature="e#12895#12896#0" expanded="false" />
+                <element signature="e#12932#12933#0" expanded="false" />
+                <element signature="e#13020#13021#0" expanded="false" />
+                <element signature="e#13061#13062#0" expanded="false" />
+                <element signature="e#13123#13124#0" expanded="false" />
+                <element signature="e#13164#13165#0" expanded="false" />
+                <element signature="e#14177#14178#0" expanded="false" />
+                <element signature="e#14217#14218#0" expanded="false" />
+                <element signature="e#14274#14275#0" expanded="false" />
+                <element signature="e#14313#14314#0" expanded="false" />
+                <element signature="e#17543#17544#0" expanded="false" />
+                <element signature="e#17578#17579#0" expanded="false" />
+                <element signature="e#18160#18161#0" expanded="false" />
+                <element signature="e#18194#18195#0" expanded="false" />
+                <element signature="e#18228#18229#0" expanded="false" />
+                <element signature="e#18263#18264#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -182,19 +348,58 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="750">
               <caret line="64" column="16" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
-              <folding />
+              <folding>
+                <element signature="e#627#628#0" expanded="false" />
+                <element signature="e#654#655#0" expanded="false" />
+                <element signature="e#706#707#0" expanded="false" />
+                <element signature="e#738#739#0" expanded="false" />
+                <element signature="e#791#792#0" expanded="false" />
+                <element signature="e#824#825#0" expanded="false" />
+                <element signature="e#877#878#0" expanded="false" />
+                <element signature="e#907#908#0" expanded="false" />
+                <element signature="e#1013#1014#0" expanded="false" />
+                <element signature="e#1053#1054#0" expanded="false" />
+                <element signature="e#1107#1108#0" expanded="false" />
+                <element signature="e#1141#1142#0" expanded="false" />
+                <element signature="e#1188#1189#0" expanded="false" />
+                <element signature="e#1216#1217#0" expanded="false" />
+                <element signature="e#1262#1263#0" expanded="false" />
+                <element signature="e#1288#1289#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="11" lean-forward="false" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+            <state relative-caret-position="-563">
+              <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
               <folding>
                 <element signature="e#0#317#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#400#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gradle.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gradle.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -630,7 +835,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1440" />
+    <option name="x" value="2665" />
     <option name="y" value="-314" />
     <option name="width" value="1280" />
     <option name="height" value="1417" />
@@ -651,9 +856,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -734,7 +938,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -823,7 +1028,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517430757919" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517432196950" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -871,7 +1076,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517430757919" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517432196950" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -903,27 +1108,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -1041,35 +1225,35 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-314" width="1280" height="1417" extended-state="0" />
+    <frame x="2665" y="-314" width="1280" height="1417" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2536349" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1080,6 +1264,180 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/api/RobotData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#462#463#0" expanded="false" />
+            <element signature="e#491#492#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/api/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/model/Acknowledgment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="103" column="6" lean-forward="false" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/model/BaseResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/api/BaseRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding>
+            <element signature="e#689#690#0" expanded="false" />
+            <element signature="e#714#715#0" expanded="false" />
+            <element signature="e#762#763#0" expanded="false" />
+            <element signature="e#789#790#0" expanded="false" />
+            <element signature="e#842#843#0" expanded="false" />
+            <element signature="e#874#875#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/model/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="89" column="18" lean-forward="false" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="18" />
+          <folding>
+            <element signature="e#1457#1458#0" expanded="false" />
+            <element signature="e#1492#1493#0" expanded="false" />
+            <element signature="e#1548#1549#0" expanded="false" />
+            <element signature="e#1578#1579#0" expanded="false" />
+            <element signature="e#1717#1718#0" expanded="false" />
+            <element signature="e#1757#1758#0" expanded="false" />
+            <element signature="e#1817#1818#0" expanded="false" />
+            <element signature="e#1852#1853#0" expanded="false" />
+            <element signature="e#2741#2742#0" expanded="false" />
+            <element signature="e#2793#2794#0" expanded="false" />
+            <element signature="e#2839#2840#0" expanded="false" />
+            <element signature="e#2880#2881#0" expanded="false" />
+            <element signature="e#2923#2924#0" expanded="false" />
+            <element signature="e#2966#2967#0" expanded="false" />
+            <element signature="e#3021#3022#0" expanded="false" />
+            <element signature="e#3067#3068#0" expanded="false" />
+            <element signature="e#3121#3122#0" expanded="false" />
+            <element signature="e#3171#3172#0" expanded="false" />
+            <element signature="e#3298#3299#0" expanded="false" />
+            <element signature="e#3358#3359#0" expanded="false" />
+            <element signature="e#3784#3785#0" expanded="false" />
+            <element signature="e#3847#3848#0" expanded="false" />
+            <element signature="e#5005#5006#0" expanded="false" />
+            <element signature="e#5040#5041#0" expanded="false" />
+            <element signature="e#6297#6298#0" expanded="false" />
+            <element signature="e#6347#6348#0" expanded="false" />
+            <element signature="e#7756#7757#0" expanded="false" />
+            <element signature="e#7799#7800#0" expanded="false" />
+            <element signature="e#7861#7862#0" expanded="false" />
+            <element signature="e#7901#7902#0" expanded="false" />
+            <element signature="e#8427#8428#0" expanded="false" />
+            <element signature="e#8478#8479#0" expanded="false" />
+            <element signature="e#8545#8546#0" expanded="false" />
+            <element signature="e#8592#8593#0" expanded="false" />
+            <element signature="e#8983#8984#0" expanded="false" />
+            <element signature="e#9028#9029#0" expanded="false" />
+            <element signature="e#9092#9093#0" expanded="false" />
+            <element signature="e#9136#9137#0" expanded="false" />
+            <element signature="e#9640#9641#0" expanded="false" />
+            <element signature="e#9687#9688#0" expanded="false" />
+            <element signature="e#9779#9780#0" expanded="false" />
+            <element signature="e#9824#9825#0" expanded="false" />
+            <element signature="e#10159#10160#0" expanded="false" />
+            <element signature="e#10218#10219#0" expanded="false" />
+            <element signature="e#10317#10318#0" expanded="false" />
+            <element signature="e#10368#10369#0" expanded="false" />
+            <element signature="e#10771#10772#0" expanded="false" />
+            <element signature="e#10815#10816#0" expanded="false" />
+            <element signature="e#11078#11079#0" expanded="false" />
+            <element signature="e#11113#11114#0" expanded="false" />
+            <element signature="e#11257#11258#0" expanded="false" />
+            <element signature="e#11312#11313#0" expanded="false" />
+            <element signature="e#12895#12896#0" expanded="false" />
+            <element signature="e#12932#12933#0" expanded="false" />
+            <element signature="e#13020#13021#0" expanded="false" />
+            <element signature="e#13061#13062#0" expanded="false" />
+            <element signature="e#13123#13124#0" expanded="false" />
+            <element signature="e#13164#13165#0" expanded="false" />
+            <element signature="e#14177#14178#0" expanded="false" />
+            <element signature="e#14217#14218#0" expanded="false" />
+            <element signature="e#14274#14275#0" expanded="false" />
+            <element signature="e#14313#14314#0" expanded="false" />
+            <element signature="e#17543#17544#0" expanded="false" />
+            <element signature="e#17578#17579#0" expanded="false" />
+            <element signature="e#18160#18161#0" expanded="false" />
+            <element signature="e#18194#18195#0" expanded="false" />
+            <element signature="e#18228#18229#0" expanded="false" />
+            <element signature="e#18263#18264#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/api/BaseCertificates.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="64" column="16" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+          <folding>
+            <element signature="e#627#628#0" expanded="false" />
+            <element signature="e#654#655#0" expanded="false" />
+            <element signature="e#706#707#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#791#792#0" expanded="false" />
+            <element signature="e#824#825#0" expanded="false" />
+            <element signature="e#877#878#0" expanded="false" />
+            <element signature="e#907#908#0" expanded="false" />
+            <element signature="e#1013#1014#0" expanded="false" />
+            <element signature="e#1053#1054#0" expanded="false" />
+            <element signature="e#1107#1108#0" expanded="false" />
+            <element signature="e#1141#1142#0" expanded="false" />
+            <element signature="e#1188#1189#0" expanded="false" />
+            <element signature="e#1216#1217#0" expanded="false" />
+            <element signature="e#1262#1263#0" expanded="false" />
+            <element signature="e#1288#1289#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="37" column="11" lean-forward="false" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/model/EventMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1845">
+          <caret line="146" column="13" lean-forward="true" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
+          <folding>
+            <element signature="e#4050#4051#0" expanded="true" />
+            <element signature="e#4098#4099#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/model/Header.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1108,7 +1466,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="467" column="0" lean-forward="true" selection-start-line="467" selection-start-column="0" selection-end-line="470" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1162,7 +1519,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/model/Acknowledgment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
+        <state relative-caret-position="1365">
           <caret line="103" column="6" lean-forward="false" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="6" />
           <folding />
         </state>
@@ -1176,16 +1533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="11" lean-forward="false" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#317#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/utils/Commons.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1196,13 +1543,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/model/Command.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
+        <state relative-caret-position="1215">
           <caret line="89" column="18" lean-forward="false" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="18" />
           <folding>
-            <element signature="e#5327#5328#0" expanded="true" />
-            <element signature="e#5360#5361#0" expanded="true" />
-            <element signature="e#5711#5712#0" expanded="true" />
-            <element signature="e#5763#5764#0" expanded="true" />
+            <element signature="e#1457#1458#0" expanded="false" />
+            <element signature="e#1492#1493#0" expanded="false" />
+            <element signature="e#1548#1549#0" expanded="false" />
+            <element signature="e#1578#1579#0" expanded="false" />
+            <element signature="e#1717#1718#0" expanded="false" />
+            <element signature="e#1757#1758#0" expanded="false" />
+            <element signature="e#1817#1818#0" expanded="false" />
+            <element signature="e#1852#1853#0" expanded="false" />
+            <element signature="e#2741#2742#0" expanded="false" />
+            <element signature="e#2793#2794#0" expanded="false" />
+            <element signature="e#2839#2840#0" expanded="false" />
+            <element signature="e#2880#2881#0" expanded="false" />
+            <element signature="e#2923#2924#0" expanded="false" />
+            <element signature="e#2966#2967#0" expanded="false" />
+            <element signature="e#3021#3022#0" expanded="false" />
+            <element signature="e#3067#3068#0" expanded="false" />
+            <element signature="e#3121#3122#0" expanded="false" />
+            <element signature="e#3171#3172#0" expanded="false" />
+            <element signature="e#3298#3299#0" expanded="false" />
+            <element signature="e#3358#3359#0" expanded="false" />
+            <element signature="e#3784#3785#0" expanded="false" />
+            <element signature="e#3847#3848#0" expanded="false" />
+            <element signature="e#5005#5006#0" expanded="false" />
+            <element signature="e#5040#5041#0" expanded="false" />
+            <element signature="e#6297#6298#0" expanded="false" />
+            <element signature="e#6347#6348#0" expanded="false" />
+            <element signature="e#7756#7757#0" expanded="false" />
+            <element signature="e#7799#7800#0" expanded="false" />
+            <element signature="e#7861#7862#0" expanded="false" />
+            <element signature="e#7901#7902#0" expanded="false" />
+            <element signature="e#8427#8428#0" expanded="false" />
+            <element signature="e#8478#8479#0" expanded="false" />
+            <element signature="e#8545#8546#0" expanded="false" />
+            <element signature="e#8592#8593#0" expanded="false" />
+            <element signature="e#8983#8984#0" expanded="false" />
+            <element signature="e#9028#9029#0" expanded="false" />
+            <element signature="e#9092#9093#0" expanded="false" />
+            <element signature="e#9136#9137#0" expanded="false" />
+            <element signature="e#9640#9641#0" expanded="false" />
+            <element signature="e#9687#9688#0" expanded="false" />
+            <element signature="e#9779#9780#0" expanded="false" />
+            <element signature="e#9824#9825#0" expanded="false" />
+            <element signature="e#10159#10160#0" expanded="false" />
+            <element signature="e#10218#10219#0" expanded="false" />
+            <element signature="e#10317#10318#0" expanded="false" />
+            <element signature="e#10368#10369#0" expanded="false" />
+            <element signature="e#10771#10772#0" expanded="false" />
+            <element signature="e#10815#10816#0" expanded="false" />
+            <element signature="e#11078#11079#0" expanded="false" />
+            <element signature="e#11113#11114#0" expanded="false" />
+            <element signature="e#11257#11258#0" expanded="false" />
+            <element signature="e#11312#11313#0" expanded="false" />
+            <element signature="e#12895#12896#0" expanded="false" />
+            <element signature="e#12932#12933#0" expanded="false" />
+            <element signature="e#13020#13021#0" expanded="false" />
+            <element signature="e#13061#13062#0" expanded="false" />
+            <element signature="e#13123#13124#0" expanded="false" />
+            <element signature="e#13164#13165#0" expanded="false" />
+            <element signature="e#14177#14178#0" expanded="false" />
+            <element signature="e#14217#14218#0" expanded="false" />
+            <element signature="e#14274#14275#0" expanded="false" />
+            <element signature="e#14313#14314#0" expanded="false" />
+            <element signature="e#17543#17544#0" expanded="false" />
+            <element signature="e#17578#17579#0" expanded="false" />
+            <element signature="e#18160#18161#0" expanded="false" />
+            <element signature="e#18194#18195#0" expanded="false" />
+            <element signature="e#18228#18229#0" expanded="false" />
+            <element signature="e#18263#18264#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1211,7 +1622,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#462#463#0" expanded="false" />
+            <element signature="e#491#492#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1219,7 +1634,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="e#689#690#0" expanded="false" />
+            <element signature="e#714#715#0" expanded="false" />
+            <element signature="e#762#763#0" expanded="false" />
+            <element signature="e#789#790#0" expanded="false" />
+            <element signature="e#842#843#0" expanded="false" />
+            <element signature="e#874#875#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1227,21 +1649,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
           <caret line="64" column="16" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="e#627#628#0" expanded="false" />
+            <element signature="e#654#655#0" expanded="false" />
+            <element signature="e#706#707#0" expanded="false" />
+            <element signature="e#738#739#0" expanded="false" />
+            <element signature="e#791#792#0" expanded="false" />
+            <element signature="e#824#825#0" expanded="false" />
+            <element signature="e#877#878#0" expanded="false" />
+            <element signature="e#907#908#0" expanded="false" />
+            <element signature="e#1013#1014#0" expanded="false" />
+            <element signature="e#1053#1054#0" expanded="false" />
+            <element signature="e#1107#1108#0" expanded="false" />
+            <element signature="e#1141#1142#0" expanded="false" />
+            <element signature="e#1188#1189#0" expanded="false" />
+            <element signature="e#1216#1217#0" expanded="false" />
+            <element signature="e#1262#1263#0" expanded="false" />
+            <element signature="e#1288#1289#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jibo/atk/model/EventMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="148" column="42" lean-forward="false" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
+        <state relative-caret-position="378">
+          <caret line="146" column="13" lean-forward="false" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
           <folding>
-            <element signature="e#2883#2884#0" expanded="true" />
-            <element signature="e#2923#2924#0" expanded="true" />
-            <element signature="e#3162#3163#0" expanded="true" />
-            <element signature="e#3198#3199#0" expanded="true" />
-            <element signature="e#3766#3767#0" expanded="true" />
-            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#4050#4051#0" expanded="true" />
+            <element signature="e#4098#4099#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#400#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-563">
+          <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#317#0" expanded="true" />
           </folding>
         </state>
       </provider>
