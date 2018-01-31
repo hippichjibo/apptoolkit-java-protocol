@@ -9,18 +9,17 @@ import java.util.List;
  */
 
 /**
- * Class for robot data
+ * Conveince class for robot information
  */
 public class RobotData {
 
     @SerializedName("data")
     private List<BaseRobot> robots;
 
+
     /**
-     * Get a list of all robots associated with the user’s authenticated account.
-     * It is suggested that you prompt users to select which robot they would
-     * like to connect to use your app in the event that they own multiple robots.
-     * @return robots Robots for whom this user is the owner.
+     * Convenience function for converting List of Robot to List of BaseRobot
+     * @return robots See {@link BaseRobot}
      */
     public List<BaseRobot> getRobots() {
         return robots;

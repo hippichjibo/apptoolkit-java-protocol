@@ -3,13 +3,14 @@ package com.jibo.atk.api;
 /*
  * Created by calvinator on 1/26/18.
  */
-/** Robot information */
+/** Base robot information */
 public class BaseRobot {
 
     String id;
     String name;
     String robotName;
 
+    /** @hide */
     public BaseRobot(){
     }
 

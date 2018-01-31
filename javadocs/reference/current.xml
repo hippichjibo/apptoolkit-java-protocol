@@ -36,14 +36,6 @@
  deprecated="not deprecated"
  visibility="public"
 >
-</constructor>
-<constructor name="BaseRobot"
- type="com.jibo.atk.api.BaseRobot"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
 <parameter name="id" type="java.lang.String">
 </parameter>
 <parameter name="name" type="java.lang.String">
@@ -877,6 +869,73 @@
 </method>
 <method name="getWorldCoords"
  return="int[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.ErrorEvent"
+ extends="com.jibo.atk.model.EventMessage.BaseEvent"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ErrorEvent"
+ type="com.jibo.atk.model.EventMessage.ErrorEvent"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getEventError"
+ return="com.jibo.atk.model.EventMessage.ErrorEvent.ErrorData"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="EventMessage.ErrorEvent.ErrorData"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ErrorData"
+ type="com.jibo.atk.model.EventMessage.ErrorEvent.ErrorData"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getErrorCode"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getErrorString"
+ return="java.lang.String"
  abstract="false"
  native="false"
  synchronized="false"

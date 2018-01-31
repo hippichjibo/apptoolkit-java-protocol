@@ -125,22 +125,28 @@ public class EventMessage extends BaseResponse {
     static public class StartEvent extends BaseEvent implements FinalisingEvent {}
     /** @hide */
     static public class StopEvent extends BaseEvent implements FinalisingEvent {}
-    /** @hide */
+    /** Class for error events */
     static public class ErrorEvent extends BaseEvent implements FinalisingEvent {
         private ErrorData EventError;
 
+        /** Get info for the error that occured
+         * @return EventError {@link ErrorData}
+         */
         public ErrorData getEventError() {
             return EventError;
         }
 
+        /** Class for error data info */
         static public class ErrorData {
             private int ErrorCode;
             private String ErrorString;
 
+            /** @return Error code string */
             public int getErrorCode() {
                 return ErrorCode;
             }
 
+            /** @return  Error description string */
             public String getErrorString() {
                 return ErrorString;
             }
@@ -406,7 +412,7 @@ public class EventMessage extends BaseResponse {
 
     }
 
-
+    /** Info for when Jibo stops listening */
     static public class ListenStopEvent extends StopEvent {
 
         /** Enum of reasons why Jibo stopped listening */
@@ -414,7 +420,7 @@ public class EventMessage extends BaseResponse {
             /** `maxNoSpeech` means Jibo timed out without hearing any speech */
             @SerializedName("maxNoSpeech")
             MaxNoSpeech,
-            /** `maxSpeech` means Jibo heard too many words and stopped listening. This event exists in case Jibo is hearing longrunning background noise */
+            /** `maxSpeech` means Jibo timed out while listening.  */
             @SerializedName("maxSpeech")
             MaxSpeech
         }
