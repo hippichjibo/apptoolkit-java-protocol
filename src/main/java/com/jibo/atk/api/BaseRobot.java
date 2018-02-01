@@ -1,23 +1,24 @@
 package com.jibo.atk.api;
 
-/**
+/*
  * Created by calvinator on 1/26/18.
  */
-
+/** Base robot information */
 public class BaseRobot {
 
     String id;
     String name;
     String robotName;
 
+    /** @hide */
     public BaseRobot(){
     }
 
     /**
      * Information about the authenticated robot
      * @param id Unique ID of the robot
-     * @param name Loop name. Usually Owner's Jibo
-     * @param robotName My-Friendly-Robot-Name, found on the underside of the robot's base
+     * @param name Loop name. Usually `OwnerFirstName's Jibo`
+     * @param robotName `My-Friendly-Robot-Name`, found on the underside of the robot's base
      */
     public BaseRobot(String id, String name, String robotName) {
         this.id = id;
@@ -25,26 +26,17 @@ public class BaseRobot {
         this.robotName = robotName;
     }
 
-    /**
-     * Get the authenticated robot's unique ID.
-     * @return id
-     */
+    /** @hide */
     public String getId() {
         return id;
     }
 
-    /**
-     * Get the authenticated robot's Loop name.
-     * @return name
-     */
+    /** @hide */
     public String getName() {
         return name;
     }
 
-    /**
-     * Get the authenticated robot's serial name.
-     * @return robotName
-     */
+    /** @hide */
     public String getRobotName() {
         return robotName;
     }

@@ -1,9 +1,9 @@
 package com.jibo.atk.model;
 
-/**
+/*
  * Created by alexz on 11.10.17.
  */
-
+/** @hide */
  abstract public class Header {
 
      private String SessionID;

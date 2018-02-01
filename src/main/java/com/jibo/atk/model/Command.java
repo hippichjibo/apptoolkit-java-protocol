@@ -2,12 +2,16 @@ package com.jibo.atk.model;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
+/*
  * Created by alexz on 13.10.17.
  */
 
+/**
+ * Additional information and objects for working with the java protocol
+ */
 public class Command {
 
+    /** @hide */
     public enum CommandType {
         @SerializedName("StartSession")
         StartSession,
@@ -46,26 +50,29 @@ public class Command {
     private Header.RequestHeader ClientHeader;
     private BaseCommand Command;
 
+    /** @hide */
     public Command(Header.RequestHeader clientHeader, BaseCommand command) {
         ClientHeader = clientHeader;
         Command = command;
     }
-
+    /** @hide */
     public Header.RequestHeader getClientHeader() {
         return ClientHeader;
     }
 
+    /** @hide */
     public BaseCommand getCommand() {
         return Command;
     }
 
+    /** @hide */
     static public class BaseCommand {
         private CommandType Type;
 
         private BaseCommand(CommandType type) {
             this.Type = type;
         }
-
+        /** @hide */
         public CommandType getType() {
             return Type;
         }
@@ -101,6 +108,7 @@ public class Command {
         ScreenGesture;
     }
 
+    /** @hide */
     static public class BaseSubscribeCommand extends BaseCommand {
 
         protected StreamTypes StreamType;
@@ -127,12 +135,15 @@ public class Command {
         }
     }
 
+    /** @hide */
     static public class MotionRequest extends BaseSubscribeCommand {
+
         public MotionRequest() {
             this.StreamType = StreamTypes.Motion;
         }
     }
 
+    /** @hide */
     static public class SpeechRequest extends BaseSubscribeCommand {
         @SerializedName("Listen")
         boolean listen;
@@ -143,6 +154,7 @@ public class Command {
         }
     }
 
+    /** @hide */
     static public class HeadTouchRequest extends BaseSubscribeCommand {
 
         public HeadTouchRequest() {
@@ -155,8 +167,10 @@ public class Command {
      * This will allow us release their listeners as soon as acknowledgment arrives
      *
      */
+    /** @hide */
     public interface AtomicCommand {}
 
+    /** @hide */
     static public class AttentionRequest extends BaseCommand implements AtomicCommand {
 
         public enum AttentionMode {
@@ -192,6 +206,7 @@ public class Command {
         }
     }
 
+    /** @hide */
     static public class CancelRequest extends BaseCommand implements AtomicCommand {
         private String ID;
 
@@ -205,6 +220,7 @@ public class Command {
         }
     }
 
+    /** @hide */
     static public class EntityRequest extends BaseSubscribeCommand {
 
         public EntityRequest() {
@@ -213,18 +229,23 @@ public class Command {
         }
     }
 
-
+    /** @hide */
     static public class GetConfigRequest extends BaseCommand implements AtomicCommand {
         public GetConfigRequest() {
             super(CommandType.GetConfig);
         }
     }
 
+    /** Additional information for setting config options */
     static public class SetConfigRequest extends BaseCommand implements AtomicCommand {
+        /** Class for robot config options */
         public static class SetConfigOptions {
             @SerializedName("Mixer")
             private float mixer;
 
+            /**
+             * Robot configuration options that can be set by your app
+             * @param mixer Robot volume between 0 (mute) and 1 (loudest) */
             public SetConfigOptions(float mixer){
                 this.mixer = mixer;
             }
@@ -232,13 +253,14 @@ public class Command {
 
         @SerializedName("Options")
         private SetConfigOptions options;
-
+        /** @hide */
         public SetConfigRequest(SetConfigOptions options) {
             super(CommandType.SetConfig);
             this.options = options;
         }
     }
 
+    /** @hide */
     static public class ListenRequest extends BaseCommand implements AtomicCommand {
 
         @SerializedName("MaxSpeechTimeout")
@@ -256,25 +278,29 @@ public class Command {
         }
     }
 
-
+    /** Additional information for lookats */
     static public class LookAtRequest extends BaseCommand {
         private BaseLookAtTarget LookAtTarget;
         private Boolean TrackFlag;
 
+        /** @hide */
         public LookAtRequest(LookAtRequest.BaseLookAtTarget lookAtTarget, Boolean trackFlag) {
             super(CommandType.LookAt);
             LookAtTarget = lookAtTarget;
             TrackFlag = trackFlag;
         }
 
+        /** @hide */
         public BaseLookAtTarget getLookAtTarget() {
             return LookAtTarget;
         }
 
+        /** @hide */
         public Boolean getTrackFlag() {
             return TrackFlag;
         }
 
+        /** Base class for LookAt Targets */
         static public class BaseLookAtTarget {
         }
 
@@ -285,17 +311,15 @@ public class Command {
             private int[] Position;
 
             /**
-             * Vector that provides a location in space in the base coordinate frame of the robot.
-             * @param position 3-number array for location, defined as `[x: meters forward, y: meters left, z: meters up]`
+             * Location for the base coordinate frame of the robot.
+             *
+             * Defined as {@code [x: meters forward, y: meters left, z: meters up]}
              */
             public PositionTarget(int[] position) {
                 Position = position;
             }
 
-            /**
-             * Get the location for the base coordinate frame of the robot.
-             * @return Position 3-number array for location, defined as `[x: meters forward, y: meters left, z: meters up]`
-             */
+            /** @hide */
             public int[] getPosition() {
                 return Position;
             }
@@ -308,19 +332,14 @@ public class Command {
             private int[] Angle;
 
             /**
-             * These angles are relative to Jibo's current orientation
-             * vector that provides a twist angle (theta) and vertical angle (psi) in
-             * the base coordinate from of the robot to look at.
-             * @param angle `[theta, psi]` where `theta` = twist/horizontal angle and `psi` = vertical angle.
+             * Angles relative to Jibo’s current orientation.
+             * Defined as {@code [theta: twist/horiz angle, psi: vert angle]}
              */
             public AngleTarget(int[] angle) {
                 Angle = angle;
             }
 
-            /**
-             * Get the look at location relative to Jibo's current position.
-             * @return Angle 2-number array, defined as `[theta: twist/horiz angle, psi: vert angle]`
-             */
+            /** @hide */
             public int[] getAngle() {
                 return Angle;
             }
@@ -334,8 +353,7 @@ public class Command {
 
             /**
              * Currently unsupported.
-             * When target is a face that's being tracked.
-             * @param entity An integer that refers to an entity that is known and available in Jibo’s LPS
+             * An integer that refers to an entity that is known and available in Jibo’s LPS
              * system. An error will be returned if that entity is no longer being tracked.
              */
             public EntityTarget(Long entity) {
@@ -343,10 +361,7 @@ public class Command {
             }
 
             /**
-             * Currently unsupported.
-             * Get the id of the face being tracked.
-             * @return Entity An integer that refers to an entity that is known and available in Jibo’s LPS
-             * system. An error will be returned if that entity is no longer being tracked.
+             * @hide
              */
             public Long getEntity() {
                 return Entity;
@@ -360,16 +375,14 @@ public class Command {
             private int[] ScreenCoords;
 
             /**
-             * Target for where on Jibo's screen the camera should target.
-             * @param screenCoords 2-number array for location on Jibo's screen
+             * Location on Jibo's screen that the camera is targeting
              */
             public CameraTarget(int[] screenCoords) {
                 ScreenCoords = screenCoords;
             }
 
             /**
-             * Get the location on Jibo's screen that the camera is targeting
-             * @return ScreenCoords 2-number array for location on Jibo's screen
+             * @hide
              */
             public int[] getScreenCoords() {
                 return ScreenCoords;
@@ -378,6 +391,7 @@ public class Command {
 
     }
 
+    /** @hide */
     static public class LookAtRequestExt extends LookAtRequest {
         private Boolean LevelHeadFlag;
 
@@ -391,6 +405,7 @@ public class Command {
         }
     }
 
+    /** @hide */
     static public class SayRequest extends BaseCommand {
         private String ESML;
 
@@ -404,12 +419,14 @@ public class Command {
         }
     }
 
+    /** @hide */
     static public class SessionRequest extends BaseCommand implements AtomicCommand {
         public SessionRequest() {
             super(CommandType.StartSession);
         }
     }
 
+    /** Additional information for taking photos */
     static public class TakePhotoRequest extends BaseCommand {
 
         /**
@@ -422,7 +439,7 @@ public class Command {
             @SerializedName("left")
             Left,
             /**
-             * `right` reserved for face tracking
+             * `right` Unsupported
              */
             @SerializedName("right")
             Right;
@@ -458,26 +475,28 @@ public class Command {
         private CameraResolution Resolution;
         private Boolean Distortion;
 
+        /** @hide */
         public TakePhotoRequest(TakePhotoRequest.Camera camera, TakePhotoRequest.CameraResolution resolution, Boolean distortion) {
             super(CommandType.TakePhoto);
             Camera = camera;
             Resolution = resolution;
             Distortion = distortion;
         }
-
+        /** @hide */
         public TakePhotoRequest.Camera getCamera() {
             return Camera;
         }
-
+        /** @hide */
         public TakePhotoRequest.CameraResolution getResolution() {
             return Resolution;
         }
-
+        /** @hide */
         public Boolean getDistortion() {
             return Distortion;
         }
     }
 
+    /** Additional information for capturing video */
     static public class VideoRequest extends BaseCommand {
 
         /**
@@ -498,46 +517,52 @@ public class Command {
 
         private VideoType VideoType;
         private Long Duration;
-
+        /** @hide */
         public VideoRequest(VideoRequest.VideoType videoType) {
             super(CommandType.Video);
             VideoType = videoType;
             Duration = 0L;
         }
 
+        /** @hide */
         public VideoRequest(VideoRequest.VideoType videoType, Long duration) {
             super(CommandType.Video);
             VideoType = videoType;
             Duration = duration;
         }
 
+        /** @hide */
         public VideoRequest.VideoType getVideoType() {
             return VideoType;
         }
-
+        /** @hide */
         public Long getDuration() {
             return Duration;
         }
     }
 
+    /** Additional information for displaying info on Jibo's screen */
     static public class DisplayRequest extends BaseCommand {
 
         /**
-         * Type of thing to display on Jibo's screen
+         * What to display on Jibo's screen
          */
         public enum DisplayViewType {
             /**
-             * `Eye` Display Jibo's eye
+             * Display Jibo's eye.
+             * See {@link EyeView}
              */
             @SerializedName("Eye")
             Eye,
             /**
-             * `Eye` Display text
+             * Display text.
+             * See {@link TextView}
              */
             @SerializedName("Text")
             Text,
             /**
-             * `Eye` Display an image
+             * Display an image.
+             * See {@link ImageView}
              */
             @SerializedName("Image")
             Image;
@@ -547,21 +572,21 @@ public class Command {
          * Data object for image info
          */
         static public class ImageData {
-            /**
-             * Name of asset in local cache
-             */
+
+            /** Name of asset in local cache */
             @SerializedName("name")
-            String name;
-            /**
-             * URL to the image
-             */
+            public String name;
+            /** URL to the image */
             @SerializedName("src")
-            String src;
+            public String src;
             @SerializedName("set")
             String set;
         }
 
 
+        /**
+         * View to display on Jibo's screen
+         */
         public static class DisplayView {
 
             @SerializedName("Type")
@@ -569,17 +594,18 @@ public class Command {
             @SerializedName("Name")
             String name;
 
-             /**
-              * Display information
-              * @param type See {@link DisplayViewType}
-              * @param name Unique name of view
-              */
+           /**
+            * Display information
+            * @param type See {@link DisplayViewType}
+            * @param name Unique name of view
+            */
             public DisplayView(DisplayViewType type, String name){
                 this.type = type;
                 this.name = name;
             }
         }
 
+        /** Display text on Jibo's screen */
         static public class TextView extends DisplayView {
             @SerializedName("Text")
             String text;
@@ -595,6 +621,7 @@ public class Command {
             }
         }
 
+        /** Display an image on Jibo's screen */
         static public class ImageView extends DisplayView {
             @SerializedName("Image")
             ImageData image;
@@ -610,6 +637,7 @@ public class Command {
             }
         }
 
+        /** Display the eye on Jibo's screen */
         static public class EyeView extends DisplayView {
             /**
              * Info for displaying Jibo's eye
@@ -628,12 +656,14 @@ public class Command {
             return view;
         }
 
+        /** @hide */
         public DisplayRequest(DisplayView displayView) {
             super(CommandType.Display);
             this.view = displayView;
         }
     }
 
+    /** @hide */
     static public class FetchAssetRequest extends BaseCommand {
 
         @SerializedName("URI")
@@ -656,8 +686,10 @@ public class Command {
 
     }
 
+    /** Additional info for screen gestures **/
     static public class ScreenGestureRequest extends BaseCommand {
 
+        /** Filters options for screen gestures */
         public static class ScreenGestureFilter {
 
             /**
@@ -669,44 +701,47 @@ public class Command {
                  */
                 Tap,
                 /**
-                 * SwipeDown
+                 * Swipe from top to bottom
                  */
                 SwipeDown,
                 /**
-                 * SwipeUp
+                 * Swipe from bottom to top
                  */
                 SwipeUp,
                 /**
-                 * SwipeRight
+                 * Swipe from left to right
                  */
                 SwipeRight,
                 /**
-                 * SwipeLeft
+                 * Swipe from right to left
                  */
                 SwipeLeft;
             }
 
+            /** Define an area on Jibo's screen. See {@link Rectangle} and {@link Circle} */
             public static class Area {
                 float x;
                 float y;
                 /**
                  * Pixel on the screen in which to listen for screen gesture.
-                 * `[x, y]`
                  */
                 public Area(float x, float y){
+                    /** horizontal coordinate */
                     this.x = x;
+                    /** vertical coordinate */
                     this.y = y;
                 }
             }
 
-
+            /** Define a rectangular area on Jibo's screen */
             public static class Rectangle extends Area{
                 float width;
                 float height;
 
                 /**
-                 * Rectanglar area on the screen in which to listen for screen gesture
-                 * `[x, y, width, height]`
+                 * Rectangular area on the screen in which to listen for screen gesture
+                 * where {@code (x,y) } is the top-left corner of the rectangle.
+                 *  All params in pixels.
                  */
                 public Rectangle(float x, float y, float width, float height) {
                     super(x, y);
@@ -715,12 +750,14 @@ public class Command {
                 }
             }
 
+            /** Define a circular area on Jibo's screen */
             public static class Circle extends Area{
                 float radius;
 
                 /**
                  * Circular area in which to listen for screen gesture
-                 * `[x, y, radius]` Where `(x,y)` is the center of the circle
+                 *  where {@code (x,y) } is the center of the circle.
+                 *  All params in pixels.
                  */
                 public Circle(float x, float y, float radius) {
                     super(x, y);
@@ -753,13 +790,15 @@ public class Command {
         @SerializedName("StreamFilter")
         private ScreenGestureFilter streamFilter;
 
+        /** @hide */
         public ScreenGestureRequest(ScreenGestureFilter filter) {
             super(CommandType.ScreenGesture);
             this.streamType = StreamTypes.ScreenGesture;
             this.streamFilter = filter;
         }
-
+        /** @hide */
         public StreamTypes getStreamType() {return streamType;}
+        /** @hide */
         public ScreenGestureFilter getScreenGestureFilter() {return streamFilter;}
     }
 

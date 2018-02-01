@@ -4,21 +4,22 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-/**
+/*
  * Created by alexz on 30.10.17.
  */
 
 /**
- * Class for robot data
+ * Conveince class for robot information
  */
 public class RobotData {
 
     @SerializedName("data")
     private List<BaseRobot> robots;
 
+
     /**
-     * Get the list of robots in this user's account
-     * @return robots
+     * Convenience function for converting List of Robot to List of BaseRobot
+     * @return robots See {@link BaseRobot}
      */
     public List<BaseRobot> getRobots() {
         return robots;

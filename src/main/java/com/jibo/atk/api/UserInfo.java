@@ -1,9 +1,9 @@
 package com.jibo.atk.api;
 
-/**
+/*
  * Created by alexz on 30.10.17.
  */
-
+/** @hide */
 public class UserInfo {
     private String id;
     private String email;

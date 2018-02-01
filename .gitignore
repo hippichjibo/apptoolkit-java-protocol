@@ -8,5 +8,8 @@ gen/
 .gradle/
 gradle/
 build/
+javadocs/
+.idea/
+local.properties
 
 .DS_Store
