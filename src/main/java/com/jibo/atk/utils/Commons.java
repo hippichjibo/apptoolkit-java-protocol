@@ -13,7 +13,7 @@ public class Commons {
     public static final String PROD_ENDPOINT = "portal.jibo.com";
     public static final String[] ALLOWED_ENDPOINTS = {DEV_ENDPOINT, STG_ENDPOINT,PREPROD_ENDPOINT,PROD_ENDPOINT};
 
-    public static String ROOT_ENDPOINT = STG_ENDPOINT;
+    public static String ROOT_ENDPOINT = PROD_ENDPOINT;
 
     public static void setRootEndpoint(String endpoint) throws InvalidParameterValueException {
         for (String ep : ALLOWED_ENDPOINTS) {
