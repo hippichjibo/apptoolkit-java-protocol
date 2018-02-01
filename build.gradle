@@ -124,8 +124,8 @@ afterEvaluate { project ->
         sign configurations.archives
     }
 
-    task packageJavadoc(type: Jar, dependsOn: 'javadoc') {
-        from javadoc.destinationDir
+    task packageJavadoc(type: Jar, dependsOn: 'generateJavadoc') {
+        from file("./javadocs/")
           classifier = 'javadoc'
     }
 
