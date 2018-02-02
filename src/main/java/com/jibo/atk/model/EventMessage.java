@@ -12,7 +12,7 @@ import java.util.Map;
 import static com.jibo.atk.model.EventMessage.EventType.*;
 
 /*
- * Created by alexz on 10.10.17.
+ * Created by Jibo, Inc. on 10.10.17.
  */
 /** Information returned with command messages */
 public class EventMessage extends BaseResponse {

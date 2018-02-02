@@ -1,7 +1,7 @@
 package com.jibo.atk.utils;
 
 /*
- * Created by alexz on 10.10.17.
+ * Created by Jibo, Inc. on 10.10.17.
  */
 /** @hide */
 public class Commons {

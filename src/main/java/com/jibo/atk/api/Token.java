@@ -1,6 +1,6 @@
 package com.jibo.atk.api;
 /**
- * Created by alexz on 30.10.17.
+ * Created by Jibo, Inc. on 30.10.17.
  */
 /** @hide */
 public class Token {

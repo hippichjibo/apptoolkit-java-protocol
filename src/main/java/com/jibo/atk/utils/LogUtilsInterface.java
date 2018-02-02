@@ -1,7 +1,7 @@
 package com.jibo.atk.utils;
 
 /*
- * Created by calvinator on 1/26/18.
+ * Created by Jibo, Inc. on 1/26/18.
  */
 /** @hide */
 public interface LogUtilsInterface {

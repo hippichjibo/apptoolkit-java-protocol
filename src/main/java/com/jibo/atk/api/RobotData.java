@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /*
- * Created by alexz on 30.10.17.
+ * Created by Jibo, Inc. on 30.10.17.
  */
 
 /**

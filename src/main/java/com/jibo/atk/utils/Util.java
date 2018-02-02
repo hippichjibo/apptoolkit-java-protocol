@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /*
- * Created by alexz on 23.10.17.
+ * Created by Jibo, Inc. on 23.10.17.
  */
 /** @hide */
 public class Util {
