@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 /*
  * Created by calvinator on 1/26/18.
  */
-/** Certification information */
+/** @hide */
 public class BaseCertificates {
 
     String cert;

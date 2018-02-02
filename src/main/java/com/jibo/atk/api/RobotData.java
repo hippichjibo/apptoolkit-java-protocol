@@ -9,7 +9,7 @@ import java.util.List;
  */
 
 /**
- * Conveince class for robot information
+ * Convenience class for robot information
  */
 public class RobotData {
 
