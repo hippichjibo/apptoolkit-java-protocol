@@ -13,3 +13,6 @@ javadocs/
 local.properties
 
 .DS_Store
+.classpath
+.project
+.settings/
