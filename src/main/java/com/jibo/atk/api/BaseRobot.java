@@ -1,7 +1,7 @@
 package com.jibo.atk.api;
 
 /*
- * Created by calvinator on 1/26/18.
+ * Created by Jibo, Inc. on 1/26/18.
  */
 /** Base robot information */
 public class BaseRobot {
@@ -26,17 +26,17 @@ public class BaseRobot {
         this.robotName = robotName;
     }
 
-    /** @hide */
+    /** Get unique ID of the robot */
     public String getId() {
         return id;
     }
 
-    /** @hide */
+    /** Get robot's loop name */
     public String getName() {
         return name;
     }
 
-    /** @hide */
+    /** Get robot's name */
     public String getRobotName() {
         return robotName;
     }
