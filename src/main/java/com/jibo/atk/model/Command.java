@@ -261,7 +261,7 @@ public class Command {
     }
 
     /** @hide */
-    static public class ListenRequest extends BaseCommand implements AtomicCommand {
+    static public class ListenRequest extends BaseCommand {
 
         @SerializedName("MaxSpeechTimeout")
         Long maxSpeechTimeout;
