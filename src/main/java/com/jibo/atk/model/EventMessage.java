@@ -434,7 +434,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /** Info about what Jibo heard */
-    static public class ListenResultEvent extends BaseEvent {
+    static public class ListenResultEvent extends BaseEvent implements FinalisingEvent {
 
         @SerializedName("LanguageCode")
         private String languageCode;
