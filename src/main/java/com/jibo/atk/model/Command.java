@@ -94,6 +94,7 @@ public class Command {
         Entity,
         /**
          * `Motion` for motion tracking
+         * `Motion` for motion tracking
          */
         @SerializedName("Motion")
         Motion,
@@ -433,7 +434,8 @@ public class Command {
     }
 
     /** 
-     * Make Jibo speak and play animations via embodied speech [(ESML)](https://app-toolkit.jibo.com/esml/).
+     * Make Jibo speak and play animations via embodied speech
+     * <a href="https://app-toolkit.jibo.com/esml/">(ESML)</a>
      */
     static public class SayRequest extends BaseCommand {
         private String ESML;
@@ -441,7 +443,7 @@ public class Command {
         /** 
          * Make Jibo speak.
          * @param esml Straight string to speak or 
-         * [ESML](https://app-toolkit.jibo.com/esml/) markup.
+         * <a href="https://app-toolkit.jibo.com/esml/">ESML</a>
          */
         public SayRequest(String esml) {
             super(CommandType.Say);
