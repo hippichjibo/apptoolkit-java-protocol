@@ -3,7 +3,7 @@ package com.jibo.atk.model;
 /*
  * Created by Jibo, Inc. on 11.10.17.
  */
-/** @hide */
+/** Header class */
  abstract public class Header {
 
      private String SessionID;

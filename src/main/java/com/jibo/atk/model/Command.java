@@ -7,11 +7,13 @@ import com.google.gson.annotations.SerializedName;
  */
 
 /**
- * Additional information and objects for working with the java protocol
+ * Classes in the Jibo Command Protocol. 
  */
 public class Command {
 
-    /** @hide */
+    /** 
+     * Types of commands available. Please note that some are not currently supported.
+     */
     public enum CommandType {
         @SerializedName("StartSession")
         StartSession,
@@ -55,6 +57,7 @@ public class Command {
         ClientHeader = clientHeader;
         Command = command;
     }
+
     /** @hide */
     public Header.RequestHeader getClientHeader() {
         return ClientHeader;
@@ -65,14 +68,18 @@ public class Command {
         return Command;
     }
 
-    /** @hide */
+    /** Base class for command */
     static public class BaseCommand {
         private CommandType Type;
 
         private BaseCommand(CommandType type) {
             this.Type = type;
         }
-        /** @hide */
+        
+        /** 
+         * What type of command is this
+         * @type {CommandType}
+         */
         public CommandType getType() {
             return Type;
         }
@@ -108,7 +115,9 @@ public class Command {
         ScreenGesture;
     }
 
-    /** @hide */
+    /** 
+     * @hide
+     */
     static public class BaseSubscribeCommand extends BaseCommand {
 
         protected StreamTypes StreamType;
@@ -135,15 +144,15 @@ public class Command {
         }
     }
 
-    /** @hide */
+    /** Track motion */
     static public class MotionRequest extends BaseSubscribeCommand {
-
+        /** Request to track motion in Jibo's perceptual space. */
         public MotionRequest() {
             this.StreamType = StreamTypes.Motion;
         }
     }
 
-    /** @hide */
+    /** Currently unsupported */
     static public class SpeechRequest extends BaseSubscribeCommand {
         @SerializedName("Listen")
         boolean listen;
@@ -154,19 +163,14 @@ public class Command {
         }
     }
 
-    /** @hide */
+    /** Class for head touch input */
     static public class HeadTouchRequest extends BaseSubscribeCommand {
-
+        /** Request for Jibo to listen for a head touch. */
         public HeadTouchRequest() {
             this.StreamType = StreamTypes.HeadTouch;
         }
     }
 
-    /*
-     * We use this interface to mark commands that dont trigger events
-     * This will allow us release their listeners as soon as acknowledgment arrives
-     *
-     */
     /** @hide */
     public interface AtomicCommand {}
 
@@ -206,21 +210,28 @@ public class Command {
         }
     }
 
-    /** @hide */
+    /** Cancel a command */
     static public class CancelRequest extends BaseCommand implements AtomicCommand {
         private String ID;
 
+        /** 
+         * Cancel a command. 
+         * @param {string} id ID of the command to cancel 
+         */
         public CancelRequest(String id) {
             super(CommandType.Cancel);
             this.ID = id;
         }
 
+        /**
+         * Get the ID of the command to cancel.
+         */
         public String getID() {
             return ID;
         }
     }
 
-    /** @hide */
+    /** Currently unsupported */
     static public class EntityRequest extends BaseSubscribeCommand {
 
         public EntityRequest() {
@@ -229,15 +240,18 @@ public class Command {
         }
     }
 
-    /** @hide */
+    /** Get robot configuration info */
     static public class GetConfigRequest extends BaseCommand implements AtomicCommand {
+
+        /** Request for Jibo's current configurations. */
         public GetConfigRequest() {
             super(CommandType.GetConfig);
         }
     }
 
-    /** Additional information for setting config options */
+    /** Set robot options */
     static public class SetConfigRequest extends BaseCommand implements AtomicCommand {
+
         /** Class for robot config options */
         public static class SetConfigOptions {
             @SerializedName("Mixer")
@@ -245,7 +259,8 @@ public class Command {
 
             /**
              * Robot configuration options that can be set by your app
-             * @param mixer Robot volume between 0 (mute) and 1 (loudest) */
+             * @param mixer Robot volume between 0 (mute) and 1 (loudest) 
+             */
             public SetConfigOptions(float mixer){
                 this.mixer = mixer;
             }
@@ -253,14 +268,18 @@ public class Command {
 
         @SerializedName("Options")
         private SetConfigOptions options;
-        /** @hide */
+
+        /** 
+         * Request for setting config options
+         * @param options {SetConfigOptions} Options to set. 
+         */
         public SetConfigRequest(SetConfigOptions options) {
             super(CommandType.SetConfig);
             this.options = options;
         }
     }
 
-    /** @hide */
+    /** Listen for speech */
     static public class ListenRequest extends BaseCommand {
 
         @SerializedName("MaxSpeechTimeout")
@@ -270,6 +289,11 @@ public class Command {
         @SerializedName("LanguageCode")
         String languageCode;
 
+        /** 
+         * Request for Jibo to listen for speech input.
+         * @param {Long} maxSpeechTimeout Maximum amount of time Jibo should listen to speech. Default = 15. In seconds.
+         * @param {Long} maxNoSpeechTimeout Maximum amount of time Jibo should wait for speech to begin. Default = 15. In seconds.
+         * @param {string} languageCode Language to listen for. Right now only english (`en_US`) is supported. */
         public ListenRequest(Long maxSpeechTimeout, Long maxNoSpeechTimeout, String languageCode) {
             super(CommandType.Listen);
             this.maxSpeechTimeout = maxSpeechTimeout;
@@ -278,24 +302,28 @@ public class Command {
         }
     }
 
-    /** Additional information for lookats */
+    /** Move Jibo */
     static public class LookAtRequest extends BaseCommand {
         private BaseLookAtTarget LookAtTarget;
         private Boolean TrackFlag;
 
-        /** @hide */
+        /** 
+         * Request Jibo to look toward a specific point. 
+         * @param {LookAtRequest.BaseLookAtTarget} lookAtTarget 	Where to make Jibo look
+         * @param {boolean} trackFlag Currently unsupported.
+         */
         public LookAtRequest(LookAtRequest.BaseLookAtTarget lookAtTarget, Boolean trackFlag) {
             super(CommandType.LookAt);
             LookAtTarget = lookAtTarget;
             TrackFlag = trackFlag;
         }
 
-        /** @hide */
+        /** Get the target to make Jibo look toward */
         public BaseLookAtTarget getLookAtTarget() {
             return LookAtTarget;
         }
 
-        /** @hide */
+        /** Currently unsupported */
         public Boolean getTrackFlag() {
             return TrackFlag;
         }
@@ -319,7 +347,7 @@ public class Command {
                 Position = position;
             }
 
-            /** @hide */
+            /** Get Jibo's current position */
             public int[] getPosition() {
                 return Position;
             }
@@ -339,7 +367,7 @@ public class Command {
                 Angle = angle;
             }
 
-            /** @hide */
+            /** Get Jibo's current angle */
             public int[] getAngle() {
                 return Angle;
             }
@@ -361,7 +389,7 @@ public class Command {
             }
 
             /**
-             * @hide
+             * Currently unsupported
              */
             public Long getEntity() {
                 return Entity;
@@ -382,7 +410,7 @@ public class Command {
             }
 
             /**
-             * @hide
+             * Get the screen coordinate of where Jibo is targeting
              */
             public int[] getScreenCoords() {
                 return ScreenCoords;
@@ -405,28 +433,37 @@ public class Command {
         }
     }
 
-    /** @hide */
+    /** 
+     * Making Jibo speak and play animations via embodied speech [(ESML)](https://app-toolkit.jibo.com/esml/).
+    */
     static public class SayRequest extends BaseCommand {
         private String ESML;
 
+        /** Make Jibo speak.
+         * @param {string} ESML Straight string to speak or 
+         * [ESML](https://app-toolkit.jibo.com/esml/) markup.
+         */
         public SayRequest(String esml) {
             super(CommandType.Say);
             this.ESML = esml;
         }
 
+        /** Get the string Jibo is speak */
         public String getESML() {
             return ESML;
         }
     }
 
-    /** @hide */
+    /** Start a command session */
     static public class SessionRequest extends BaseCommand implements AtomicCommand {
+
+        /** Start a command session */
         public SessionRequest() {
             super(CommandType.StartSession);
         }
     }
 
-    /** Additional information for taking photos */
+    /** Take a photo */
     static public class TakePhotoRequest extends BaseCommand {
 
         /**
@@ -475,28 +512,38 @@ public class Command {
         private CameraResolution Resolution;
         private Boolean Distortion;
 
-        /** @hide */
+        /** Take a photo
+         * @param {TakePhotoRequest.Camera} camera Which camera to use (left or right). Default = left.
+         * @param {TakePhotoRequest.CameraResolution} resolution Resolution photo to take. Default = low.
+         * @param {boolean} distortion 	`true` for regular lense. `false` for fisheye.
+         */
         public TakePhotoRequest(TakePhotoRequest.Camera camera, TakePhotoRequest.CameraResolution resolution, Boolean distortion) {
             super(CommandType.TakePhoto);
             Camera = camera;
             Resolution = resolution;
             Distortion = distortion;
         }
-        /** @hide */
+
+        /** 
+         * Which camera is being used (right or left). 
+         * Should always be left.
+         */
         public TakePhotoRequest.Camera getCamera() {
             return Camera;
         }
-        /** @hide */
+
+        /** Which resolution of photo is taken. */
         public TakePhotoRequest.CameraResolution getResolution() {
             return Resolution;
         }
-        /** @hide */
+
+        /** `true` for regular lense. `false` for fisheye.  */
         public Boolean getDistortion() {
             return Distortion;
         }
     }
 
-    /** Additional information for capturing video */
+    /** Capture a video */
     static public class VideoRequest extends BaseCommand {
 
         /**
@@ -517,6 +564,7 @@ public class Command {
 
         private VideoType VideoType;
         private Long Duration;
+
         /** @hide */
         public VideoRequest(VideoRequest.VideoType videoType) {
             super(CommandType.Video);
@@ -524,24 +572,34 @@ public class Command {
             Duration = 0L;
         }
 
-        /** @hide */
+        /** 
+         * Get a stream of what Jibo’s cameras see. 
+         * Please note that this option does NOT record a video -- 
+         * it provides a stream of camera information. 
+         * @param {VideoRequest.VideoType} videoType Use `NORMAL`.
+         * @param {Long} [duration Unsupported. Call `cancel()` to stop the stream.]
+         */
         public VideoRequest(VideoRequest.VideoType videoType, Long duration) {
             super(CommandType.Video);
             VideoType = videoType;
             Duration = duration;
         }
 
-        /** @hide */
+        /** 
+         * Should always be `NORMAL`.
+         * @returns {VideoType}
+         */
         public VideoRequest.VideoType getVideoType() {
             return VideoType;
         }
-        /** @hide */
+
+        /** Currently unsupported */
         public Long getDuration() {
             return Duration;
         }
     }
 
-    /** Additional information for displaying info on Jibo's screen */
+    /** Display something on Jibo's screen */
     static public class DisplayRequest extends BaseCommand {
 
         /**
@@ -652,18 +710,22 @@ public class Command {
         @SerializedName("View")
         private DisplayView view;
 
+        /** Get the current view */
         public DisplayView getView() {
             return view;
         }
 
-        /** @hide */
+        /** 
+         * Request something on Jibo's screen.
+         * @param displayView {DisplayView} What to display onscreen.
+         */
         public DisplayRequest(DisplayView displayView) {
             super(CommandType.Display);
             this.view = displayView;
         }
     }
 
-    /** @hide */
+    /** Fetch an asset */
     static public class FetchAssetRequest extends BaseCommand {
 
         @SerializedName("URI")
@@ -671,22 +733,29 @@ public class Command {
         @SerializedName("Name")
         private String name;
 
+        /** 
+         * Retrieve external asset and store in local cache by name
+         * @param {string} uri URI to the asset to be fetched
+         * @param {string} name Name the asset will be called by
+         */
         public FetchAssetRequest(String uri, String name) {
             super(CommandType.FetchAsset);
             this.uri = uri;
             this.name = name;
         }
 
+        /** Get the URI of the asset. */
         public String getUri() {
             return uri;
         }
+        /** Get the name of the asset */
         public String getName() {
             return name;
         }
 
     }
 
-    /** Additional info for screen gestures **/
+    /** Listen for screen touch input **/
     static public class ScreenGestureRequest extends BaseCommand {
 
         /** Filters options for screen gestures */
@@ -790,15 +859,21 @@ public class Command {
         @SerializedName("StreamFilter")
         private ScreenGestureFilter streamFilter;
 
-        /** @hide */
+        /** 
+         * Request for Jibo to listen for screen touch input
+         * @param {ScreenGestureFilter} filter Screen touch input options
+         */
         public ScreenGestureRequest(ScreenGestureFilter filter) {
             super(CommandType.ScreenGesture);
             this.streamType = StreamTypes.ScreenGesture;
             this.streamFilter = filter;
         }
-        /** @hide */
+        /** 
+         * What type of stream is this
+         * @type {StreamTypes}
+         */
         public StreamTypes getStreamType() {return streamType;}
-        /** @hide */
+        /** The screen touch options  */
         public ScreenGestureFilter getScreenGestureFilter() {return streamFilter;}
     }
 
