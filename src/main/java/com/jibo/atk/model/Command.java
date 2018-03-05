@@ -52,18 +52,18 @@ public class Command {
     private Header.RequestHeader ClientHeader;
     private BaseCommand Command;
 
-    /** @hide */
+    /** HELP */
     public Command(Header.RequestHeader clientHeader, BaseCommand command) {
         ClientHeader = clientHeader;
         Command = command;
     }
 
-    /** @hide */
+    /** HELP */
     public Header.RequestHeader getClientHeader() {
         return ClientHeader;
     }
 
-    /** @hide */
+    /** HELP */
     public BaseCommand getCommand() {
         return Command;
     }
@@ -174,7 +174,7 @@ public class Command {
     /** @hide */
     public interface AtomicCommand {}
 
-    /** @hide */
+    /** Currently unsupported */
     static public class AttentionRequest extends BaseCommand implements AtomicCommand {
 
         public enum AttentionMode {
