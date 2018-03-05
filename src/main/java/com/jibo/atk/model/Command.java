@@ -78,7 +78,6 @@ public class Command {
         
         /** 
          * What type of command is this
-         * @type {CommandType}
          */
         public CommandType getType() {
             return Type;
@@ -216,7 +215,7 @@ public class Command {
 
         /** 
          * Cancel a command. 
-         * @param {string} id ID of the command to cancel 
+         * @param id ID of the command to cancel 
          */
         public CancelRequest(String id) {
             super(CommandType.Cancel);
@@ -271,7 +270,7 @@ public class Command {
 
         /** 
          * Request for setting config options
-         * @param options {SetConfigOptions} Options to set. 
+         * @param options Options to set. 
          */
         public SetConfigRequest(SetConfigOptions options) {
             super(CommandType.SetConfig);
@@ -291,9 +290,9 @@ public class Command {
 
         /** 
          * Request for Jibo to listen for speech input.
-         * @param {Long} maxSpeechTimeout Maximum amount of time Jibo should listen to speech. Default = 15. In seconds.
-         * @param {Long} maxNoSpeechTimeout Maximum amount of time Jibo should wait for speech to begin. Default = 15. In seconds.
-         * @param {string} languageCode Language to listen for. Right now only english (`en_US`) is supported. */
+         * @param maxSpeechTimeout Maximum amount of time Jibo should listen to speech. Default = 15. In seconds.
+         * @param maxNoSpeechTimeout Maximum amount of time Jibo should wait for speech to begin. Default = 15. In seconds.
+         * @param languageCode Language to listen for. Right now only english (`en_US`) is supported. */
         public ListenRequest(Long maxSpeechTimeout, Long maxNoSpeechTimeout, String languageCode) {
             super(CommandType.Listen);
             this.maxSpeechTimeout = maxSpeechTimeout;
@@ -309,8 +308,8 @@ public class Command {
 
         /** 
          * Request Jibo to look toward a specific point. 
-         * @param {LookAtRequest.BaseLookAtTarget} lookAtTarget 	Where to make Jibo look
-         * @param {boolean} trackFlag Currently unsupported.
+         * @param lookAtTarget 	Where to make Jibo look
+         * @param trackFlag Currently unsupported.
          */
         public LookAtRequest(LookAtRequest.BaseLookAtTarget lookAtTarget, Boolean trackFlag) {
             super(CommandType.LookAt);
@@ -434,13 +433,14 @@ public class Command {
     }
 
     /** 
-     * Making Jibo speak and play animations via embodied speech [(ESML)](https://app-toolkit.jibo.com/esml/).
-    */
+     * Make Jibo speak and play animations via embodied speech [(ESML)](https://app-toolkit.jibo.com/esml/).
+     */
     static public class SayRequest extends BaseCommand {
         private String ESML;
 
-        /** Make Jibo speak.
-         * @param {string} ESML Straight string to speak or 
+        /** 
+         * Make Jibo speak.
+         * @param esml Straight string to speak or 
          * [ESML](https://app-toolkit.jibo.com/esml/) markup.
          */
         public SayRequest(String esml) {
@@ -513,9 +513,9 @@ public class Command {
         private Boolean Distortion;
 
         /** Take a photo
-         * @param {TakePhotoRequest.Camera} camera Which camera to use (left or right). Default = left.
-         * @param {TakePhotoRequest.CameraResolution} resolution Resolution photo to take. Default = low.
-         * @param {boolean} distortion 	`true` for regular lense. `false` for fisheye.
+         * @param camera Which camera to use (left or right). Default = left.
+         * @param resolution Resolution photo to take. Default = low.
+         * @param distortion 	`true` for regular lense. `false` for fisheye.
          */
         public TakePhotoRequest(TakePhotoRequest.Camera camera, TakePhotoRequest.CameraResolution resolution, Boolean distortion) {
             super(CommandType.TakePhoto);
@@ -576,8 +576,8 @@ public class Command {
          * Get a stream of what Jibo’s cameras see. 
          * Please note that this option does NOT record a video -- 
          * it provides a stream of camera information. 
-         * @param {VideoRequest.VideoType} videoType Use `NORMAL`.
-         * @param {Long} [duration Unsupported. Call `cancel()` to stop the stream.]
+         * @param videoType Use `NORMAL`.
+         * @param duration Unsupported. Call `cancel()` to stop the stream.]
          */
         public VideoRequest(VideoRequest.VideoType videoType, Long duration) {
             super(CommandType.Video);
@@ -587,7 +587,6 @@ public class Command {
 
         /** 
          * Should always be `NORMAL`.
-         * @returns {VideoType}
          */
         public VideoRequest.VideoType getVideoType() {
             return VideoType;
@@ -717,7 +716,7 @@ public class Command {
 
         /** 
          * Request something on Jibo's screen.
-         * @param displayView {DisplayView} What to display onscreen.
+         * @param displayView What to display onscreen.
          */
         public DisplayRequest(DisplayView displayView) {
             super(CommandType.Display);
@@ -735,8 +734,8 @@ public class Command {
 
         /** 
          * Retrieve external asset and store in local cache by name
-         * @param {string} uri URI to the asset to be fetched
-         * @param {string} name Name the asset will be called by
+         * @param uri URI to the asset to be fetched
+         * @param name Name the asset will be called by
          */
         public FetchAssetRequest(String uri, String name) {
             super(CommandType.FetchAsset);
@@ -861,18 +860,17 @@ public class Command {
 
         /** 
          * Request for Jibo to listen for screen touch input
-         * @param {ScreenGestureFilter} filter Screen touch input options
+         * @param filter Screen touch input options
          */
         public ScreenGestureRequest(ScreenGestureFilter filter) {
             super(CommandType.ScreenGesture);
             this.streamType = StreamTypes.ScreenGesture;
             this.streamFilter = filter;
         }
-        /** 
-         * What type of stream is this
-         * @type {StreamTypes}
-         */
+
+        /** What type of stream is this */
         public StreamTypes getStreamType() {return streamType;}
+
         /** The screen touch options  */
         public ScreenGestureFilter getScreenGestureFilter() {return streamFilter;}
     }
