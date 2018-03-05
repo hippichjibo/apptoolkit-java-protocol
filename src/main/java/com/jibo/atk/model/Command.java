@@ -52,18 +52,26 @@ public class Command {
     private Header.RequestHeader ClientHeader;
     private BaseCommand Command;
 
-    /** HELP */
+    /** 
+     * A command object to be sent over the websocket to be received by the robot from the client.
+     * @param clientHeader The RequestHeader object for this Command
+     * @param command The BaseCommand object for this Command
+     */
     public Command(Header.RequestHeader clientHeader, BaseCommand command) {
         ClientHeader = clientHeader;
         Command = command;
     }
 
-    /** HELP */
+    /** 
+     * the RequestHeader object for this command
+     */
     public Header.RequestHeader getClientHeader() {
         return ClientHeader;
     }
 
-    /** HELP */
+    /** 
+     * the BaseCommand object for this command
+     */
     public BaseCommand getCommand() {
         return Command;
     }
