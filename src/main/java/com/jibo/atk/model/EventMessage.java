@@ -154,7 +154,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /**
-     * Currently unsupported </br>
+     * Currently unsupported <br />
      * Class for face tracking events. 
      */
     static public class EntityTrackEvent extends BaseEvent {
@@ -162,7 +162,7 @@ public class EventMessage extends BaseResponse {
         private TrackedEntity[] Tracks;
 
         /**
-         * Currently unsupported </br>
+         * Currently unsupported <br />
          * 
          * When Jibo sees a face, they're either a known loop member or unknown.
          */
@@ -176,7 +176,7 @@ public class EventMessage extends BaseResponse {
         }
 
         /** 
-         * Currently unsupported </br>
+         * Currently unsupported <br />
          * 
          * Get the tracks in Jibo's perceptual space
          * @return Tracks
@@ -186,7 +186,7 @@ public class EventMessage extends BaseResponse {
         }
 
         /**
-         * Currently unsupported </br>
+         * Currently unsupported <br />
          * Info for tracking a face
          */
         static public class TrackedEntity {
@@ -197,7 +197,7 @@ public class EventMessage extends BaseResponse {
             private int[] ScreenCoords;
 
             /**
-             * Currently unsupported </br>
+             * Currently unsupported <br />
              * Get the ID of the tracked face
              * @return EntityID
              */
@@ -206,7 +206,7 @@ public class EventMessage extends BaseResponse {
             }
 
             /**
-             * Currently unsupported </br>
+             * Currently unsupported <br />
              * Get the type of track (loop member or unknown)
              * @return Type
              * */
@@ -215,7 +215,7 @@ public class EventMessage extends BaseResponse {
             }
 
             /**
-             * Currently unsupported </br>
+             * Currently unsupported <br />
              * Get Jibo's confidence in his identifcation of the person
              * @return Confidence `int` [0,1]
              */
@@ -224,7 +224,7 @@ public class EventMessage extends BaseResponse {
             }
 
             /**
-             * Currently unsupported </br>
+             * Currently unsupported <br />
              * 3-number array in space where the face exists
              * @return WorldCoords `[x: meters forward, y: meters left, z: meters up]`
              */
@@ -233,7 +233,7 @@ public class EventMessage extends BaseResponse {
             }
 
             /**
-             * Currently unsupported </br>
+             * Currently unsupported <br />
              * Point in Jibo's field of vision where face currently exists
              * @return ScreenCoords`[x,y]`
              */
@@ -244,7 +244,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /**
-     * Jibo achieved his lookat command </br>
+     * Jibo achieved his lookat command <br />
      *
      * {@link EventMessage.EventType} = {@code onLookAtAchieved}
      */
@@ -253,7 +253,7 @@ public class EventMessage extends BaseResponse {
         private int[] AngleTarget;
 
         /**
-         * Returns the location that was achieved in absolute space. </br>
+         * Returns the location that was achieved in absolute space. <br />
          * {@code [x: meters forward, y: meters left, Z: meters forward}
          */
         public int[] getPositionTarget() {
@@ -261,7 +261,7 @@ public class EventMessage extends BaseResponse {
         }
 
         /**
-         * Returns the location that was achieved in angle space </br>
+         * Returns the location that was achieved in angle space <br />
          *  {@code [theta: horizontal/twist angle, psi: vertical angle}
          */
         public int[] getAngleTarget() {
@@ -479,12 +479,12 @@ public class EventMessage extends BaseResponse {
             @SerializedName("Intensity")
             public float intensity;
             /** 3D global position of the motion
-             * </br> {@code [x: meters forward, y: meters left, z: meters up]}
+             * <br /> {@code [x: meters forward, y: meters left, z: meters up]}
              */
             @SerializedName("WorldCoords")
             public float[] worldCoords;
             /** 2D screen position of the motion
-             * </br> {@code [x: horiz coord, y: vert coord]}
+             * <br /> {@code [x: horiz coord, y: vert coord]}
              */
             @SerializedName("ScreenCoords")
             public float[] ScreenCoords;
@@ -573,7 +573,7 @@ public class EventMessage extends BaseResponse {
 
     /** 
      * Info for head touch events
-     * </br> See <a href="https://app-toolkit.jibo.com/images/JiboHeadSensors.png">Head Touch Sensors</a> for a diagram.
+     * <br /> See <a href="https://app-toolkit.jibo.com/images/JiboHeadSensors.png">Head Touch Sensors</a> for a diagram.
      */
     static public class HeadTouchEvent extends BaseEvent {
 
@@ -585,9 +585,9 @@ public class EventMessage extends BaseResponse {
         }
 
         /**
-         * There are 6 touch sensors on the back of Jibo’s head. </br>
-         * Three run down each side of his head. </br>
-         * Left is Jibo’s left and right is Jibo’s right.</br>
+         * There are 6 touch sensors on the back of Jibo’s head. <br />
+         * Three run down each side of his head. <br />
+         * Left is Jibo’s left and right is Jibo’s right.<br />
          * See <a href="https://app-toolkit.jibo.com/images/JiboHeadSensors.png">Head Touch Sensors</a> for a diagram.
          */
         public enum HeadTouchPads {

@@ -12,7 +12,7 @@ import com.google.gson.annotations.SerializedName;
 public class Command {
 
     /** 
-     * Types of commands available </br>
+     * Types of commands available <br />
      * Please note that some are not currently supported
      */
     public enum CommandType {
@@ -379,7 +379,7 @@ public class Command {
 
             /**
              * Location for the base coordinate frame of the robot
-             * </br>
+             * <br />
              * Defined as {@code [x: meters forward, y: meters left, z: meters up]}
              */
             public PositionTarget(int[] position) {
@@ -399,7 +399,7 @@ public class Command {
             private int[] Angle;
 
             /**
-             * Angles relative to Jibo’s current orientation </br>
+             * Angles relative to Jibo’s current orientation <br />
              * Defined as {@code [theta: twist/horiz angle, psi: vert angle]}
              */
             public AngleTarget(int[] angle) {
