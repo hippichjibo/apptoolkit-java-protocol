@@ -154,13 +154,16 @@ public class EventMessage extends BaseResponse {
     }
 
     /**
-     * Class for face tracking events. Currently unsupported.
+     * Currently unsupported </br>
+     * Class for face tracking events. 
      */
     static public class EntityTrackEvent extends BaseEvent {
 
         private TrackedEntity[] Tracks;
 
         /**
+         * Currently unsupported </br>
+         * 
          * When Jibo sees a face, they're either a known loop member or unknown.
          */
         public enum EntityType {
@@ -173,6 +176,8 @@ public class EventMessage extends BaseResponse {
         }
 
         /** 
+         * Currently unsupported </br>
+         * 
          * Get the tracks in Jibo's perceptual space
          * @return Tracks
          */
@@ -181,6 +186,7 @@ public class EventMessage extends BaseResponse {
         }
 
         /**
+         * Currently unsupported </br>
          * Info for tracking a face
          */
         static public class TrackedEntity {
@@ -191,6 +197,7 @@ public class EventMessage extends BaseResponse {
             private int[] ScreenCoords;
 
             /**
+             * Currently unsupported </br>
              * Get the ID of the tracked face
              * @return EntityID
              */
@@ -199,6 +206,7 @@ public class EventMessage extends BaseResponse {
             }
 
             /**
+             * Currently unsupported </br>
              * Get the type of track (loop member or unknown)
              * @return Type
              * */
@@ -207,6 +215,7 @@ public class EventMessage extends BaseResponse {
             }
 
             /**
+             * Currently unsupported </br>
              * Get Jibo's confidence in his identifcation of the person
              * @return Confidence `int` [0,1]
              */
@@ -215,6 +224,7 @@ public class EventMessage extends BaseResponse {
             }
 
             /**
+             * Currently unsupported </br>
              * 3-number array in space where the face exists
              * @return WorldCoords `[x: meters forward, y: meters left, z: meters up]`
              */
@@ -223,6 +233,7 @@ public class EventMessage extends BaseResponse {
             }
 
             /**
+             * Currently unsupported </br>
              * Point in Jibo's field of vision where face currently exists
              * @return ScreenCoords`[x,y]`
              */
@@ -233,7 +244,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /**
-     * Jibo achieved his lookat command. </br>
+     * Jibo achieved his lookat command </br>
      *
      * {@link EventMessage.EventType} = {@code onLookAtAchieved}
      */
@@ -489,9 +500,10 @@ public class EventMessage extends BaseResponse {
         }
     }
 
-    /** @hide */
+    /** Currently unsupported */
     public static class HotWordHeardEvent extends BaseEvent {
 
+        /** @hide */
         public static class LPSPosition {
             @SerializedName("Position")
             private int[] position;
@@ -501,6 +513,7 @@ public class EventMessage extends BaseResponse {
             float confidence;
         }
 
+        /** @hide */
         public static class SpeakerId {
             @SerializedName("Type")
             EntityTrackEvent.EntityType type;
@@ -508,6 +521,7 @@ public class EventMessage extends BaseResponse {
             float confidence;
         }
 
+        /** @hide */
         public static class Speaker {
             @SerializedName("LPSPosition")
             LPSPosition lpsPosition;
@@ -518,6 +532,7 @@ public class EventMessage extends BaseResponse {
         @SerializedName("Speaker")
         private Speaker speaker;
 
+        /** @hide */
         public Speaker getSpeaker() {
             return speaker;
         }
@@ -556,7 +571,10 @@ public class EventMessage extends BaseResponse {
         }
     }
 
-    /** Info for head touch events */
+    /** 
+     * Info for head touch events
+     * </br> See <a href="https://app-toolkit.jibo.com/images/JiboHeadSensors.png">Head Touch Sensors</a> for a diagram.
+     */
     static public class HeadTouchEvent extends BaseEvent {
 
         /** Events fired if any one of Jibo's head touch sensors is touched */
@@ -567,9 +585,9 @@ public class EventMessage extends BaseResponse {
         }
 
         /**
-         * There are 6 touch sensors on the back of Jibo’s head.
-         * Three run down each side of his head.
-         * Left is Jibo’s left and right is Jibo’s right.
+         * There are 6 touch sensors on the back of Jibo’s head. </br>
+         * Three run down each side of his head. </br>
+         * Left is Jibo’s left and right is Jibo’s right.</br>
          * See <a href="https://app-toolkit.jibo.com/images/JiboHeadSensors.png">Head Touch Sensors</a> for a diagram.
          */
         public enum HeadTouchPads {

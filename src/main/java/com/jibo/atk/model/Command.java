@@ -109,7 +109,7 @@ public class Command {
         }
     }
     /**
-     * Types of streams
+     * Types of streams from the robot that can be subscribed to
      */
     public enum StreamTypes {
         /**
@@ -123,17 +123,17 @@ public class Command {
         @SerializedName("Motion")
         Motion,
         /**
-         * `Speech` for speech input
+         * {@link ListenRequest}
          */
         @SerializedName("Speech")
         Speech,
         /**
-         * `HeadTouch` for head touch input
+         * {@link HeadTouchRequest}
          */
         @SerializedName("HeadTouch")
         HeadTouch,
         /**
-         * `ScreenGesture` for screen touch input
+         * {@link ScreenGestureRequest}
          */
         @SerializedName("ScreenGesture")
         ScreenGesture;
@@ -176,7 +176,9 @@ public class Command {
     /** Track motion */
     static public class MotionRequest extends BaseSubscribeCommand {
 
-        /** Request to track motion in Jibo's perceptual space */
+        /** 
+         * Request for Jibo to listen for {@link EventMessage.MotionEvent}.
+         */
         public MotionRequest() {
             this.StreamType = StreamTypes.Motion;
         }
@@ -197,7 +199,9 @@ public class Command {
     /** Listen for head touch input */
     static public class HeadTouchRequest extends BaseSubscribeCommand {
 
-        /** Request for Jibo to listen for a head touch */
+        /** 
+         * Request for Jibo to listen for {@link EventMessage.HeadTouchEvent}.
+         */
         public HeadTouchRequest() {
             this.StreamType = StreamTypes.HeadTouch;
         }
@@ -325,7 +329,7 @@ public class Command {
         String languageCode;
 
         /** 
-         * Request for Jibo to listen for speech input
+         * Request for Jibo to listen for {@link EventMessage.ListenResultEvent}
          * @param maxSpeechTimeout Maximum amount of time Jibo should listen to speech. Default = 15. In seconds.
          * @param maxNoSpeechTimeout Maximum amount of time Jibo should wait for speech to begin. Default = 15. In seconds.
          * @param languageCode Language to listen for. Right now only english (`en_US`) is supported. */
@@ -343,7 +347,7 @@ public class Command {
         private Boolean TrackFlag;
 
         /** 
-         * Request Jibo to look toward a specific point
+         * Request for Jibo to listen for {@link EventMessage.LookAtAchievedEvent}
          * @param lookAtTarget 	Where to make Jibo look
          * @param trackFlag Currently unsupported.
          */
@@ -549,7 +553,8 @@ public class Command {
         private CameraResolution Resolution;
         private Boolean Distortion;
 
-        /** Take a photo
+        /** 
+         * Request for Jibo to listen for {@link EventMessage.TakePhotoEvent}
          * @param camera Which camera to use (left or right). Default = left.
          * @param resolution Resolution photo to take. Default = low.
          * @param distortion 	`true` for regular lense. `false` for fisheye.
@@ -580,7 +585,11 @@ public class Command {
         }
     }
 
-    /** Capture a video */
+    /** 
+     * Get a stream of what Jibo’s cameras see. 
+     * Please note that this option does NOT record a video -- 
+     * it provides a stream of camera information.  
+     */
     static public class VideoRequest extends BaseCommand {
 
         /**
@@ -610,9 +619,7 @@ public class Command {
         }
 
         /** 
-         * Get a stream of what Jibo’s cameras see. 
-         * Please note that this option does NOT record a video -- 
-         * it provides a stream of camera information. 
+         * Request for Jibo to listen for {@link EventMessage.VideoReadyEvent}
          * @param videoType Use `NORMAL`.
          * @param duration Unsupported. Call `cancel()` to stop the stream.
          */
@@ -770,9 +777,9 @@ public class Command {
         private String name;
 
         /** 
-         * Retrieve external asset and store in local cache by name
+         * Request for Jibo to listen for {@link EventMessage.FetchAssetEvent}
          * @param uri URI to the asset to be fetched
-         * @param name Name the asset will be called by
+         * @param name Name the asset will be called by in local cache
          */
         public FetchAssetRequest(String uri, String name) {
             super(CommandType.FetchAsset);
@@ -896,7 +903,7 @@ public class Command {
         private ScreenGestureFilter streamFilter;
 
         /** 
-         * Request for Jibo to listen for screen touch input
+         * Request for Jibo to listen for {@link EventMessage.TapEvent} or {@link EventMessage.SwipeEvent}
          * @param filter Screen touch input options
          */
         public ScreenGestureRequest(ScreenGestureFilter filter) {
