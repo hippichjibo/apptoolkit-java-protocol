@@ -57,7 +57,11 @@ package com.jibo.atk.model;
          private String Credentials;
          private String Version = VER_1;
 
-         /** @hide */
+         /** 
+          * This should only be used for the {@link Command.SessionRequest} command. 
+          * Upon receiving a successful response for the SessionRequest command, 
+          * it will include a sessionId for us to use with subsequent commands.
+          */
          public RequestHeader(String transactionID) {
              super(transactionID);
          }
