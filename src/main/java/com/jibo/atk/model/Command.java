@@ -7,44 +7,61 @@ import com.google.gson.annotations.SerializedName;
  */
 
 /**
- * Classes in the Jibo Command Protocol. 
+ * Main entry point for the Jibo Command Protocol
  */
 public class Command {
 
     /** 
-     * Types of commands available. Please note that some are not currently supported.
+     * Types of commands available </br>
+     * Please note that some are not currently supported
      */
     public enum CommandType {
+        /** {@link SessionRequest} */
         @SerializedName("StartSession")
         StartSession,
+        /** {@link GetConfigRequest} */
         @SerializedName("GetConfig")
         GetConfig,
+        /** {@link SetConfigRequest} */
         @SerializedName("SetConfig")
         SetConfig,
+        /** {@link CancelRequest} */
         @SerializedName("Cancel")
         Cancel,
+        /** {@link AttentionRequest} */
         @SerializedName("SetAttention")
         SetAttention,
+        /** {@link SayRequest} */
         @SerializedName("Say")
         Say,
+        /** {@link ListenRequest} */
         @SerializedName("Listen")
         Listen,
+        /** {@link LookAtRequest} */
         @SerializedName("LookAt")
         LookAt,
+        /** {@link TakePhotoRequest} */
         @SerializedName("TakePhoto")
         TakePhoto,
+        /** {@link VideoRequest} */
         @SerializedName("Video")
         Video,
+        /** {@link DisplayRequest} */
         @SerializedName("Display")
         Display,
+        /** {@link FetchAssetRequest} */
         @SerializedName("FetchAsset")
         FetchAsset,
+        /** {@link MotionRequest} */
         @SerializedName("Motion")
         Motion,
+        /** {@link ScreenGestureRequest} */
         @SerializedName("ScreenGesture")
         ScreenGesture,
+        /** {@link EntityRequest} */
         @SerializedName("Entity")
         Entity,
+        /** {@link BaseSubscribeCommand} */
         @SerializedName("Subscribe")
         Subscribe;
     }
@@ -63,14 +80,14 @@ public class Command {
     }
 
     /** 
-     * the RequestHeader object for this command
+     * The RequestHeader object for this command
      */
     public Header.RequestHeader getClientHeader() {
         return ClientHeader;
     }
 
     /** 
-     * the BaseCommand object for this command
+     * The BaseCommand object for this command
      */
     public BaseCommand getCommand() {
         return Command;
@@ -96,13 +113,12 @@ public class Command {
      */
     public enum StreamTypes {
         /**
-         * `Entity` for face tracking
+         * {@link EntityRequest}
          */
         @SerializedName("Entity")
         Entity,
         /**
-         * `Motion` for motion tracking
-         * `Motion` for motion tracking
+         * {@link MotionRequest}
          */
         @SerializedName("Motion")
         Motion,
@@ -124,29 +140,34 @@ public class Command {
     }
 
     /** 
-     * @hide
+     * Base class for subscribing to a stream
      */
     static public class BaseSubscribeCommand extends BaseCommand {
 
         protected StreamTypes StreamType;
         protected String StreamFilter;
 
+        /** Subscribe to a stream */
         public BaseSubscribeCommand() {
             super(CommandType.Subscribe);
         }
 
+        /** Get the type of stream we're subscribing to. */
         public StreamTypes getStreamType() {
             return StreamType;
         }
 
+        /** Get the stream filter string */
         public String getStreamFilter() {
             return StreamFilter;
         }
 
+        /** Set the type of stream we're subscribint to */
         public void setStreamType(StreamTypes type) {
             this.StreamType = type;
         }
 
+        /** Set a string filter for the stream */
         public void setStreamFilter(String filter) {
             this.StreamFilter = filter;
         }
@@ -154,7 +175,8 @@ public class Command {
 
     /** Track motion */
     static public class MotionRequest extends BaseSubscribeCommand {
-        /** Request to track motion in Jibo's perceptual space. */
+
+        /** Request to track motion in Jibo's perceptual space */
         public MotionRequest() {
             this.StreamType = StreamTypes.Motion;
         }
@@ -165,15 +187,17 @@ public class Command {
         @SerializedName("Listen")
         boolean listen;
 
+        /** Currently unsupported */
         public SpeechRequest(boolean listen) {
             this.StreamType = StreamTypes.Speech;
             this.listen = listen;
         }
     }
 
-    /** Class for head touch input */
+    /** Listen for head touch input */
     static public class HeadTouchRequest extends BaseSubscribeCommand {
-        /** Request for Jibo to listen for a head touch. */
+
+        /** Request for Jibo to listen for a head touch */
         public HeadTouchRequest() {
             this.StreamType = StreamTypes.HeadTouch;
         }
@@ -185,6 +209,7 @@ public class Command {
     /** Currently unsupported */
     static public class AttentionRequest extends BaseCommand implements AtomicCommand {
 
+        /** Currently unsupported */
         public enum AttentionMode {
             @SerializedName("OFF")
             Off,
@@ -208,11 +233,13 @@ public class Command {
 
         private AttentionMode Mode;
 
+        /** Currently unsupported */
         public AttentionRequest(CommandType type, AttentionMode mode) {
             super(CommandType.SetAttention);
             Mode = mode;
         }
 
+        /** Currently unsupported */
         public AttentionMode getMode() {
             return Mode;
         }
@@ -223,7 +250,7 @@ public class Command {
         private String ID;
 
         /** 
-         * Cancel a command. 
+         * Cancel a command
          * @param id ID of the command to cancel 
          */
         public CancelRequest(String id) {
@@ -232,7 +259,7 @@ public class Command {
         }
 
         /**
-         * Get the ID of the command to cancel.
+         * Get the ID of the command to cancel
          */
         public String getID() {
             return ID;
@@ -251,7 +278,7 @@ public class Command {
     /** Get robot configuration info */
     static public class GetConfigRequest extends BaseCommand implements AtomicCommand {
 
-        /** Request for Jibo's current configurations. */
+        /** Request for Jibo's current configurations */
         public GetConfigRequest() {
             super(CommandType.GetConfig);
         }
@@ -260,7 +287,7 @@ public class Command {
     /** Set robot options */
     static public class SetConfigRequest extends BaseCommand implements AtomicCommand {
 
-        /** Class for robot config options */
+        /** Robot config options that can be set */
         public static class SetConfigOptions {
             @SerializedName("Mixer")
             private float mixer;
@@ -279,7 +306,7 @@ public class Command {
 
         /** 
          * Request for setting config options
-         * @param options Options to set. 
+         * @param options Options to set
          */
         public SetConfigRequest(SetConfigOptions options) {
             super(CommandType.SetConfig);
@@ -298,7 +325,7 @@ public class Command {
         String languageCode;
 
         /** 
-         * Request for Jibo to listen for speech input.
+         * Request for Jibo to listen for speech input
          * @param maxSpeechTimeout Maximum amount of time Jibo should listen to speech. Default = 15. In seconds.
          * @param maxNoSpeechTimeout Maximum amount of time Jibo should wait for speech to begin. Default = 15. In seconds.
          * @param languageCode Language to listen for. Right now only english (`en_US`) is supported. */
@@ -316,7 +343,7 @@ public class Command {
         private Boolean TrackFlag;
 
         /** 
-         * Request Jibo to look toward a specific point. 
+         * Request Jibo to look toward a specific point
          * @param lookAtTarget 	Where to make Jibo look
          * @param trackFlag Currently unsupported.
          */
@@ -341,14 +368,14 @@ public class Command {
         }
 
         /**
-         * Class for 3D position targets
+         * 3D position targets
          */
         static public class PositionTarget extends BaseLookAtTarget{
             private int[] Position;
 
             /**
-             * Location for the base coordinate frame of the robot.
-             *
+             * Location for the base coordinate frame of the robot
+             * </br>
              * Defined as {@code [x: meters forward, y: meters left, z: meters up]}
              */
             public PositionTarget(int[] position) {
@@ -362,13 +389,13 @@ public class Command {
         }
 
         /**
-         * Class for 2D angle targets
+         * 2D angle targets
          */
         static public class AngleTarget extends BaseLookAtTarget{
             private int[] Angle;
 
             /**
-             * Angles relative to Jibo’s current orientation.
+             * Angles relative to Jibo’s current orientation </br>
              * Defined as {@code [theta: twist/horiz angle, psi: vert angle]}
              */
             public AngleTarget(int[] angle) {
@@ -382,15 +409,15 @@ public class Command {
         }
 
         /**
-         * Class for entity (face) targets. Currently unsupported
+         * Track an entity (face). Currently unsupported
          */
         static public class EntityTarget extends BaseLookAtTarget{
             private Long Entity;
 
+            // An integer that refers to an entity that is known and available in Jibo’s LPS
+            // system. An error will be returned if that entity is no longer being tracked.
             /**
-             * Currently unsupported.
-             * An integer that refers to an entity that is known and available in Jibo’s LPS
-             * system. An error will be returned if that entity is no longer being tracked.
+             * Currently unsupported
              */
             public EntityTarget(Long entity) {
                 Entity = entity;
@@ -405,7 +432,7 @@ public class Command {
         }
 
         /**
-         * Class for camera targets
+         * Camera target info
          */
         static public class CameraTarget extends BaseLookAtTarget{
             private int[] ScreenCoords;
@@ -449,7 +476,7 @@ public class Command {
         private String ESML;
 
         /** 
-         * Make Jibo speak.
+         * Make Jibo speak
          * @param esml Straight string to speak or 
          * <a href="https://app-toolkit.jibo.com/esml/">ESML</a>
          */
@@ -535,8 +562,8 @@ public class Command {
         }
 
         /** 
-         * Which camera is being used (right or left). 
-         * Should always be left.
+         * Which camera is being used (`right` or `left`). 
+         * Should always be `left`.
          */
         public TakePhotoRequest.Camera getCamera() {
             return Camera;
@@ -587,7 +614,7 @@ public class Command {
          * Please note that this option does NOT record a video -- 
          * it provides a stream of camera information. 
          * @param videoType Use `NORMAL`.
-         * @param duration Unsupported. Call `cancel()` to stop the stream.]
+         * @param duration Unsupported. Call `cancel()` to stop the stream.
          */
         public VideoRequest(VideoRequest.VideoType videoType, Long duration) {
             super(CommandType.Video);
@@ -596,7 +623,7 @@ public class Command {
         }
 
         /** 
-         * Should always be `NORMAL`.
+         * Should always be `NORMAL`
          */
         public VideoRequest.VideoType getVideoType() {
             return VideoType;
