@@ -162,7 +162,7 @@ public class Command {
             return StreamFilter;
         }
 
-        /** Set the type of stream we're subscribint to */
+        /** Set the type of stream we're subscribing to */
         public void setStreamType(StreamTypes type) {
             this.StreamType = type;
         }
