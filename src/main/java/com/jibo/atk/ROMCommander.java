@@ -300,13 +300,14 @@ public class ROMCommander {
                 /****************SUCCESSFULL START SESSION COMMAND***************/
                     //just checking if this command is Session start command
                     if (command.getCommand() instanceof Command.SessionRequest) {
+                        //getting proper instance of Session and saving it
+                        Acknowledgment.SessionResponse sessionResponse = sGson.fromJson(jsonObject.getJSONObject("Response").toString(), Acknowledgment.SessionResponse.class);
+                        mSessionInfo = sessionResponse.getResponseBody();
+                        // trigger the onSessionStarted callback after we've finished parsing the session info
+                        // this is so if any commands are sent in the onSessionStarted callback, they will have a valid sessionID
                         if (mOnConnectionListener != null) {
                             mOnConnectionListener.onSessionStarted(this);
                         }
-                        //getting proper instance of Session and saving it
-                        Acknowledgment.SessionResponse sessionResponse = sGson.fromJson(jsonObject
-                                .getJSONObject("Response").toString(), Acknowledgment.SessionResponse.class);
-                        mSessionInfo = sessionResponse.getResponseBody();
                     } else {
                         /****************SUCCESSFULL ANY OTHER COMMAND***************/
                         //we need to send call back saying command has been successfully executed on Jibo
@@ -451,12 +452,22 @@ public class ROMCommander {
     }
 
     private String sendCommand(Command.BaseCommand commandBody, OnCommandResponseListener onCommandResponseListener) {
+        System.out.println("SEND COMMAND");
         String tranID = null;
         if (mWebSocket != null) {
+            System.out.println("WEB SOCKET IS NOT NULL");
             tranID = generateTransactionID();
 
-            Header.RequestHeader requestHeader = mSessionInfo == null ? new Header.RequestHeader(tranID)
-                    : new Header.RequestHeader(tranID, mSessionInfo.getSessionID(), mSessionInfo.getVersion());
+            Header.RequestHeader requestHeader = null;
+            if(mSessionInfo == null) {
+                System.out.println("SESSION INFO IS NULL");
+                requestHeader = new Header.RequestHeader(tranID);
+            }
+            else {
+                System.out.println("SESSION INFO IS NOT NULL. USING SESSION ID: " + mSessionInfo.getSessionID() + " AND TRANID: " + tranID);
+                requestHeader = new Header.RequestHeader(tranID, mSessionInfo.getSessionID(), mSessionInfo.getVersion());
+            }
+
             Command command = new Command(requestHeader, commandBody);
 
             if (mWebSocket.send(sGson.toJson(command))) {
