@@ -15,7 +15,7 @@ apply plugin: 'signing'
 repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
-    mavenCentral()
+    jcenter()
 }
 
 def getRepositoryUsername() {
@@ -45,6 +45,8 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.code.gson:gson:2.7'
     implementation 'org.json:json:20171018'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
