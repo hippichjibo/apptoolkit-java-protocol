@@ -452,22 +452,12 @@ public class ROMCommander {
     }
 
     private String sendCommand(Command.BaseCommand commandBody, OnCommandResponseListener onCommandResponseListener) {
-        System.out.println("SEND COMMAND");
         String tranID = null;
         if (mWebSocket != null) {
-            System.out.println("WEB SOCKET IS NOT NULL");
             tranID = generateTransactionID();
 
-            Header.RequestHeader requestHeader = null;
-            if(mSessionInfo == null) {
-                System.out.println("SESSION INFO IS NULL");
-                requestHeader = new Header.RequestHeader(tranID);
-            }
-            else {
-                System.out.println("SESSION INFO IS NOT NULL. USING SESSION ID: " + mSessionInfo.getSessionID() + " AND TRANID: " + tranID);
-                requestHeader = new Header.RequestHeader(tranID, mSessionInfo.getSessionID(), mSessionInfo.getVersion());
-            }
-
+            Header.RequestHeader requestHeader = mSessionInfo == null ? new Header.RequestHeader(tranID)
+                    : new Header.RequestHeader(tranID, mSessionInfo.getSessionID(), mSessionInfo.getVersion());
             Command command = new Command(requestHeader, commandBody);
 
             if (mWebSocket.send(sGson.toJson(command))) {
