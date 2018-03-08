@@ -37,7 +37,9 @@ import static com.jibo.atk.ROMConnectionException.ERROR_CONNECTION_PROBLEMS;
  */
 
 /**
- * Main class for the Android Command Library
+ * Main class for the Android Command Library		 + * Convenience class for the Android Command Library <br />
+ * See the <a href="https://app-toolkit.jibo.com/java-shared/reference/classes.html">Java Library</a> to bypass the
+ * convenience methods.
  */
 public class ROMCommander {
     private static final String TAG = ROMCommander.class.getSimpleName();
@@ -127,7 +129,7 @@ public class ROMCommander {
 
     /**
      * Get a stream of what Jibo’s cameras see. See EventMessage.VideoReadyEvent
-     * </br> Please note that this option does NOT record a video -- it provides a stream of camera information.
+     <br /> Please note that this option does NOT record a video -- it provides a stream of camera information.
      * @param videoType Use `NORMAL`.
      * @param duration Unsupported. Call `cancel()` to stop the stream.
      * @param onCommandResponseListener {@link OnCommandResponseListener#onVideo(String, EventMessage.VideoReadyEvent, InputStream)}
