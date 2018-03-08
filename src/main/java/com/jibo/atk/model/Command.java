@@ -7,13 +7,14 @@ import com.google.gson.annotations.SerializedName;
  */
 
 /**
- * Main entry point for the Jibo Command Protocol
+ * Class for additional command info
  */
 public class Command {
 
     /** 
      * Types of commands available <br />
      * Please note that some are not currently supported
+     * @hide
      */
     public enum CommandType {
         /** {@link SessionRequest} */
@@ -81,6 +82,7 @@ public class Command {
 
     /** 
      * The RequestHeader object for this command
+     * @hide
      */
     public Header.RequestHeader getClientHeader() {
         return ClientHeader;
@@ -88,12 +90,16 @@ public class Command {
 
     /** 
      * The BaseCommand object for this command
+     * @hide
      */
     public BaseCommand getCommand() {
         return Command;
     }
 
-    /** Base class for command */
+    /** 
+     * Base class for command
+     * @hide
+     */
     static public class BaseCommand {
         private CommandType Type;
 
@@ -110,6 +116,7 @@ public class Command {
     }
     /**
      * Types of streams from the robot that can be subscribed to
+     * @hide
      */
     public enum StreamTypes {
         /**
@@ -141,6 +148,7 @@ public class Command {
 
     /** 
      * Base class for subscribing to a stream
+     * @hide
      */
     static public class BaseSubscribeCommand extends BaseCommand {
 
@@ -173,7 +181,10 @@ public class Command {
         }
     }
 
-    /** Track motion */
+    /** 
+     * Track motion 
+     * @hide
+     */
     static public class MotionRequest extends BaseSubscribeCommand {
 
         /** 
@@ -184,7 +195,10 @@ public class Command {
         }
     }
 
-    /** Currently unsupported */
+    /** 
+     * Currently unsupported 
+     * @hide
+     */
     static public class SpeechRequest extends BaseSubscribeCommand {
         @SerializedName("Listen")
         boolean listen;
@@ -196,7 +210,10 @@ public class Command {
         }
     }
 
-    /** Listen for head touch input */
+    /** 
+     * Listen for head touch input
+     * @hide
+     */
     static public class HeadTouchRequest extends BaseSubscribeCommand {
 
         /** 
@@ -210,7 +227,10 @@ public class Command {
     /** @hide */
     public interface AtomicCommand {}
 
-    /** Currently unsupported */
+    /** 
+     * Currently unsupported 
+     * @hide
+     */
     static public class AttentionRequest extends BaseCommand implements AtomicCommand {
 
         /** Currently unsupported */
@@ -249,7 +269,10 @@ public class Command {
         }
     }
 
-    /** Cancel a command */
+    /** 
+     * Cancel a command
+     * @hide
+     */
     static public class CancelRequest extends BaseCommand implements AtomicCommand {
         private String ID;
 
@@ -270,7 +293,10 @@ public class Command {
         }
     }
 
-    /** Currently unsupported */
+    /** 
+     * Currently unsupported 
+     * @hide
+     */
     static public class EntityRequest extends BaseSubscribeCommand {
 
         public EntityRequest() {
@@ -279,7 +305,10 @@ public class Command {
         }
     }
 
-    /** Get robot configuration info */
+    /** 
+     * Get robot configuration info 
+     * @hide
+     */
     static public class GetConfigRequest extends BaseCommand implements AtomicCommand {
 
         /** Request for Jibo's current configurations */
@@ -288,7 +317,7 @@ public class Command {
         }
     }
 
-    /** Set robot options */
+    /** Additional information for setting robot configurations */
     static public class SetConfigRequest extends BaseCommand implements AtomicCommand {
 
         /** Robot config options that can be set */
@@ -311,6 +340,7 @@ public class Command {
         /** 
          * Request for setting config options
          * @param options Options to set
+         * @hide
          */
         public SetConfigRequest(SetConfigOptions options) {
             super(CommandType.SetConfig);
@@ -318,7 +348,10 @@ public class Command {
         }
     }
 
-    /** Listen for speech */
+    /** 
+     * Listen for speech 
+     * @hide
+     */
     static public class ListenRequest extends BaseCommand {
 
         @SerializedName("MaxSpeechTimeout")
@@ -341,12 +374,13 @@ public class Command {
         }
     }
 
-    /** Move Jibo */
+    /** Additional information for moving Jibo */
     static public class LookAtRequest extends BaseCommand {
         private BaseLookAtTarget LookAtTarget;
         private Boolean TrackFlag;
 
         /** 
+         * @hide
          * Request for Jibo to listen for {@link EventMessage.LookAtAchievedEvent}
          * @param lookAtTarget 	Where to make Jibo look
          * @param trackFlag Currently unsupported.
@@ -412,6 +446,7 @@ public class Command {
         }
 
         /**
+         * @hide
          * Track an entity (face). Currently unsupported
          */
         static public class EntityTarget extends BaseLookAtTarget{
@@ -472,6 +507,7 @@ public class Command {
     }
 
     /** 
+     * @hide
      * Make Jibo speak and play animations via embodied speech
      * <a href="https://app-toolkit.jibo.com/esml/">(ESML)</a>
      */
@@ -494,7 +530,10 @@ public class Command {
         }
     }
 
-    /** Start a command session */
+    /** 
+     * Start a command session
+     * @hide
+     */
     static public class SessionRequest extends BaseCommand implements AtomicCommand {
 
         /** Start a command session */
@@ -503,7 +542,7 @@ public class Command {
         }
     }
 
-    /** Take a photo */
+    /** Additional information for taking photos */
     static public class TakePhotoRequest extends BaseCommand {
 
         /**
@@ -553,6 +592,7 @@ public class Command {
         private Boolean Distortion;
 
         /** 
+         * @hide
          * Request for Jibo to listen for {@link EventMessage.TakePhotoEvent}
          * @param camera Which camera to use (left or right). Default = left.
          * @param resolution Resolution photo to take. Default = low.
@@ -585,9 +625,7 @@ public class Command {
     }
 
     /** 
-     * Get a stream of what Jibo’s cameras see. 
-     * Please note that this option does NOT record a video -- 
-     * it provides a stream of camera information.  
+     * Additional information for capturing video streams
      */
     static public class VideoRequest extends BaseCommand {
 
@@ -618,6 +656,7 @@ public class Command {
         }
 
         /** 
+         * @hide
          * Request for Jibo to listen for {@link EventMessage.VideoReadyEvent}
          * @param videoType Use `NORMAL`.
          * @param duration Unsupported. Call `cancel()` to stop the stream.
@@ -641,7 +680,7 @@ public class Command {
         }
     }
 
-    /** Display something on Jibo's screen */
+    /** Additional information for displaying something on Jibo's screen */
     static public class DisplayRequest extends BaseCommand {
 
         /**
@@ -758,6 +797,7 @@ public class Command {
         }
 
         /** 
+         * @hide
          * Request something on Jibo's screen.
          * @param displayView What to display onscreen.
          */
@@ -767,7 +807,7 @@ public class Command {
         }
     }
 
-    /** Fetch an asset */
+    /** Additional information for fetching assets */
     static public class FetchAssetRequest extends BaseCommand {
 
         @SerializedName("URI")
@@ -776,6 +816,7 @@ public class Command {
         private String name;
 
         /** 
+         * @hide
          * Request for Jibo to listen for {@link EventMessage.FetchAssetEvent}
          * @param uri URI to the asset to be fetched
          * @param name Name the asset will be called by in local cache
@@ -797,7 +838,7 @@ public class Command {
 
     }
 
-    /** Listen for screen touch input **/
+    /** Additional information for screen touch input **/
     static public class ScreenGestureRequest extends BaseCommand {
 
         /** Filters options for screen gestures */
@@ -829,7 +870,8 @@ public class Command {
                 SwipeLeft;
             }
 
-            /** Define an area on Jibo's screen. See {@link Rectangle} and {@link Circle} */
+            /** Define an area on Jibo's screen <br />
+             * See {@link Rectangle} and {@link Circle} */
             public static class Area {
                 float x;
                 float y;
@@ -904,6 +946,7 @@ public class Command {
         /** 
          * Request for Jibo to listen for {@link EventMessage.TapEvent} or {@link EventMessage.SwipeEvent}
          * @param filter Screen touch input options
+         * @hide
          */
         public ScreenGestureRequest(ScreenGestureFilter filter) {
             super(CommandType.ScreenGesture);
@@ -911,7 +954,10 @@ public class Command {
             this.streamFilter = filter;
         }
 
-        /** What type of stream is this */
+        /** 
+         * What type of stream is this
+         * @hide
+         */
         public StreamTypes getStreamType() {return streamType;}
 
         /** The screen touch options  */

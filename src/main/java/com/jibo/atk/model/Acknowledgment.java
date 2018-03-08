@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
  /**
-  * Class for acknowledgement response codes. 
+  * Class for acknowledgement response codes
   */
  public class Acknowledgment extends BaseResponse {
 
