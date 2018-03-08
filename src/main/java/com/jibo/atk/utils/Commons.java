@@ -11,6 +11,12 @@ public class Commons {
     public static final String STG_ENDPOINT = "stg-customer-portal.jibo.com";
     public static final String PREPROD_ENDPOINT = "preprod-customer-portal.jibo.com";
     public static final String PROD_ENDPOINT = "portal.jibo.com";
+
+    public static final boolean JIBO_MODE = true;
+    public static final String SOCKET_PROTOCOL = "wss://";
+    public static final String SOCKET_PORT = "7160";
+    public static final String URLS_PROTOCOL = "https://";
+
     public static final String[] ALLOWED_ENDPOINTS = {DEV_ENDPOINT, STG_ENDPOINT,PREPROD_ENDPOINT,PROD_ENDPOINT};
 
     public static String ROOT_ENDPOINT = PROD_ENDPOINT;
