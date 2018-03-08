@@ -1,7 +1,7 @@
 package com.jibo.atk;
 
+/** Interface for connecting to a robot */
 public interface OnConnectionListener {
-    /** Interface for connecting to a robot */
 
     /** We succesfully connect to the robot */
     public void onConnected();

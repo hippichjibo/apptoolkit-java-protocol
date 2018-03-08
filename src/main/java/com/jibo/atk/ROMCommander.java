@@ -37,7 +37,7 @@ import static com.jibo.atk.ROMConnectionException.ERROR_CONNECTION_PROBLEMS;
  */
 
 /**
- * Main class for the Android Command Library
+ * Main entry point for the Android Command Library
  */
 public class ROMCommander {
     private static final String TAG = ROMCommander.class.getSimpleName();
