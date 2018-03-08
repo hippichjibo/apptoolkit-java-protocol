@@ -112,7 +112,8 @@ package com.jibo.atk.model;
      }
 
      /**
-      * The Reponse header is attached to any Command message being received from the robot, delivered to the client.
+      * The Reponse header is attached to any Command message being received from the robot, 
+      * delivered to the client.
       */
      static public class ResponseHeader extends Header {
          private String RobotID;
@@ -127,7 +128,8 @@ package com.jibo.atk.model;
          }
 
          /**
-          * Construct a ResponseHeader for a Command which has been sent by the robot and received by the client.
+          * Construct a ResponseHeader for a Command which has been sent by the robot and 
+          * received by the client.
           * @param transactionID The Id for the transaction this command is a part of
           * @param sessionID The Id for the session this command is a part of
           */

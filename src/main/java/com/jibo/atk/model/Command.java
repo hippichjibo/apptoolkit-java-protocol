@@ -378,8 +378,7 @@ public class Command {
             private int[] Position;
 
             /**
-             * Location for the base coordinate frame of the robot
-             * <br />
+             * Location for the base coordinate frame of the robot <br />
              * Defined as {@code [x: meters forward, y: meters left, z: meters up]}
              */
             public PositionTarget(int[] position) {
