@@ -1,4 +1,4 @@
-package com.jibo.atk;
+package com.jibo.apptoolkit_java_protocol;
 
 /** Interface for connecting to a robot */
 public interface OnConnectionListener {

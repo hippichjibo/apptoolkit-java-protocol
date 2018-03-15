@@ -1,4 +1,4 @@
-package com.jibo.atk.model;
+package com.jibo.apptoolkit_java_protocol.model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -9,7 +9,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.jibo.atk.model.EventMessage.EventType.*;
+import static com.jibo.apptoolkit_java_protocol.model.EventMessage.EventType.*;
 
 /*
  * Created by Jibo, Inc. on 10.10.17.
