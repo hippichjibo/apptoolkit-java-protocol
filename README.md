@@ -1,5 +1,5 @@
-# app-toolkit-java
-For Java/Android compatible version of app-toolkit components
+# apptoolkit-java-protocol
+For Java compatible version of AppToolkit components
 
 #### docs
 

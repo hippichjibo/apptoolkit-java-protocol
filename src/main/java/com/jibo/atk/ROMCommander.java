@@ -126,7 +126,7 @@ public class ROMCommander {
     }
 
     /**
-     * Get a stream of what Jibo’s cameras see. See EventMessage.VideoReadyEvent
+     * Get a stream of what Jibo's cameras see. See EventMessage.VideoReadyEvent
      * </br> Please note that this option does NOT record a video -- it provides a stream of camera information.
      * @param videoType Use `NORMAL`.
      * @param duration Unsupported. Call `cancel()` to stop the stream.
@@ -183,7 +183,7 @@ public class ROMCommander {
     }
 
     /**
-     * Track motion in Jibo’s perceptual space. See EventMessage.MotionEvent
+     * Track motion in Jibo's perceptual space. See EventMessage.MotionEvent
      * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
      */
     public String motion(OnCommandResponseListener onCommandResponseListener){
@@ -296,8 +296,8 @@ public class ROMCommander {
                         }
                         disconnect();
                     }
-                } else
-                /****************SUCCESSFULL START SESSION COMMAND***************/
+                } else {
+                    /****************SUCCESSFULL START SESSION COMMAND***************/
                     //just checking if this command is Session start command
                     if (command.getCommand() instanceof Command.SessionRequest) {
                         //getting proper instance of Session and saving it
@@ -320,7 +320,9 @@ public class ROMCommander {
                             }
                         }
                     }
-            } else {
+                }
+            } 
+            else {
                 /****************THIS IS AN EVENT WE HAVE HERE****************/
                 EventMessage eventMessage = mEventFactory.parseEventMessage(response);
                 if (eventMessage == null) return;
