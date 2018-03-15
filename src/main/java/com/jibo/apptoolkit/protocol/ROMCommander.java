@@ -1,18 +1,18 @@
-package com.jibo.apptoolkit_java_protocol;
+package com.jibo.apptoolkit.protocol;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.jibo.apptoolkit_java_protocol.model.Acknowledgment;
-import com.jibo.apptoolkit_java_protocol.model.Command;
-import com.jibo.apptoolkit_java_protocol.model.EventMessage;
-import com.jibo.apptoolkit_java_protocol.model.Header;
-import com.jibo.apptoolkit_java_protocol.utils.Commons;
-import com.jibo.apptoolkit_java_protocol.utils.LruCache;
-import com.jibo.apptoolkit_java_protocol.utils.StringUtils;
-import com.jibo.apptoolkit_java_protocol.utils.Util;
-import com.jibo.apptoolkit_java_protocol.OnConnectionListener;
-import com.jibo.apptoolkit_java_protocol.utils.LruCache;
-import com.jibo.apptoolkit_java_protocol.utils.StringUtils;
+import com.jibo.apptoolkit.protocol.model.Acknowledgment;
+import com.jibo.apptoolkit.protocol.model.Command;
+import com.jibo.apptoolkit.protocol.model.EventMessage;
+import com.jibo.apptoolkit.protocol.model.Header;
+import com.jibo.apptoolkit.protocol.utils.Commons;
+import com.jibo.apptoolkit.protocol.utils.LruCache;
+import com.jibo.apptoolkit.protocol.utils.StringUtils;
+import com.jibo.apptoolkit.protocol.utils.Util;
+import com.jibo.apptoolkit.protocol.OnConnectionListener;
+import com.jibo.apptoolkit.protocol.utils.LruCache;
+import com.jibo.apptoolkit.protocol.utils.StringUtils;
 
 import org.json.JSONObject;
 
@@ -29,8 +29,8 @@ import javax.net.ssl.SSLSession;
 
 import okhttp3.WebSocket;
 
-import static com.jibo.apptoolkit_java_protocol.ROMConnectionException.ERROR_CONNECTION_PROBLEMS;
-import static com.jibo.apptoolkit_java_protocol.ROMConnectionException.ERROR_CONNECTION_PROBLEMS;
+import static com.jibo.apptoolkit.protocol.ROMConnectionException.ERROR_CONNECTION_PROBLEMS;
+import static com.jibo.apptoolkit.protocol.ROMConnectionException.ERROR_CONNECTION_PROBLEMS;
 
 /*
  * Created by alexz on 01.11.17.

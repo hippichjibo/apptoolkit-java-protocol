@@ -1,4 +1,4 @@
-package com.jibo.apptoolkit_java_protocol.api;
+package com.jibo.apptoolkit.protocol.api;
 
 /*
  * Created by Jibo, Inc. on 1/26/18.

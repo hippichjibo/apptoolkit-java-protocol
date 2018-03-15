@@ -1,4 +1,4 @@
-package com.jibo.apptoolkit_java_protocol.utils;
+package com.jibo.apptoolkit.protocol.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
