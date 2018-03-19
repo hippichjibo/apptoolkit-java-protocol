@@ -14,7 +14,7 @@ public class Command {
     /** 
      * Types of commands available <br />
      * Please note that some are not currently supported
-     * @hide
+     * @treatAsPrivate
      */
     public enum CommandType {
         /** {@link SessionRequest} */
@@ -98,7 +98,7 @@ public class Command {
 
     /** 
      * Base class for command
-     * @hide
+     * @treatAsPrivate
      */
     static public class BaseCommand {
         private CommandType Type;

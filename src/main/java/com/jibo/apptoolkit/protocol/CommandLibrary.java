@@ -29,8 +29,7 @@ import javax.net.ssl.SSLSession;
 
 import okhttp3.WebSocket;
 
-import static com.jibo.apptoolkit.protocol.ROMConnectionException.ERROR_CONNECTION_PROBLEMS;
-import static com.jibo.apptoolkit.protocol.ROMConnectionException.ERROR_CONNECTION_PROBLEMS;
+import static com.jibo.apptoolkit.protocol.ConnectionException.ERROR_CONNECTION_PROBLEMS;
 
 /*
  * Created by alexz on 01.11.17.
@@ -39,8 +38,8 @@ import static com.jibo.apptoolkit.protocol.ROMConnectionException.ERROR_CONNECTI
 /**
  * Main entry point for the Android Command Library
  */
-public class ROMCommander {
-    private static final String TAG = ROMCommander.class.getSimpleName();
+public class CommandLibrary {
+    private static final String TAG = CommandLibrary.class.getSimpleName();
 
     /** @hide */
     public static Gson sGson = new GsonBuilder().serializeNulls().create();
@@ -60,7 +59,7 @@ public class ROMCommander {
     private HttpURLConnection mVideoUrlConnection;
     private HttpURLConnection mGestureUrlConnection;
 
-    public ROMCommander(SSLContext sslContext, WebSocket webSocket, String ipAddress, OnConnectionListener onConnectionListener) {
+    public CommandLibrary(SSLContext sslContext, WebSocket webSocket, String ipAddress, OnConnectionListener onConnectionListener) {
         this.mSslContext = sslContext;
         this.mWebSocket = webSocket;
         mIpAddress = ipAddress;
@@ -292,7 +291,7 @@ public class ROMCommander {
                     //if we find that the error belongs to StartSession command then we perform the disconnect
                     if (command.getCommand() instanceof Command.SessionRequest) {
                         if (mOnConnectionListener != null) {
-                            mOnConnectionListener.onConnectionFailed(new ROMConnectionException(ERROR_CONNECTION_PROBLEMS));
+                            mOnConnectionListener.onConnectionFailed(new ConnectionException(ERROR_CONNECTION_PROBLEMS));
                         }
                         disconnect();
                     }
@@ -430,7 +429,7 @@ public class ROMCommander {
 
         } catch (Exception e) {
             if (onCommandResponseListeners.containsKey(transactionID)) {
-                onCommandResponseListeners.get(transactionID).onError(transactionID, ROMConnectionException.ERROR_INTERNAL_SYSTEM);
+                onCommandResponseListeners.get(transactionID).onError(transactionID, ConnectionException.ERROR_INTERNAL_SYSTEM);
             }
             System.out.print(TAG + " Error parsing Jibo response " + e.getMessage());
         }
