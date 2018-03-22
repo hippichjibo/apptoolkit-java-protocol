@@ -1,4 +1,4 @@
-package com.jibo.atk.api;
+package com.jibo.apptoolkit.protocol.api;
 
 import java.util.List;
 

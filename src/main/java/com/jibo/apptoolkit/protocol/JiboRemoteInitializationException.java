@@ -1,4 +1,4 @@
-package com.jibo.atk;
+package com.jibo.apptoolkit.protocol;
 
 /**
  * Created by alexz on 12/22/2017.
