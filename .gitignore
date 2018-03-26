@@ -16,5 +16,6 @@ local.properties
 .classpath
 .project
 .settings/
+.vscode
 
 apptoolkit-java-protocol.iml
