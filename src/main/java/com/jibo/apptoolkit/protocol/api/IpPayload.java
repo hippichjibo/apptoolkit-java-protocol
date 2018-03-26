@@ -1,4 +1,4 @@
-package com.jibo.atk.api;
+package com.jibo.apptoolkit.protocol.api;
 
 /*
  * Created by Jibo, Inc. on 1/26/18.

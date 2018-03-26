@@ -1,4 +1,4 @@
-package com.jibo.atk.utils;
+package com.jibo.apptoolkit.protocol.utils;
 
 /**
  * Created by calvinator on 3/7/18.

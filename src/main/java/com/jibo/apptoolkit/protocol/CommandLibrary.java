@@ -1,18 +1,18 @@
-package com.jibo.atk;
+package com.jibo.apptoolkit.protocol;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.jibo.atk.model.Acknowledgment;
-import com.jibo.atk.model.Command;
-import com.jibo.atk.model.EventMessage;
-import com.jibo.atk.model.Header;
-import com.jibo.atk.utils.Commons;
-import com.jibo.atk.utils.LruCache;
-import com.jibo.atk.utils.StringUtils;
-import com.jibo.atk.utils.Util;
-import com.jibo.atk.OnConnectionListener;
-import com.jibo.atk.utils.LruCache;
-import com.jibo.atk.utils.StringUtils;
+import com.jibo.apptoolkit.protocol.model.Acknowledgment;
+import com.jibo.apptoolkit.protocol.model.Command;
+import com.jibo.apptoolkit.protocol.model.EventMessage;
+import com.jibo.apptoolkit.protocol.model.Header;
+import com.jibo.apptoolkit.protocol.utils.Commons;
+import com.jibo.apptoolkit.protocol.utils.LruCache;
+import com.jibo.apptoolkit.protocol.utils.StringUtils;
+import com.jibo.apptoolkit.protocol.utils.Util;
+import com.jibo.apptoolkit.protocol.OnConnectionListener;
+import com.jibo.apptoolkit.protocol.utils.LruCache;
+import com.jibo.apptoolkit.protocol.utils.StringUtils;
 
 import org.json.JSONObject;
 
@@ -29,8 +29,7 @@ import javax.net.ssl.SSLSession;
 
 import okhttp3.WebSocket;
 
-import static com.jibo.atk.ROMConnectionException.ERROR_CONNECTION_PROBLEMS;
-import static com.jibo.atk.ROMConnectionException.ERROR_CONNECTION_PROBLEMS;
+import static com.jibo.apptoolkit.protocol.ConnectionException.ERROR_CONNECTION_PROBLEMS;
 
 /*
  * Created by alexz on 01.11.17.
@@ -39,8 +38,8 @@ import static com.jibo.atk.ROMConnectionException.ERROR_CONNECTION_PROBLEMS;
 /**
  * Main entry point for the Android Command Library
  */
-public class ROMCommander {
-    private static final String TAG = ROMCommander.class.getSimpleName();
+public class CommandLibrary {
+    private static final String TAG = CommandLibrary.class.getSimpleName();
 
     /** @hide */
     public static Gson sGson = new GsonBuilder().serializeNulls().create();
@@ -60,7 +59,7 @@ public class ROMCommander {
     private HttpURLConnection mVideoUrlConnection;
     private HttpURLConnection mGestureUrlConnection;
 
-    public ROMCommander(SSLContext sslContext, WebSocket webSocket, String ipAddress, OnConnectionListener onConnectionListener) {
+    public CommandLibrary(SSLContext sslContext, WebSocket webSocket, String ipAddress, OnConnectionListener onConnectionListener) {
         this.mSslContext = sslContext;
         this.mWebSocket = webSocket;
         mIpAddress = ipAddress;
@@ -126,7 +125,7 @@ public class ROMCommander {
     }
 
     /**
-     * Get a stream of what Jibo’s cameras see. See EventMessage.VideoReadyEvent
+     * Get a stream of what Jibo's cameras see. See EventMessage.VideoReadyEvent
      * </br> Please note that this option does NOT record a video -- it provides a stream of camera information.
      * @param videoType Use `NORMAL`.
      * @param duration Unsupported. Call `cancel()` to stop the stream.
@@ -183,7 +182,7 @@ public class ROMCommander {
     }
 
     /**
-     * Track motion in Jibo’s perceptual space. See EventMessage.MotionEvent
+     * Track motion in Jibo's perceptual space. See EventMessage.MotionEvent
      * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
      */
     public String motion(OnCommandResponseListener onCommandResponseListener){
@@ -292,12 +291,12 @@ public class ROMCommander {
                     //if we find that the error belongs to StartSession command then we perform the disconnect
                     if (command.getCommand() instanceof Command.SessionRequest) {
                         if (mOnConnectionListener != null) {
-                            mOnConnectionListener.onConnectionFailed(new ROMConnectionException(ERROR_CONNECTION_PROBLEMS));
+                            mOnConnectionListener.onConnectionFailed(new ConnectionException(ERROR_CONNECTION_PROBLEMS));
                         }
                         disconnect();
                     }
-                } else
-                /****************SUCCESSFULL START SESSION COMMAND***************/
+                } else {
+                    /****************SUCCESSFULL START SESSION COMMAND***************/
                     //just checking if this command is Session start command
                     if (command.getCommand() instanceof Command.SessionRequest) {
                         //getting proper instance of Session and saving it
@@ -320,7 +319,9 @@ public class ROMCommander {
                             }
                         }
                     }
-            } else {
+                }
+            } 
+            else {
                 /****************THIS IS AN EVENT WE HAVE HERE****************/
                 EventMessage eventMessage = mEventFactory.parseEventMessage(response);
                 if (eventMessage == null) return;
@@ -428,7 +429,7 @@ public class ROMCommander {
 
         } catch (Exception e) {
             if (onCommandResponseListeners.containsKey(transactionID)) {
-                onCommandResponseListeners.get(transactionID).onError(transactionID, ROMConnectionException.ERROR_INTERNAL_SYSTEM);
+                onCommandResponseListeners.get(transactionID).onError(transactionID, ConnectionException.ERROR_INTERNAL_SYSTEM);
             }
             System.out.print(TAG + " Error parsing Jibo response " + e.getMessage());
         }

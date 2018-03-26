@@ -1,4 +1,4 @@
-package com.jibo.atk;
+package com.jibo.apptoolkit.protocol;
 
 /** Interface for connecting to a robot */
 public interface OnConnectionListener {
@@ -7,7 +7,7 @@ public interface OnConnectionListener {
     public void onConnected();
 
     /** We've started sending commands to the robot */
-    public void onSessionStarted(ROMCommander romCommander);
+    public void onSessionStarted(CommandLibrary commandLibrary);
 
     /** We were unable to connect from the robot */
     public void onConnectionFailed(Throwable throwable);

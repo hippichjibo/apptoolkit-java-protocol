@@ -1,4 +1,4 @@
-package com.jibo.atk.api;
+package com.jibo.apptoolkit.protocol.api;
 
 import com.google.gson.annotations.SerializedName;
 
