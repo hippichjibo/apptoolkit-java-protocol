@@ -1,9 +1,3 @@
-# apptoolkit-java-protocol
-For Java compatible version of AppToolkit components
+## Jibo App Toolkit - Java Command Library
 
-#### docs
-
-```
-gradle generateJavadoc
-open javadocs/index.html
-``` 
+See the [Jibo App Toolkit site](https://app-toolkit.jibo.com/library/) for more information.
