@@ -10,6 +10,7 @@
 apply plugin: 'java-library'
 apply plugin: 'maven'
 apply plugin: 'signing'
+apply plugin: 'maven-publish'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -71,8 +72,12 @@ afterEvaluate { project ->
 
                 //repository(url: "~/.m2/repository")
 
-                repository(url: getReleaseRepositoryUrl()) {
-                    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+                repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                    authentication(userName: "$mavenUser", password: "$mavenPassword")
+                }
+
+                snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                    authentication(userName: "$mavenUser", password: "$mavenPassword")
                 }
 
                 pom.groupId = GROUP
@@ -138,6 +143,7 @@ afterEvaluate { project ->
 
     artifacts {
         archives jar
+        archives sourcesJar
         archives packageJavadoc
     }
 }
