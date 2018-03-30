@@ -32,6 +32,11 @@ def getReleaseRepositoryUrl() {
             : "http://artifactory.jibo.com/artifactory/Android_maven"
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def mavenUser = properties.getProperty('mavenUser')
+def mavenPassword = properties.getProperty('mavenPassword')
+
 targetCompatibility = '1.7'
 sourceCompatibility = '1.7'
 
@@ -64,91 +69,165 @@ task generateJavadoc(type: Javadoc, dependsOn: project.configurations.doclava) {
 }
 
 
-afterEvaluate { project ->
-    uploadArchives {
-        repositories {
-            mavenDeployer {
-                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+// afterEvaluate { project ->
+//     uploadArchives {
+//         repositories {
+//             mavenDeployer {
+//                 beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-                //repository(url: "~/.m2/repository")
+//                 //repository(url: "~/.m2/repository")
 
-                // Internal artifactory
-                //repository(url: getReleaseRepositoryUrl()) {
-                //    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
-                //}
+// println("GOT HERE")
+//                 // repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+//                 //     authentication(userName: "$mavenUser", password: "$mavenPassword")
+//                 // }
 
-                repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                    authentication(userName: "$mavenUser", password: "$mavenPassword")
-                }
+//                 // snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+//                 //     authentication(userName: "$mavenUser", password: "$mavenPassword")
+//                 // }
 
-                snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                    authentication(userName: "$mavenUser", password: "$mavenPassword")
-                }
+//                 pom.groupId = GROUP
+//                 pom.version = project.VERSION_NAME
 
-                pom.groupId = GROUP
-                pom.version = project.VERSION_NAME
+//                 pom.project {
+//                     name POM_NAME
+//                     packaging POM_PACKAGING
+//                     description POM_DESCRIPTION
+//                     url POM_URL
 
-                pom.project {
-                    name POM_NAME
-                    packaging POM_PACKAGING
-                    description POM_DESCRIPTION
-                    url POM_URL
+//                     scm {
+//                         url POM_SCM_URL
+//                         connection POM_SCM_CONNECTION
+//                         developerConnection POM_SCM_DEV_CONNECTION
+//                     }
 
-                    scm {
-                        url POM_SCM_URL
-                        connection POM_SCM_CONNECTION
-                        developerConnection POM_SCM_DEV_CONNECTION
+//                     licenses {
+//                         license {
+//                             name POM_LICENSE_NAME
+//                             url POM_LICENSE_URL
+//                             distribution POM_LICENSE_DIST
+//                         }
+//                     }
+
+//                     developers {
+//                         developer {
+//                             id POM_DEVELOPER_ID
+//                             name POM_DEVELOPER_NAME
+//                         }
+//                     }
+//                     dependencies {
+//                         dependency {
+//                             groupId 'com.google.code.gson'
+//                             artifactId 'gson'
+//                             version '2.7'
+//                         }
+//                         dependency {
+//                             groupId 'org.json'
+//                             artifactId 'json'
+//                             version '20171018'
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+signing {
+    required { gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
+task packageJavadoc(type: Jar, dependsOn: 'generateJavadoc') {
+    from file("./javadocs/")
+        classifier = 'javadoc'
+}
+
+task sourcesJar ( type: Jar, dependsOn: classes ) {
+    classifier 'sources'
+    from sourceSets.main.allJava
+}
+
+afterEvaluate {
+    tasks.whenTaskAdded { task ->
+        if (task.name == 'deploy') {
+            task.dependsOn 'copyNativeLibs'
+        }
+    }
+}
+
+task deploy {
+    afterEvaluate {
+        uploadArchives {
+            repositories {
+                mavenDeployer {
+                    beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+                    pom.groupId = GROUP
+                    pom.version = project.VERSION_NAME
+
+                    println(" publishing to central repo ")
+
+                    // Internal artifactory
+                    //repository(url: getReleaseRepositoryUrl()) {
+                    //    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+                    //}
+
+                    repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                        authentication(userName: mavenUser, password: mavenPassword)
                     }
 
-                    licenses {
-                        license {
-                            name POM_LICENSE_NAME
-                            url POM_LICENSE_URL
-                            distribution POM_LICENSE_DIST
-                        }
+                    snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                        authentication(userName: mavenUser, password: mavenPassword)
                     }
 
-                    developers {
-                        developer {
-                            id POM_DEVELOPER_ID
-                            name POM_DEVELOPER_NAME
+                    pom.project {
+                        name POM_NAME
+                        packaging POM_PACKAGING
+                        description POM_DESCRIPTION
+                        url POM_URL
+
+                        scm {
+                            url POM_SCM_URL
+                            connection POM_SCM_CONNECTION
+                            developerConnection POM_SCM_DEV_CONNECTION
                         }
-                    }
-                    dependencies {
-                        dependency {
-                            groupId 'com.google.code.gson'
-                            artifactId 'gson'
-                            version '2.7'
+
+                        licenses {
+                            license {
+                                name POM_LICENSE_NAME
+                                url POM_LICENSE_URL
+                                distribution POM_LICENSE_DIST
+                            }
                         }
-                        dependency {
-                            groupId 'org.json'
-                            artifactId 'json'
-                            version '20171018'
+
+                        developers {
+                            developer {
+                                id POM_DEVELOPER_ID
+                                name POM_DEVELOPER_NAME
+                            }
+                        }
+                        dependencies {
+                            dependency {
+                                groupId 'com.google.code.gson'
+                                artifactId 'gson'
+                                version '2.7'
+                            }
+                            dependency {
+                                groupId 'org.json'
+                                artifactId 'json'
+                                version '20171018'
+                            }
                         }
                     }
                 }
             }
         }
-    }
-
-    signing {
-        required { gradle.taskGraph.hasTask("uploadArchives") }
-        sign configurations.archives
-    }
-
-    task packageJavadoc(type: Jar, dependsOn: 'generateJavadoc') {
-        from file("./javadocs/")
-          classifier = 'javadoc'
-    }
-
-    task sourcesJar ( type: Jar, dependsOn: classes ) {
-        classifier 'sources'
-        from sourceSets.main.allJava
-    }
-
-    artifacts {
-        archives jar
-        archives sourcesJar
-        archives packageJavadoc
-    }
+        artifacts {
+            archives jar
+            archives sourcesJar
+            archives packageJavadoc
+        }
+    }   
 }
+
+    
