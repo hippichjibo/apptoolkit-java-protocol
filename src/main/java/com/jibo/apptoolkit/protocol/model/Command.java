@@ -11,7 +11,7 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Command {
 
-    /** 
+    /**
      * Types of commands available <br />
      * Please note that some are not currently supported
      * @treatAsPrivate
@@ -70,7 +70,7 @@ public class Command {
     private Header.RequestHeader ClientHeader;
     private BaseCommand Command;
 
-    /** 
+    /**
      * A command object to be sent over the websocket to be received by the robot from the client.
      * @param clientHeader The RequestHeader object for this Command
      * @param command The BaseCommand object for this Command
@@ -80,7 +80,7 @@ public class Command {
         Command = command;
     }
 
-    /** 
+    /**
      * The RequestHeader object for this command
      * @hide
      */
@@ -88,7 +88,7 @@ public class Command {
         return ClientHeader;
     }
 
-    /** 
+    /**
      * The BaseCommand object for this command
      * @hide
      */
@@ -96,7 +96,7 @@ public class Command {
         return Command;
     }
 
-    /** 
+    /**
      * Base class for command
      * @treatAsPrivate
      */
@@ -106,8 +106,8 @@ public class Command {
         private BaseCommand(CommandType type) {
             this.Type = type;
         }
-        
-        /** 
+
+        /**
          * What type of command is this
          */
         public CommandType getType() {
@@ -146,14 +146,14 @@ public class Command {
         ScreenGesture;
     }
 
-    /** 
+    /**
      * Base class for subscribing to a stream
      * @hide
      */
     static public class BaseSubscribeCommand extends BaseCommand {
 
-        protected StreamTypes StreamType;
-        protected String StreamFilter;
+        StreamTypes StreamType;
+        BaseSubscribeFilter StreamFilter;
 
         /** Subscribe to a stream */
         public BaseSubscribeCommand() {
@@ -166,7 +166,7 @@ public class Command {
         }
 
         /** Get the stream filter string */
-        public String getStreamFilter() {
+        public BaseSubscribeFilter getStreamFilter() {
             return StreamFilter;
         }
 
@@ -176,18 +176,141 @@ public class Command {
         }
 
         /** Set a string filter for the stream */
-        public void setStreamFilter(String filter) {
+        public void setStreamFilter(BaseSubscribeFilter filter) {
             this.StreamFilter = filter;
         }
     }
 
-    /** 
-     * Track motion 
+    static public class BaseSubscribeFilter {
+
+    }
+
+    /** Additional information for screen touch input **/
+    static public class ScreenGestureRequest extends BaseSubscribeCommand {
+
+        /** Filters options for screen gestures */
+        public static class ScreenGestureFilter extends BaseSubscribeFilter {
+
+            /**
+             * Type of screen gesture
+             */
+            public enum ScreenGestureType {
+                /**
+                 * Tap
+                 */
+                Tap,
+                /**
+                 * Swipe from top to bottom
+                 */
+                SwipeDown,
+                /**
+                 * Swipe from bottom to top
+                 */
+                SwipeUp,
+                /**
+                 * Swipe from left to right
+                 */
+                SwipeRight,
+                /**
+                 * Swipe from right to left
+                 */
+                SwipeLeft;
+            }
+
+            /** Define an area on Jibo's screen <br />
+             * See {@link Rectangle} and {@link Circle} */
+            public static class Area {
+                float x;
+                float y;
+                /**
+                 * Pixel on the screen in which to listen for screen gesture.
+                 */
+                public Area(float x, float y){
+                    /** horizontal coordinate */
+                    this.x = x;
+                    /** vertical coordinate */
+                    this.y = y;
+                }
+            }
+
+            /** Define a rectangular area on Jibo's screen */
+            public static class Rectangle extends Area{
+                float width;
+                float height;
+
+                /**
+                 * Rectangular area on the screen in which to listen for screen gesture
+                 * where {@code (x,y) } is the top-left corner of the rectangle.
+                 *  All params in pixels.
+                 */
+                public Rectangle(float x, float y, float width, float height) {
+                    super(x, y);
+                    this.width = width;
+                    this.height = height;
+                }
+            }
+
+            /** Define a circular area on Jibo's screen */
+            public static class Circle extends Area{
+                float radius;
+
+                /**
+                 * Circular area in which to listen for screen gesture
+                 *  where {@code (x,y) } is the center of the circle.
+                 *  All params in pixels.
+                 */
+                public Circle(float x, float y, float radius) {
+                    super(x, y);
+                    this.radius = radius;
+                }
+            }
+
+            @SerializedName("Type")
+            private ScreenGestureType type;
+
+            @SerializedName("Area")
+            private Area area;
+
+            /**
+             * Screen gesture information.
+             * @param type Type of gesture to listen for
+             * @param area Area to listen for gesture in
+             */
+            public ScreenGestureFilter(ScreenGestureType type, Area area){
+                this.type = type;
+                this.area = area;
+            }
+
+        }
+
+        /**
+         * Request for Jibo to listen for {@link EventMessage.TapEvent} or {@link EventMessage.SwipeEvent}
+         * @param filter Screen touch input options
+         * @hide
+         */
+        public ScreenGestureRequest(ScreenGestureFilter filter) {
+
+            this.setStreamType(StreamTypes.ScreenGesture);
+            this.setStreamFilter(filter);
+        }
+
+        /**
+         * What type of stream is this
+         * @hide
+         */
+        public StreamTypes getStreamType() {return StreamType;}
+
+        /** The screen touch options  */
+        public ScreenGestureFilter getScreenGestureFilter() {return (ScreenGestureFilter)StreamFilter;}
+    }
+
+    /**
+     * Track motion
      * @hide
      */
     static public class MotionRequest extends BaseSubscribeCommand {
 
-        /** 
+        /**
          * Request for Jibo to listen for {@link EventMessage.MotionEvent}.
          */
         public MotionRequest() {
@@ -195,8 +318,8 @@ public class Command {
         }
     }
 
-    /** 
-     * Currently unsupported 
+    /**
+     * Currently unsupported
      * @hide
      */
     static public class SpeechRequest extends BaseSubscribeCommand {
@@ -210,13 +333,13 @@ public class Command {
         }
     }
 
-    /** 
+    /**
      * Listen for head touch input
      * @hide
      */
     static public class HeadTouchRequest extends BaseSubscribeCommand {
 
-        /** 
+        /**
          * Request for Jibo to listen for {@link EventMessage.HeadTouchEvent}.
          */
         public HeadTouchRequest() {
@@ -227,8 +350,8 @@ public class Command {
     /** @hide */
     public interface AtomicCommand {}
 
-    /** 
-     * Currently unsupported 
+    /**
+     * Currently unsupported
      * @hide
      */
     static public class AttentionRequest extends BaseCommand implements AtomicCommand {
@@ -269,16 +392,16 @@ public class Command {
         }
     }
 
-    /** 
+    /**
      * Cancel a command
      * @hide
      */
     static public class CancelRequest extends BaseCommand implements AtomicCommand {
         private String ID;
 
-        /** 
+        /**
          * Cancel a command
-         * @param id ID of the command to cancel 
+         * @param id ID of the command to cancel
          */
         public CancelRequest(String id) {
             super(CommandType.Cancel);
@@ -293,8 +416,8 @@ public class Command {
         }
     }
 
-    /** 
-     * Currently unsupported 
+    /**
+     * Currently unsupported
      * @hide
      */
     static public class EntityRequest extends BaseSubscribeCommand {
@@ -305,8 +428,8 @@ public class Command {
         }
     }
 
-    /** 
-     * Get robot configuration info 
+    /**
+     * Get robot configuration info
      * @hide
      */
     static public class GetConfigRequest extends BaseCommand implements AtomicCommand {
@@ -327,7 +450,7 @@ public class Command {
 
             /**
              * Robot configuration options that can be set by your app
-             * @param mixer Robot volume between 0 (mute) and 1 (loudest) 
+             * @param mixer Robot volume between 0 (mute) and 1 (loudest)
              */
             public SetConfigOptions(float mixer){
                 this.mixer = mixer;
@@ -337,7 +460,7 @@ public class Command {
         @SerializedName("Options")
         private SetConfigOptions options;
 
-        /** 
+        /**
          * Request for setting config options
          * @param options Options to set
          * @hide
@@ -348,8 +471,8 @@ public class Command {
         }
     }
 
-    /** 
-     * Listen for speech 
+    /**
+     * Listen for speech
      * @hide
      */
     static public class ListenRequest extends BaseCommand {
@@ -361,7 +484,7 @@ public class Command {
         @SerializedName("LanguageCode")
         String languageCode;
 
-        /** 
+        /**
          * Request for Jibo to listen for {@link EventMessage.ListenResultEvent}
          * @param maxSpeechTimeout Maximum amount of time Jibo should listen to speech. Default = 15. In seconds.
          * @param maxNoSpeechTimeout Maximum amount of time Jibo should wait for speech to begin. Default = 15. In seconds.
@@ -379,7 +502,7 @@ public class Command {
         private BaseLookAtTarget LookAtTarget;
         private Boolean TrackFlag;
 
-        /** 
+        /**
          * @hide
          * Request for Jibo to listen for {@link EventMessage.LookAtAchievedEvent}
          * @param lookAtTarget 	Where to make Jibo look
@@ -506,7 +629,7 @@ public class Command {
         }
     }
 
-    /** 
+    /**
      * @hide
      * Make Jibo speak and play animations via embodied speech
      * <a href="https://app-toolkit.jibo.com/esml/">(ESML)</a>
@@ -514,9 +637,9 @@ public class Command {
     static public class SayRequest extends BaseCommand {
         private String ESML;
 
-        /** 
+        /**
          * Make Jibo speak
-         * @param esml Straight string to speak or 
+         * @param esml Straight string to speak or
          * <a href="https://app-toolkit.jibo.com/esml/">ESML</a>
          */
         public SayRequest(String esml) {
@@ -530,7 +653,7 @@ public class Command {
         }
     }
 
-    /** 
+    /**
      * Start a command session
      * @hide
      */
@@ -591,7 +714,7 @@ public class Command {
         private CameraResolution Resolution;
         private Boolean Distortion;
 
-        /** 
+        /**
          * @hide
          * Request for Jibo to listen for {@link EventMessage.TakePhotoEvent}
          * @param camera Which camera to use (left or right). Default = left.
@@ -605,8 +728,8 @@ public class Command {
             Distortion = distortion;
         }
 
-        /** 
-         * Which camera is being used (`right` or `left`). 
+        /**
+         * Which camera is being used (`right` or `left`).
          * Should always be `left`.
          */
         public TakePhotoRequest.Camera getCamera() {
@@ -624,7 +747,7 @@ public class Command {
         }
     }
 
-    /** 
+    /**
      * Additional information for capturing video streams
      */
     static public class VideoRequest extends BaseCommand {
@@ -655,7 +778,7 @@ public class Command {
             Duration = 0L;
         }
 
-        /** 
+        /**
          * @hide
          * Request for Jibo to listen for {@link EventMessage.VideoReadyEvent}
          * @param videoType Use `NORMAL`.
@@ -667,7 +790,7 @@ public class Command {
             Duration = duration;
         }
 
-        /** 
+        /**
          * Should always be `NORMAL`
          */
         public VideoRequest.VideoType getVideoType() {
@@ -796,7 +919,7 @@ public class Command {
             return view;
         }
 
-        /** 
+        /**
          * @hide
          * Request something on Jibo's screen.
          * @param displayView What to display onscreen.
@@ -815,7 +938,7 @@ public class Command {
         @SerializedName("Name")
         private String name;
 
-        /** 
+        /**
          * @hide
          * Request for Jibo to listen for {@link EventMessage.FetchAssetEvent}
          * @param uri URI to the asset to be fetched
@@ -836,132 +959,6 @@ public class Command {
             return name;
         }
 
-    }
-
-    /** Additional information for screen touch input **/
-    static public class ScreenGestureRequest extends BaseCommand {
-
-        /** Filters options for screen gestures */
-        public static class ScreenGestureFilter {
-
-            /**
-             * Type of screen gesture
-             */
-            public enum ScreenGestureType {
-                /**
-                 * Tap
-                 */
-                Tap,
-                /**
-                 * Swipe from top to bottom
-                 */
-                SwipeDown,
-                /**
-                 * Swipe from bottom to top
-                 */
-                SwipeUp,
-                /**
-                 * Swipe from left to right
-                 */
-                SwipeRight,
-                /**
-                 * Swipe from right to left
-                 */
-                SwipeLeft;
-            }
-
-            /** Define an area on Jibo's screen <br />
-             * See {@link Rectangle} and {@link Circle} */
-            public static class Area {
-                float x;
-                float y;
-                /**
-                 * Pixel on the screen in which to listen for screen gesture.
-                 */
-                public Area(float x, float y){
-                    /** horizontal coordinate */
-                    this.x = x;
-                    /** vertical coordinate */
-                    this.y = y;
-                }
-            }
-
-            /** Define a rectangular area on Jibo's screen */
-            public static class Rectangle extends Area{
-                float width;
-                float height;
-
-                /**
-                 * Rectangular area on the screen in which to listen for screen gesture
-                 * where {@code (x,y) } is the top-left corner of the rectangle.
-                 *  All params in pixels.
-                 */
-                public Rectangle(float x, float y, float width, float height) {
-                    super(x, y);
-                    this.width = width;
-                    this.height = height;
-                }
-            }
-
-            /** Define a circular area on Jibo's screen */
-            public static class Circle extends Area{
-                float radius;
-
-                /**
-                 * Circular area in which to listen for screen gesture
-                 *  where {@code (x,y) } is the center of the circle.
-                 *  All params in pixels.
-                 */
-                public Circle(float x, float y, float radius) {
-                    super(x, y);
-                    this.radius = radius;
-                }
-            }
-
-            @SerializedName("Type")
-            private ScreenGestureType type;
-
-            @SerializedName("Area")
-            private Area area;
-
-            /**
-             * Screen gesture information.
-             * @param type Type of gesture to listen for
-             * @param area Area to listen for gesture in
-             */
-            public ScreenGestureFilter(ScreenGestureType type, Area area){
-                this.type = type;
-                this.area = area;
-            }
-
-
-        }
-
-        @SerializedName("StreamType")
-        private StreamTypes streamType;
-
-        @SerializedName("StreamFilter")
-        private ScreenGestureFilter streamFilter;
-
-        /** 
-         * Request for Jibo to listen for {@link EventMessage.TapEvent} or {@link EventMessage.SwipeEvent}
-         * @param filter Screen touch input options
-         * @hide
-         */
-        public ScreenGestureRequest(ScreenGestureFilter filter) {
-            super(CommandType.ScreenGesture);
-            this.streamType = StreamTypes.ScreenGesture;
-            this.streamFilter = filter;
-        }
-
-        /** 
-         * What type of stream is this
-         * @hide
-         */
-        public StreamTypes getStreamType() {return streamType;}
-
-        /** The screen touch options  */
-        public ScreenGestureFilter getScreenGestureFilter() {return streamFilter;}
     }
 
 }
