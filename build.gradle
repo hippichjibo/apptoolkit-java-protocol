@@ -72,6 +72,11 @@ afterEvaluate { project ->
 
                 //repository(url: "~/.m2/repository")
 
+                // Internal artifactory
+                //repository(url: getReleaseRepositoryUrl()) {
+                //    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+                //}
+
                 repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
                     authentication(userName: "$mavenUser", password: "$mavenPassword")
                 }
