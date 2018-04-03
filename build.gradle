@@ -32,10 +32,23 @@ def getReleaseRepositoryUrl() {
             : "http://artifactory.jibo.com/artifactory/Android_maven"
 }
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-def mavenUser = properties.getProperty('mavenUser')
-def mavenPassword = properties.getProperty('mavenPassword')
+def getMavenUserName() {
+    if (project.rootProject.file('local.properties').exists()) {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        return properties.getProperty('mavenUser')
+    }
+    return "FAKE_USER"
+}
+
+def getMavenPassword() {
+    if (project.rootProject.file('local.properties').exists()) {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        return properties.getProperty('mavenPassword')
+    }
+    return "FAKE_PASSWORD"
+}
 
 targetCompatibility = '1.7'
 sourceCompatibility = '1.7'
@@ -86,11 +99,11 @@ task deploy {
                     //}
 
                     repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                        authentication(userName: mavenUser, password: mavenPassword)
+                        authentication(userName: getMavenUserName(), password: getMavenPassword())
                     }
 
                     snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                        authentication(userName: mavenUser, password: mavenPassword)
+                        authentication(userName: getMavenUserName(), password: getMavenPassword())
                     }
 
                     pom.project {
