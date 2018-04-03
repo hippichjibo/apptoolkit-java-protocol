@@ -13,7 +13,7 @@ package com.jibo.apptoolkit.protocol.model;
 
      /** @hide */
      public Header() {
-     }
+     } 
 
      /** @hide */
      public Header(String transactionID) {
