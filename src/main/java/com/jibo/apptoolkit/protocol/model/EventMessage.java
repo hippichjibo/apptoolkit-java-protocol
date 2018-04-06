@@ -361,19 +361,8 @@ public class EventMessage extends BaseResponse {
     /** Someone tapped Jibo's screen */
     static public class TapEvent extends BaseEvent {
 
-        @SerializedName("Event")
-        private ScreenGestureEvents event;
-
         @SerializedName("Coordinate")
         private int[] coordinate;
-
-        /** 
-         * Get the tap event info.
-         * @return event See {@link ScreenGestureEvents}
-         */
-        public ScreenGestureEvents getGestureEvent() {
-            return event;
-        }
 
         /** 
          * Get location of the tap
@@ -400,19 +389,9 @@ public class EventMessage extends BaseResponse {
             Left;
         }
 
-        @SerializedName("Event")
-        private ScreenGestureEvents event;
-
         @SerializedName("Direction")
         private SwipeDirection direction;
 
-        /** 
-         * Get the swipe event info.
-         * @return event See {@link ScreenGestureEvents}
-         */
-        public ScreenGestureEvents getGestureEvent() {
-            return event;
-        }
         /** 
          * Get the swipe direction
          * @return direction See {@link SwipeDirection}
@@ -605,19 +584,8 @@ public class EventMessage extends BaseResponse {
             backRight
         }
 
-
-        @SerializedName("Event")
-        private HeadTouchEvents event;
-
         @SerializedName("Pads")
         private boolean[] pads;
-
-        /** Get the info for any head touches Jibo gets
-         * @return event `onHeadTouch`
-         */
-        public HeadTouchEvents getHeadTouchEvent() {
-            return event;
-        }
 
         /**
          * Details about the head touch Jibo got
