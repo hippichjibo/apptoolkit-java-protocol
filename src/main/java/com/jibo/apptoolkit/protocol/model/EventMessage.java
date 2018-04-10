@@ -350,16 +350,16 @@ public class EventMessage extends BaseResponse {
      * Enum of screen gesture events
      */
     public enum ScreenGestureEvents {
-        /** `onTap` for tap events. See {@link TapEvent} */
+        /** `onTap` for tap events. See {@link JiboTapEvent} */
         @SerializedName("onTap")
         Tap,
-        /** `onSwipe` for swipe events. See {@link SwipeEvent} */
+        /** `onSwipe` for swipe events. See {@link JiboSwipeEvent} */
         @SerializedName("onSwipe")
         Swipe
     }
 
     /** Someone tapped Jibo's screen */
-    static public class TapEvent extends BaseEvent {
+    private static class JiboTapEvent extends BaseEvent {
 
         @SerializedName("Coordinate")
         private int[] coordinate;
@@ -375,7 +375,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /** Someone swiped on Jibo's screen */
-    static public class SwipeEvent extends BaseEvent {
+    private static class JiboSwipeEvent extends BaseEvent {
 
         /** Enum of swipe directions */
         public enum SwipeDirection {
@@ -392,7 +392,7 @@ public class EventMessage extends BaseResponse {
         @SerializedName("Direction")
         private SwipeDirection direction;
 
-        /** 
+        /**
          * Get the swipe direction
          * @return direction See {@link SwipeDirection}
          */
@@ -554,7 +554,7 @@ public class EventMessage extends BaseResponse {
      * Info for head touch events
      * <br /> See <a href="https://app-toolkit.jibo.com/images/JiboHeadSensors.png">Head Touch Sensors</a> for a diagram.
      */
-    static public class HeadTouchEvent extends BaseEvent {
+    private static class JiboHeadTouchEvent extends BaseEvent {
 
         /** Events fired if any one of Jibo's head touch sensors is touched */
         public enum HeadTouchEvents {
@@ -596,6 +596,90 @@ public class EventMessage extends BaseResponse {
         }
     }
 
+
+    /** Someone tapped Jibo's screen */
+    public static class TapEvent extends BaseEvent {
+
+        @SerializedName("gesture")
+        private JiboTapEvent gesture;
+
+        private TapEvent(JiboTapEvent event) {
+            gesture = event;
+            Event = event.Event;
+            gesture.Event = null;
+        }
+
+        public JiboTapEvent getGesture() {
+            return gesture;
+        }
+
+    }
+
+    /** Someone swiped on Jibo's screen */
+    public static class SwipeEvent extends BaseEvent {
+
+        @SerializedName("gesture")
+        private JiboSwipeEvent gesture;
+
+        private SwipeEvent(JiboSwipeEvent event) {
+            gesture = event;
+            Event = gesture.Event;
+            gesture.Event = null;
+        }
+
+        public JiboSwipeEvent getGesture() {
+            return gesture;
+        }
+
+    }
+
+    /** Info for head touch events */
+    public static class HeadTouchEvent extends BaseEvent {
+
+        @SerializedName("HeadSensors")
+        private HeadSensors headSensors;
+
+        private HeadTouchEvent(JiboHeadTouchEvent event) {
+            Event = event.Event;
+
+            boolean[] sensors = event.getDetail();
+            headSensors = new HeadSensors();
+            headSensors.leftFront = sensors[0];
+            headSensors.leftMiddle = sensors[1];
+            headSensors.leftBack = sensors[2];
+            headSensors.rightFront = sensors[3];
+            headSensors.rightMiddle = sensors[4];
+            headSensors.rightBack = sensors[5];
+        }
+
+        public HeadSensors getHeadSensors() {
+            return headSensors;
+        }
+
+        public static class HeadSensors {
+
+            @SerializedName("leftFront")
+            private Boolean leftFront;
+
+            @SerializedName("leftMiddle")
+            private Boolean leftMiddle;
+
+            @SerializedName("leftBack")
+            private Boolean leftBack;
+
+            @SerializedName("rightFront")
+            private Boolean rightFront;
+
+            @SerializedName("rightMiddle")
+            private Boolean rightMiddle;
+
+            @SerializedName("rightBack")
+            private Boolean rightBack;
+
+        }
+
+    }
+
     /****************THIS IS THE CLASS THAT MAPS RECEIVED JSON INTO FINAL EVENTMESSAGE****************/
     /** @hide */
     static public class EventFactory {
@@ -615,14 +699,14 @@ public class EventMessage extends BaseResponse {
             mEventsMap.put(TrackGained, EntityTrackEvent.class);
             mEventsMap.put(TrackLost, EntityTrackEvent.class);
             mEventsMap.put(TakePhoto, TakePhotoEvent.class);
-            mEventsMap.put(Tap, TapEvent.class);
-            mEventsMap.put(Swipe, SwipeEvent.class);
+            mEventsMap.put(Tap, JiboTapEvent.class);
+            mEventsMap.put(Swipe, JiboSwipeEvent.class);
             mEventsMap.put(ListenResult, ListenResultEvent.class);
             mEventsMap.put(MotionDetected, MotionEvent.class);
             mEventsMap.put(HotWordHeard, HotWordHeardEvent.class);
             mEventsMap.put(AssetReady, FetchAssetEvent.class);
             mEventsMap.put(AssetFailed, FetchAssetEvent.class);
-            mEventsMap.put(HeadTouched, HeadTouchEvent.class);
+            mEventsMap.put(HeadTouched, JiboHeadTouchEvent.class);
         }
 
         public EventMessage parseEventMessage(String json) {
@@ -637,6 +721,9 @@ public class EventMessage extends BaseResponse {
 
                     BaseEvent event = (BaseEvent) gson.fromJson(jsonObject.getJSONObject("EventBody").toString(),
                             mEventsMap.get(eventMessage.EventBody.Event));
+
+                    event = convert(event);
+
                     eventMessage.setEventBody(event);
 
                     return eventMessage;
@@ -646,6 +733,14 @@ public class EventMessage extends BaseResponse {
             }
 
             return eventMessage;
+        }
+
+        private BaseEvent convert(BaseEvent event) {
+            if (event instanceof JiboSwipeEvent) return new SwipeEvent((JiboSwipeEvent) event);
+            if (event instanceof JiboTapEvent) return new TapEvent((JiboTapEvent) event);
+            if (event instanceof JiboHeadTouchEvent) return new HeadTouchEvent((JiboHeadTouchEvent) event);
+
+            return event;
         }
     }
 

@@ -3,7 +3,6 @@ package com.jibo.apptoolkit.protocol;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.jibo.apptoolkit.protocol.model.Acknowledgment;
-import com.jibo.apptoolkit.protocol.model.BAMEventMessage;
 import com.jibo.apptoolkit.protocol.model.Command;
 import com.jibo.apptoolkit.protocol.model.EventMessage;
 import com.jibo.apptoolkit.protocol.model.Header;
@@ -344,17 +343,9 @@ public class CommandLibrary {
                                 eventMessage.getEventHeader().getTransactionID(),
                                 ((EventMessage.ErrorEvent)eventMessage.getEventBody()).getEventError());
                     } else {
-                        OnCommandResponseListener listener = onCommandResponseListeners.get(transactionID);
-                        EventMessage.BaseEvent eventBody = eventMessage.getEventBody();
-
-                        listener.onEvent(
+                        onCommandResponseListeners.get(transactionID).onEvent(
                                 eventMessage.getEventHeader().getTransactionID(),
-                                eventBody);
-                        if (listener instanceof OnBAMCommandResponseListener) {
-                            ((OnBAMCommandResponseListener) listener).onBAMEvent(
-                                    eventMessage.getEventHeader().getTransactionID(),
-                                    BAMEventMessage.toBAMEvent(eventBody));
-                        }
+                                eventMessage.getEventBody());
 
                         mPhotoUrlConnection = null;
                         //ok, if it was photo/video request then we need to connect and fetch the stream for the
@@ -617,17 +608,6 @@ public class CommandLibrary {
          * Emitted when there's an error in parsing information from the robot
          */
         public void onParseError();
-    }
-    /**
-     * Extended callback info for Be-A-Maker app
-     */
-    public interface OnBAMCommandResponseListener extends OnCommandResponseListener {
-        /**
-         * Emitted on an Be-A-Maker event
-         * @param transactionID ID of the transaction
-         * @param event See EventMessage.BaseEvent
-         */
-        public void onBAMEvent(String transactionID, EventMessage.BaseEvent event);
     }
     /** @hide */
     static public class SimpleOnCommandResponseListenerImpl implements OnCommandResponseListener {
