@@ -359,7 +359,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /** Someone tapped Jibo's screen */
-    private static class JiboTapEvent extends BaseEvent {
+    public static class JiboTapEvent extends BaseEvent {
 
         @SerializedName("Coordinate")
         private int[] coordinate;
@@ -375,7 +375,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /** Someone swiped on Jibo's screen */
-    private static class JiboSwipeEvent extends BaseEvent {
+    public static class JiboSwipeEvent extends BaseEvent {
 
         /** Enum of swipe directions */
         public enum SwipeDirection {
