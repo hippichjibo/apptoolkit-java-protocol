@@ -430,7 +430,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /** Info about what Jibo heard */
-    static public class ListenResultEvent extends BaseEvent implements FinalisingEvent {
+    public static class ListenResultEvent extends BaseEvent implements FinalisingEvent {
 
         @SerializedName("LanguageCode")
         private String languageCode;
@@ -639,6 +639,22 @@ public class EventMessage extends BaseResponse {
 
     }
 
+    /** Info about what Jibo heard */
+    public static class ListenEvent extends BaseEvent {
+
+        private ListenResultEvent listen;
+
+        private ListenEvent(ListenResultEvent listen) {
+            this.listen = listen;
+            Event = listen.Event;
+            listen.Event = null;
+        }
+
+        public ListenResultEvent getListen() {
+            return listen;
+        }
+    }
+
     /** Info for head touch events */
     public static class HeadTouchEvent extends BaseEvent {
 
@@ -746,6 +762,8 @@ public class EventMessage extends BaseResponse {
             if (event instanceof JiboSwipeEvent) return new SwipeEvent((JiboSwipeEvent) event);
 
             if (event instanceof JiboTapEvent) return new TapEvent((JiboTapEvent) event);
+            
+            if (event instanceof ListenResultEvent) return new ListenEvent((ListenResultEvent) event);
 
             if (event instanceof JiboHeadTouchEvent) return new HeadTouchEvent((JiboHeadTouchEvent) event);
 
