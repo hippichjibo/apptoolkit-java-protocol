@@ -159,6 +159,7 @@ public class EventMessage extends BaseResponse {
      */
     static public class EntityTrackEvent extends BaseEvent {
 
+        private EventType type;
         private TrackedEntity[] Tracks;
 
         /**
@@ -175,7 +176,12 @@ public class EventMessage extends BaseResponse {
             Unknown;
         }
 
-        /** 
+
+        public EventType getType() {
+            return type;
+        }
+
+        /**
          * Currently unsupported <br />
          * 
          * Get the tracks in Jibo's perceptual space
@@ -192,8 +198,8 @@ public class EventMessage extends BaseResponse {
         static public class TrackedEntity {
             private Long EntityID;
             private EntityType Type;
-            private int Confidence;
-            private int[] WorldCoords;
+            private float Confidence;
+            private float[] WorldCoords;
             private int[] ScreenCoords;
 
             /**
@@ -219,7 +225,7 @@ public class EventMessage extends BaseResponse {
              * Get Jibo's confidence in his identifcation of the person
              * @return Confidence `int` [0,1]
              */
-            public int getConfidence() {
+            public float getConfidence() {
                 return Confidence;
             }
 
@@ -228,7 +234,7 @@ public class EventMessage extends BaseResponse {
              * 3-number array in space where the face exists
              * @return WorldCoords `[x: meters forward, y: meters left, z: meters up]`
              */
-            public int[] getWorldCoords() {
+            public float[] getWorldCoords() {
                 return WorldCoords;
             }
 
@@ -736,9 +742,16 @@ public class EventMessage extends BaseResponse {
         }
 
         private BaseEvent convert(BaseEvent event) {
+
             if (event instanceof JiboSwipeEvent) return new SwipeEvent((JiboSwipeEvent) event);
+
             if (event instanceof JiboTapEvent) return new TapEvent((JiboTapEvent) event);
+
             if (event instanceof JiboHeadTouchEvent) return new HeadTouchEvent((JiboHeadTouchEvent) event);
+
+            if (event instanceof EntityTrackEvent) {
+                ((EntityTrackEvent) event).type = event.Event;
+            }
 
             return event;
         }
