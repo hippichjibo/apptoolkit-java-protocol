@@ -640,7 +640,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /** Info about what Jibo heard */
-    public static class ListenEvent extends BaseEvent {
+    public static class ListenEvent extends BaseEvent implements FinalisingEvent {
 
         private ListenResultEvent listen;
 
