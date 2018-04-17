@@ -35,9 +35,8 @@ import static com.jibo.apptoolkit.protocol.ConnectionException.ERROR_CONNECTION_
 /**
  * Main entry point for the Android Command Library
  */
-@Deprecated
-public class CommandLibrary {
-    private static final String TAG = CommandLibrary.class.getSimpleName();
+public class CommandRequester {
+    private static final String TAG = CommandRequester.class.getSimpleName();
 
     /** @hide */
     public static Gson sGson = new GsonBuilder().serializeNulls().create();
@@ -57,7 +56,16 @@ public class CommandLibrary {
     private HttpURLConnection mVideoUrlConnection;
     private HttpURLConnection mGestureUrlConnection;
 
-    public CommandLibrary(SSLContext sslContext, WebSocket webSocket, String ipAddress, OnConnectionListener onConnectionListener) {
+    private Assets assets;
+    private Display display;
+    private Perception perception;
+    private Config config;
+    private Listen listen;
+    private Expression expression;
+    private Media media;
+    private Session session;
+
+    public CommandRequester(SSLContext sslContext, WebSocket webSocket, String ipAddress, OnConnectionListener onConnectionListener) {
         this.mSslContext = sslContext;
         this.mWebSocket = webSocket;
         mIpAddress = ipAddress;
@@ -65,6 +73,15 @@ public class CommandLibrary {
 
         mCommands = new LruCache<>(COMMANDS_CACHE_SIZE);
         onCommandResponseListeners = new HashMap<>();
+
+        assets = new Assets(this);
+        display = new Display(this);
+        perception = new Perception(this);
+        config = new Config(this);
+        listen = new Listen(this);
+        expression = new Expression(this);
+        media = new Media(this);
+        session = new Session(this);
     }
 
     /**
@@ -84,153 +101,9 @@ public class CommandLibrary {
     }
 
     /**
-     * Make Jibo speak.
-     * @param text Text to speak. Can take plain text or ESML.
-     *             See <a href="https://app-toolkit.jibo.com/esml/">App Toolkit Docs</a> for ESML info.
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
-     */
-    public String say(String text, OnCommandResponseListener onCommandResponseListener) {
-        if (StringUtils.isEmpty(text)) return null;
-        return sendCommand(new Command.SayRequest(text), onCommandResponseListener);
-    }
-
-    /**
-     * Make Jibo look toward a specific spot. See EventMessage.LookAtAchievedEvent.
-     * @param lookAtTarget Where to make Jibo look. See Command.LookAtRequest
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
-     */
-    public String lookAt(Command.LookAtRequest.BaseLookAtTarget lookAtTarget, OnCommandResponseListener onCommandResponseListener) {
-        if (lookAtTarget == null) return null;
-        if (lookAtTarget instanceof Command.LookAtRequest.AngleTarget) {
-            return sendCommand(new Command.LookAtRequest(lookAtTarget, false), onCommandResponseListener);
-        } else {
-            return sendCommand(new Command.LookAtRequestExt(lookAtTarget, false, false), onCommandResponseListener);
-        }
-    }
-
-    /**
-     * Take a photo. See EventMessage.TakePhotoEvent
-     * @param camera Which camera to use (left or right). Default = left.
-     * @param resolution Resolution photo to take. Default = low.
-     * @param distortion `true` for regular lense. `false` for fisheye.
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onPhoto(String, EventMessage.TakePhotoEvent, InputStream)}
-     */
-    public String takePhoto(Command.TakePhotoRequest.Camera camera, Command.TakePhotoRequest.CameraResolution
-            resolution, boolean distortion, OnCommandResponseListener onCommandResponseListener) {
-        closePhotoConnection();
-
-        return sendCommand(new Command.TakePhotoRequest(camera, resolution, distortion), onCommandResponseListener);
-    }
-
-    /**
-     * Get a stream of what Jibo's cameras see. See EventMessage.VideoReadyEvent
-     * </br> Please note that this option does NOT record a video -- it provides a stream of camera information.
-     * @param videoType Use `NORMAL`.
-     * @param duration Unsupported. Call `cancel()` to stop the stream.
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onVideo(String, EventMessage.VideoReadyEvent, InputStream)}
-     */
-    public String video(Command.VideoRequest.VideoType videoType, long duration, OnCommandResponseListener onCommandResponseListener) {
-
-        closeVideoConnection();
-
-        if (videoType == null) return null;
-        return sendCommand(duration > 0 ? new Command.VideoRequest(videoType, duration)
-                : new Command.VideoRequest(videoType), onCommandResponseListener);
-    }
-
-    /**
-     * Listen for screen gesture
-     * @param filter Options for type of gesture and location of gesture
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
-     */
-    public String screenGesture(Command.ScreenGestureRequest.ScreenGestureFilter filter, OnCommandResponseListener onCommandResponseListener) {
-        closeGestureConnection();
-
-        return sendCommand(new Command.ScreenGestureRequest(filter), onCommandResponseListener);
-    }
-
-    /**
-     * Retrieve external asset and store in local cache by name
-     * @param uri URI to the asset to be fetched
-     * @param name Name the asset will be called by
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
-     */
-    public String fetchAsset(String uri, String name, OnCommandResponseListener onCommandResponseListener) {
-        return sendCommand(new Command.FetchAssetRequest(uri, name), onCommandResponseListener);
-    }
-
-    /**
-     * Display something on Jibo's screen
-     * @param view What to display onscreen. See Command.DisplayRequest.DisplayView
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
-     */
-    public String display(Command.DisplayRequest.DisplayView view, OnCommandResponseListener onCommandResponseListener) {
-        return sendCommand(new Command.DisplayRequest(view), onCommandResponseListener);
-    }
-
-    /**
-     * Listen for speech input
-     * @param maxSpeechTimeout Maximum amount of time Jibo should listen to speech. Default = 15. In seconds.
-     * @param maxNoSpeechTimeout Maximum amount of time Jibo should wait for speech to begin. Default = 15. In seconds.
-     * @param languageCode Language to listen for. Right now only english (`en_US`) is supported.
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)} or {@link OnCommandResponseListener#onParseError()}
-     */
-    public String listen(Long maxSpeechTimeout, Long maxNoSpeechTimeout, String languageCode, OnCommandResponseListener onCommandResponseListener){
-        return sendCommand(new Command.ListenRequest(maxSpeechTimeout, maxNoSpeechTimeout, languageCode), onCommandResponseListener);
-    }
-
-    /**
-     * Track motion in Jibo's perceptual space. See EventMessage.MotionEvent
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
-     */
-    public String motion(OnCommandResponseListener onCommandResponseListener){
-        return sendCommand(new Command.MotionRequest(), onCommandResponseListener);
-    }
-
-    /**
      * @hide */
     public String speech(boolean listen, OnCommandResponseListener onCommandResponseListener){
         return sendCommand(new Command.SpeechRequest(listen), onCommandResponseListener);
-    }
-
-    /**
-     * Set robot configuration data.
-     * @param options Options to set. See Command.SetConfigRequest.SetConfigOptions.
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
-     * @return
-     */
-    public String setConfig(Command.SetConfigRequest.SetConfigOptions options, OnCommandResponseListener onCommandResponseListener){
-        return sendCommand(new Command.SetConfigRequest(options), onCommandResponseListener);
-    }
-
-    /**
-     * Get robot configuration data
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
-     * @return
-     */
-    public String getConfig(OnCommandResponseListener onCommandResponseListener){
-        return sendCommand(new Command.GetConfigRequest(), onCommandResponseListener);
-    }
-
-    /**
-     * Listen for head touch
-     * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
-     * @return
-     */
-    public String headTouch(OnCommandResponseListener onCommandResponseListener){
-        return sendCommand(new Command.HeadTouchRequest(), onCommandResponseListener);
-    }
-
-
-    /**
-     * Disconnect from all photo, video, listener, and stream connections.
-     */
-    public void disconnect() {
-        closePhotoConnection();
-
-        closeVideoConnection();
-
-        clearListenersAndState();
     }
 
     /**
@@ -247,13 +120,6 @@ public class CommandLibrary {
         if (onCommandResponseListeners != null) {
             onCommandResponseListeners.clear();
         }
-    }
-
-    /**
-     * Start a command session
-     */
-    public String startSession() {
-        return sendCommand(new Command.SessionRequest(), null);
     }
 
     /**
@@ -291,7 +157,7 @@ public class CommandLibrary {
                         if (mOnConnectionListener != null) {
                             mOnConnectionListener.onConnectionFailed(new ConnectionException(ERROR_CONNECTION_PROBLEMS));
                         }
-                        disconnect();
+                        session.end();
                     }
                 } else {
                     /****************SUCCESSFULL START SESSION COMMAND***************/
@@ -621,4 +487,319 @@ public class CommandLibrary {
 
         public void onParseError() {}
     }
+
+
+    //----------------------------------------------------------------------------------------------
+
+
+    public Assets getAssets() {
+        return assets;
+    }
+
+    public Display getDisplay() {
+        return display;
+    }
+
+    public Perception getPerception() {
+        return perception;
+    }
+
+    public Config getConfig() {
+        return config;
+    }
+
+    public Listen getListen() {
+        return listen;
+    }
+
+    public Expression getExpression() {
+        return expression;
+    }
+
+    public Media getMedia() {
+        return media;
+    }
+
+    public Session getSession() {
+        return session;
+    }
+
+
+    //----------------------------------------------------------------------------------------------
+
+
+    abstract static class Base {
+        CommandRequester commandRequester;
+
+        Base(CommandRequester commandRequester) {
+            this.commandRequester = commandRequester;
+        }
+    }
+
+    public static class Assets extends Base {
+
+        Assets(CommandRequester commandRequester) {
+            super(commandRequester);
+        }
+
+        /**
+         * Retrieve external asset and store in local cache by name
+         * @param uri URI to the asset to be fetched
+         * @param name Name the asset will be called by
+         * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
+         */
+        public String load(String uri, String name, OnCommandResponseListener onCommandResponseListener) {
+            return commandRequester.sendCommand(new Command.FetchAssetRequest(uri, name), onCommandResponseListener);
+        }
+    }
+
+    public static class Display extends Base{
+
+        Subscribe subscribe;
+
+        Display(CommandRequester commandRequester) {
+            super(commandRequester);
+            subscribe = new Subscribe(commandRequester);
+        }
+
+        public Subscribe getSubscribe() {
+            return subscribe;
+        }
+
+        /**
+         * Display something on Jibo's screen
+         * @param view What to display onscreen. See Command.DisplayRequest.DisplayView
+         * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
+         */
+        String display(Command.DisplayRequest.DisplayView view, OnCommandResponseListener onCommandResponseListener) {
+            return commandRequester.sendCommand(new Command.DisplayRequest(view), onCommandResponseListener);
+        }
+
+        public String text(Command.DisplayRequest.TextView view, OnCommandResponseListener onCommandResponseListener) {
+            return display(view, onCommandResponseListener);
+        }
+
+        public String image(Command.DisplayRequest.ImageView view, OnCommandResponseListener onCommandResponseListener) {
+            return display(view, onCommandResponseListener);
+        }
+
+        public String eye(Command.DisplayRequest.EyeView view, OnCommandResponseListener onCommandResponseListener) {
+            return display(view, onCommandResponseListener);
+        }
+
+        public static class Subscribe extends Base {
+
+            Subscribe(CommandRequester commandRequester) {
+                super(commandRequester);
+            }
+
+            /**
+             * Listen for screen gesture
+             * @param filter Options for type of gesture and location of gesture
+             * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
+             */
+            public String gesture(Command.ScreenGestureRequest.ScreenGestureFilter filter, OnCommandResponseListener onCommandResponseListener) {
+                commandRequester.closeGestureConnection();
+
+                return commandRequester.sendCommand(new Command.ScreenGestureRequest(filter), onCommandResponseListener);
+            }
+        }
+    }
+
+    public static class Perception {
+
+        Subscribe subscribe;
+
+        Perception(CommandRequester commandRequester) {
+            this.subscribe = new Subscribe(commandRequester);
+        }
+
+        public Subscribe getSubscribe() {
+            return subscribe;
+        }
+
+        public static class Subscribe extends Base {
+
+            Subscribe(CommandRequester commandRequester) {
+                super(commandRequester);
+            }
+
+            /**
+             * Track motion in Jibo's perceptual space. See EventMessage.MotionEvent
+             * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
+             */
+            public String motion(OnCommandResponseListener onCommandResponseListener){
+                return commandRequester.sendCommand(new Command.MotionRequest(), onCommandResponseListener);
+            }
+
+            /**
+             * Listen for head touch
+             * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
+             * @return
+             */
+            public String headTouch(OnCommandResponseListener onCommandResponseListener){
+                return commandRequester.sendCommand(new Command.HeadTouchRequest(), onCommandResponseListener);
+            }
+        }
+
+    }
+
+    public static class Config extends Base {
+
+        Config(CommandRequester commandRequester) {
+            super(commandRequester);
+        }
+
+        /**
+         * Set robot configuration data.
+         * @param options Options to set. See Command.SetConfigRequest.SetConfigOptions.
+         * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
+         * @return
+         */
+        public String set(Command.SetConfigRequest.SetConfigOptions options, OnCommandResponseListener onCommandResponseListener){
+            return commandRequester.sendCommand(new Command.SetConfigRequest(options), onCommandResponseListener);
+        }
+
+        /**
+         * Get robot configuration data
+         * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
+         * @return
+         */
+        public String get(OnCommandResponseListener onCommandResponseListener){
+            return commandRequester.sendCommand(new Command.GetConfigRequest(), onCommandResponseListener);
+        }
+    }
+
+    public static class Listen extends Base {
+
+        Listen(CommandRequester commandRequester) {
+            super(commandRequester);
+        }
+
+        /**
+         * Listen for speech input
+         * @param maxSpeechTimeout Maximum amount of time Jibo should listen to speech. Default = 15. In seconds.
+         * @param maxNoSpeechTimeout Maximum amount of time Jibo should wait for speech to begin. Default = 15. In seconds.
+         * @param languageCode Language to listen for. Right now only english (`en_US`) is supported.
+         * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)} or {@link OnCommandResponseListener#onParseError()}
+         */
+        public String start(Long maxSpeechTimeout, Long maxNoSpeechTimeout, String languageCode, OnCommandResponseListener onCommandResponseListener){
+            return commandRequester.sendCommand(new Command.ListenRequest(maxSpeechTimeout, maxNoSpeechTimeout, languageCode), onCommandResponseListener);
+        }
+    }
+
+    public static class Expression extends Base {
+
+        Expression(CommandRequester commandRequester) {
+            super(commandRequester);
+        }
+
+        /**
+         * Make Jibo look toward a specific spot. See EventMessage.LookAtAchievedEvent.
+         * @param lookAtTarget Where to make Jibo look. See Command.LookAtRequest
+         * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
+         */
+        public String look(Command.LookAtRequest.BaseLookAtTarget lookAtTarget, OnCommandResponseListener onCommandResponseListener) {
+            if (lookAtTarget == null) return null;
+            if (lookAtTarget instanceof Command.LookAtRequest.AngleTarget) {
+                return commandRequester.sendCommand(new Command.LookAtRequest(lookAtTarget, false), onCommandResponseListener);
+            } else {
+                return commandRequester.sendCommand(new Command.LookAtRequestExt(lookAtTarget, false, false), onCommandResponseListener);
+            }
+        }
+
+        /**
+         * Make Jibo speak.
+         * @param text Text to speak. Can take plain text or ESML.
+         *             See <a href="https://app-toolkit.jibo.com/esml/">App Toolkit Docs</a> for ESML info.
+         * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
+         */
+        public String say(String text, OnCommandResponseListener onCommandResponseListener) {
+            if (StringUtils.isEmpty(text)) return null;
+            return commandRequester.sendCommand(new Command.SayRequest(text), onCommandResponseListener);
+        }
+    }
+
+    public static class Media extends Base {
+
+        Capture capture;
+
+        Media(CommandRequester commandRequester) {
+            super(commandRequester);
+            capture = new Capture(commandRequester);
+        }
+
+        public Capture getCapture() {
+            return capture;
+        }
+
+        public static class Capture extends Base {
+
+            Capture(CommandRequester commandRequester) {
+                super(commandRequester);
+            }
+
+            /**
+             * Take a photo. See EventMessage.TakePhotoEvent
+             * @param camera Which camera to use (left or right). Default = left.
+             * @param resolution Resolution photo to take. Default = low.
+             * @param distortion `true` for regular lense. `false` for fisheye.
+             * @param onCommandResponseListener {@link OnCommandResponseListener#onPhoto(String, EventMessage.TakePhotoEvent, InputStream)}
+             */
+            public String photo(Command.TakePhotoRequest.Camera camera, Command.TakePhotoRequest.CameraResolution
+                    resolution, boolean distortion, OnCommandResponseListener onCommandResponseListener) {
+                commandRequester.closePhotoConnection();
+
+                return commandRequester.sendCommand(new Command.TakePhotoRequest(camera, resolution, distortion), onCommandResponseListener);
+            }
+
+            /**
+             * Get a stream of what Jibo's cameras see. See EventMessage.VideoReadyEvent
+             * </br> Please note that this option does NOT record a video -- it provides a stream of camera information.
+             * @param videoType Use `NORMAL`.
+             * @param duration Unsupported. Call `cancel()` to stop the stream.
+             * @param onCommandResponseListener {@link OnCommandResponseListener#onVideo(String, EventMessage.VideoReadyEvent, InputStream)}
+             */
+            public String video(Command.VideoRequest.VideoType videoType, long duration, OnCommandResponseListener onCommandResponseListener) {
+
+                commandRequester.closeVideoConnection();
+
+                if (videoType == null) return null;
+                return commandRequester.sendCommand(duration > 0 ? new Command.VideoRequest(videoType, duration)
+                        : new Command.VideoRequest(videoType), onCommandResponseListener);
+            }
+        }
+    }
+
+    public static class Session extends Base {
+
+        Session(CommandRequester commandRequester) {
+            super(commandRequester);
+        }
+
+        /**
+         * Start a command session
+         */
+        public String start() {
+            return commandRequester.sendCommand(new Command.SessionRequest(), null);
+        }
+
+        /**
+         * Get the web socket.
+         * @return Web socket
+         */
+        public WebSocket getSocket() {
+            return commandRequester.mWebSocket;
+        }
+
+        /**
+         * Disconnect from all photo, video, listener, and stream connections.
+         */
+        public void end() {
+            commandRequester.closePhotoConnection();
+            commandRequester.closeVideoConnection();
+            commandRequester.clearListenersAndState();
+        }
+    }
+
 }
