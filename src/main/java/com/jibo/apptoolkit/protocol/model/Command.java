@@ -441,7 +441,7 @@ public class Command {
     }
 
     /** Additional information for setting robot configurations */
-    static public class SetConfigRequest extends BaseCommand implements AtomicCommand {
+    static public class SetConfigRequest extends BaseCommand {
 
         /** Robot config options that can be set */
         public static class SetConfigOptions {
@@ -552,18 +552,18 @@ public class Command {
          * 2D angle targets
          */
         static public class AngleTarget extends BaseLookAtTarget{
-            private int[] Angle;
+            private float[] Angle;
 
             /**
              * Angles relative to Jibo’s current orientation <br />
              * Defined as {@code [theta: twist/horiz angle, psi: vert angle]}
              */
-            public AngleTarget(int[] angle) {
+            public AngleTarget(float[] angle) {
                 Angle = angle;
             }
 
             /** Get Jibo's current angle */
-            public int[] getAngle() {
+            public float[] getAngle() {
                 return Angle;
             }
         }

@@ -10,9 +10,6 @@ import com.jibo.apptoolkit.protocol.utils.Commons;
 import com.jibo.apptoolkit.protocol.utils.LruCache;
 import com.jibo.apptoolkit.protocol.utils.StringUtils;
 import com.jibo.apptoolkit.protocol.utils.Util;
-import com.jibo.apptoolkit.protocol.OnConnectionListener;
-import com.jibo.apptoolkit.protocol.utils.LruCache;
-import com.jibo.apptoolkit.protocol.utils.StringUtils;
 
 import org.json.JSONObject;
 
@@ -223,6 +220,15 @@ public class CommandLibrary {
         return sendCommand(new Command.HeadTouchRequest(), onCommandResponseListener);
     }
 
+    /**
+     * Get entity
+     * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
+     * @return
+     */
+    public String entity(OnCommandResponseListener onCommandResponseListener) {
+        return sendCommand(new Command.EntityRequest(), onCommandResponseListener);
+    }
+
 
     /**
      * Disconnect from all photo, video, listener, and stream connections.
@@ -337,7 +343,8 @@ public class CommandLibrary {
                                 eventMessage.getEventHeader().getTransactionID(),
                                 ((EventMessage.ErrorEvent)eventMessage.getEventBody()).getEventError());
                     } else {
-                        onCommandResponseListeners.get(transactionID).onEvent(eventMessage.getEventHeader().getTransactionID(),
+                        onCommandResponseListeners.get(transactionID).onEvent(
+                                eventMessage.getEventHeader().getTransactionID(),
                                 eventMessage.getEventBody());
 
                         mPhotoUrlConnection = null;
