@@ -625,6 +625,16 @@ public class CommandRequester {
             }
 
             /**
+             * Get face entity
+             * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
+             * @return
+             */
+            public String face(OnCommandResponseListener onCommandResponseListener) {
+                return commandRequester.sendCommand(new Command.EntityRequest(), onCommandResponseListener);
+            }
+
+
+            /**
              * Track motion in Jibo's perceptual space. See EventMessage.MotionEvent
              * @param onCommandResponseListener {@link OnCommandResponseListener#onEvent(String, EventMessage.BaseEvent)}
              */
