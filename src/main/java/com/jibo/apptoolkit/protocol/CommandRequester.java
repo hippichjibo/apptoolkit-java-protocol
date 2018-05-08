@@ -440,7 +440,7 @@ public class CommandRequester {
         /**
          * Emitted when Jibo takes a photo
          * @param transactionID ID of the transaction
-         * @param event See EventMessage.TakePhotoEvent
+         * @param event Emitted event
          * @param inputStream Input stream of the photo
          */
         public void onPhoto(String transactionID, EventMessage.TakePhotoEvent event, InputStream inputStream);
@@ -448,7 +448,7 @@ public class CommandRequester {
         /**
          * Emitted when the video stream is ready
          * @param transactionID ID of the transaction
-         * @param event See EventMessage.VideoReadyEvent
+         * @param event Emitted event 
          * @param inputStream Input stream of the video recording
          */
         public void onVideo(String transactionID, EventMessage.VideoReadyEvent event, final InputStream inputStream);
@@ -748,6 +748,7 @@ public class CommandRequester {
         }
     }
 
+    /** Class for working with Jibo's media */
     public static class Media extends Base {
 
         Capture capture;
@@ -757,10 +758,12 @@ public class CommandRequester {
             capture = new Capture(commandRequester);
         }
 
+        /** @hide */
         public Capture getCapture() {
             return capture;
         }
 
+        /** Class for capturing media from Jibo */
         public static class Capture extends Base {
 
             Capture(CommandRequester commandRequester) {
@@ -768,11 +771,11 @@ public class CommandRequester {
             }
 
             /**
-             * Take a photo. See EventMessage.TakePhotoEvent
+             * Take a photo. See {@link EventMessage.TakePhotoEvent}
              * @param camera Which camera to use (left or right). Default = left.
              * @param resolution Resolution photo to take. Default = low.
              * @param distortion `true` for regular lense. `false` for fisheye.
-             * @param onCommandResponseListener {@link OnCommandResponseListener#onPhoto(String, EventMessage.TakePhotoEvent, InputStream)}
+             * @param onCommandResponseListener Callback
              */
             public String photo(Command.TakePhotoRequest.Camera camera, Command.TakePhotoRequest.CameraResolution
                     resolution, boolean distortion, OnCommandResponseListener onCommandResponseListener) {
@@ -782,11 +785,11 @@ public class CommandRequester {
             }
 
             /**
-             * Get a stream of what Jibo's cameras see. See EventMessage.VideoReadyEvent
+             * Get a stream of what Jibo's cameras see. See {@link EventMessage.VideoReadyEvent}
              * </br> Please note that this option does NOT record a video -- it provides a stream of camera information.
              * @param videoType Use `NORMAL`.
              * @param duration Unsupported. Call `cancel()` to stop the stream.
-             * @param onCommandResponseListener {@link OnCommandResponseListener#onVideo(String, EventMessage.VideoReadyEvent, InputStream)}
+             * @param onCommandResponseListener Callback
              */
             public String video(Command.VideoRequest.VideoType videoType, long duration, OnCommandResponseListener onCommandResponseListener) {
 
@@ -799,6 +802,7 @@ public class CommandRequester {
         }
     }
 
+    /** Class for starting a remote session with Jibo */
     public static class Session extends Base {
 
         Session(CommandRequester commandRequester) {

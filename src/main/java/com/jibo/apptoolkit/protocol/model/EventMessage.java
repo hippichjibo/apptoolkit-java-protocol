@@ -493,17 +493,18 @@ public class EventMessage extends BaseResponse {
         @SerializedName("Motions")
         private MotionEntity[] motions;
 
-        /** Get into for any motion Jibo sees
-         * @return motions {@link MotionEntity} info for all motions seen.*/
+        /** Get info for any motion Jibo sees
+         * @return motions Array of info for all motion Jibo saw
+         * */
         public MotionEntity[] getMotions() {
             return motions;
         }
     }
 
-    /** Currently unsupported */
+    /** Jibo heard "Hey Jibo" */
     public static class HotWordHeardEvent extends BaseEvent {
 
-        /** @hide */
+        /** Position of the speaker*/
         public static class LPSPosition {
             @SerializedName("Position")
             private int[] position;
@@ -513,7 +514,7 @@ public class EventMessage extends BaseResponse {
             float confidence;
         }
 
-        /** @hide */
+        /** Currently unsupported */
         public static class SpeakerId {
             @SerializedName("Type")
             EntityTrackEvent.EntityType type;
@@ -521,7 +522,7 @@ public class EventMessage extends BaseResponse {
             float confidence;
         }
 
-        /** @hide */
+        /** Speaker information */
         public static class Speaker {
             @SerializedName("LPSPosition")
             LPSPosition lpsPosition;
