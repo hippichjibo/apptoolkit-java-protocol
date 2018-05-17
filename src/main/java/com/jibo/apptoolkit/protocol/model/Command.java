@@ -11,58 +11,38 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Command {
 
-    /**
-     * Types of commands available <br />
-     * Please note that some are not currently supported
-     * @treatAsPrivate
-     */
+
     public enum CommandType {
-        /** {@link SessionRequest} */
         @SerializedName("StartSession")
         StartSession,
-        /** {@link GetConfigRequest} */
         @SerializedName("GetConfig")
         GetConfig,
-        /** {@link SetConfigRequest} */
         @SerializedName("SetConfig")
         SetConfig,
-        /** {@link CancelRequest} */
         @SerializedName("Cancel")
         Cancel,
-        /** {@link AttentionRequest} */
         @SerializedName("SetAttention")
         SetAttention,
-        /** {@link SayRequest} */
         @SerializedName("Say")
         Say,
-        /** {@link ListenRequest} */
         @SerializedName("Listen")
         Listen,
-        /** {@link LookAtRequest} */
         @SerializedName("LookAt")
         LookAt,
-        /** {@link TakePhotoRequest} */
         @SerializedName("TakePhoto")
         TakePhoto,
-        /** {@link VideoRequest} */
         @SerializedName("Video")
         Video,
-        /** {@link DisplayRequest} */
         @SerializedName("Display")
         Display,
-        /** {@link FetchAssetRequest} */
         @SerializedName("FetchAsset")
         FetchAsset,
-        /** {@link MotionRequest} */
         @SerializedName("Motion")
         Motion,
-        /** {@link ScreenGestureRequest} */
         @SerializedName("ScreenGesture")
         ScreenGesture,
-        /** {@link EntityRequest} */
         @SerializedName("Entity")
         Entity,
-        /** {@link BaseSubscribeCommand} */
         @SerializedName("Subscribe")
         Subscribe;
     }
@@ -70,36 +50,21 @@ public class Command {
     private Header.RequestHeader ClientHeader;
     private BaseCommand Command;
 
-    /**
-     * A command object to be sent over the websocket to be received by the robot from the client.
-     * @param clientHeader The RequestHeader object for this Command
-     * @param command The BaseCommand object for this Command
-     */
     public Command(Header.RequestHeader clientHeader, BaseCommand command) {
         ClientHeader = clientHeader;
         Command = command;
     }
 
-    /**
-     * The RequestHeader object for this command
-     * @hide
-     */
+    /** @hide */
     public Header.RequestHeader getClientHeader() {
         return ClientHeader;
     }
 
-    /**
-     * The BaseCommand object for this command
-     * @hide
-     */
+    /** @hide */
     public BaseCommand getCommand() {
         return Command;
     }
 
-    /**
-     * Base class for command
-     * @treatAsPrivate
-     */
     static public class BaseCommand {
         private CommandType Type;
 
@@ -107,75 +72,47 @@ public class Command {
             this.Type = type;
         }
 
-        /**
-         * What type of command is this
-         */
         public CommandType getType() {
             return Type;
         }
     }
-    /**
-     * Types of streams from the robot that can be subscribed to
-     * @hide
-     */
+
+    /** @hide */
     public enum StreamTypes {
-        /**
-         * {@link EntityRequest}
-         */
         @SerializedName("Entity")
         Entity,
-        /**
-         * {@link MotionRequest}
-         */
         @SerializedName("Motion")
         Motion,
-        /**
-         * {@link ListenRequest}
-         */
         @SerializedName("Speech")
         Speech,
-        /**
-         * {@link HeadTouchRequest}
-         */
         @SerializedName("HeadTouch")
         HeadTouch,
-        /**
-         * {@link ScreenGestureRequest}
-         */
         @SerializedName("ScreenGesture")
         ScreenGesture;
     }
 
-    /**
-     * Base class for subscribing to a stream
-     * @hide
-     */
+    /** @hide */
     static public class BaseSubscribeCommand extends BaseCommand {
 
         StreamTypes StreamType;
         BaseSubscribeFilter StreamFilter;
 
-        /** Subscribe to a stream */
         public BaseSubscribeCommand() {
             super(CommandType.Subscribe);
         }
 
-        /** Get the type of stream we're subscribing to. */
         public StreamTypes getStreamType() {
             return StreamType;
         }
 
-        /** Get the stream filter string */
         public BaseSubscribeFilter getStreamFilter() {
             return StreamFilter;
         }
 
-        /** Set the type of stream we're subscribing to */
         public void setStreamType(StreamTypes type) {
             this.StreamType = type;
         }
 
-        /** Set a string filter for the stream */
         public void setStreamFilter(BaseSubscribeFilter filter) {
             this.StreamFilter = filter;
         }
@@ -858,7 +795,7 @@ public class Command {
 
            /**
             * Display information
-            * @param type See {@link DisplayViewType}
+            * @param type Type of displace view
             * @param name Unique name of view
             */
             public DisplayView(DisplayViewType type, String name){
@@ -891,7 +828,7 @@ public class Command {
             /**
              * Info for displaying an image on Jibo's screen
              * @param name Unique name of view
-             * @param data See {@link ImageData}
+             * @param data Data for the image to display
              */
             public ImageView(String name, ImageData data) {
                 super(DisplayViewType.Image, name);
@@ -930,7 +867,8 @@ public class Command {
         }
     }
 
-    /** Additional information for fetching assets */
+    /** @hide
+     * Additional information for fetching assets */
     static public class FetchAssetRequest extends BaseCommand {
 
         @SerializedName("URI")
