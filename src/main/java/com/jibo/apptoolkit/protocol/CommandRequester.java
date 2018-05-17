@@ -433,7 +433,7 @@ public class CommandRequester {
         /**
          * Emitted on an event
          * @param transactionID ID of the transaction
-         * @param event 
+         * @param event
          */
         public void onEvent(String transactionID, EventMessage.BaseEvent event);
 
@@ -448,7 +448,7 @@ public class CommandRequester {
         /**
          * Emitted when the video stream is ready
          * @param transactionID ID of the transaction
-         * @param event Emitted event 
+         * @param event Emitted event
          * @param inputStream Input stream of the video recording
          */
         public void onVideo(String transactionID, EventMessage.VideoReadyEvent event, final InputStream inputStream);
@@ -548,7 +548,7 @@ public class CommandRequester {
          * See: {@link EventMessage.FetchAssetEvent}
          * @param uri URI to the asset to be fetched
          * @param name Name the asset will be called by
-         * @param onCommandResponseListener Callback 
+         * @param onCommandResponseListener Callback
          */
         public String load(String uri, String name, OnCommandResponseListener onCommandResponseListener) {
             return commandRequester.sendCommand(new Command.FetchAssetRequest(uri, name), onCommandResponseListener);
@@ -577,7 +577,7 @@ public class CommandRequester {
         /**
          * Display text on Jibo's screen
          * @param view Text view to display
-         * @param onCommandResponseListener Callback 
+         * @param onCommandResponseListener Callback
          */
         public String text(Command.DisplayRequest.TextView view, OnCommandResponseListener onCommandResponseListener) {
             return display(view, onCommandResponseListener);
@@ -586,7 +586,7 @@ public class CommandRequester {
         /**
          * Display an image on Jibo's screen
          * @param view Image view to display
-         * @param onCommandResponseListener Callback 
+         * @param onCommandResponseListener Callback
          */
         public String image(Command.DisplayRequest.ImageView view, OnCommandResponseListener onCommandResponseListener) {
             return display(view, onCommandResponseListener);
@@ -595,7 +595,7 @@ public class CommandRequester {
         /**
          * Display Jibo's eye on his screen
          * @param view Eye view to display
-         * @param onCommandResponseListener Callback 
+         * @param onCommandResponseListener Callback
          */
         public String eye(Command.DisplayRequest.EyeView view, OnCommandResponseListener onCommandResponseListener) {
             return display(view, onCommandResponseListener);
@@ -681,7 +681,7 @@ public class CommandRequester {
         /**
          * Set robot configuration data.
          * @param options Settings available to configure
-         * @param onCommandResponseListener Callback 
+         * @param onCommandResponseListener Callback
          */
         public String set(Command.SetConfigRequest.SetConfigOptions options, OnCommandResponseListener onCommandResponseListener){
             return commandRequester.sendCommand(new Command.SetConfigRequest(options), onCommandResponseListener);

@@ -465,7 +465,7 @@ public class EventMessage extends BaseResponse {
         public static class MotionEntity {
             /** Intensity of the motion from 0-1 */
             @SerializedName("Intensity")
-            public float intensity;
+            public Float intensity;
             /** 3D global position of the motion
              * <br /> {@code [x: meters forward, y: meters left, z: meters up]}
              */
@@ -479,7 +479,7 @@ public class EventMessage extends BaseResponse {
         }
 
         @SerializedName("Motions")
-        private MotionEntity[] motions;
+        MotionEntity[] motions;
 
         /** Get info for any motion Jibo sees
          * @return motions Array of info for all motion Jibo saw
