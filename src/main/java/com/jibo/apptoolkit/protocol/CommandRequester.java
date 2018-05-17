@@ -18,6 +18,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -300,7 +301,7 @@ public class CommandRequester {
     }
 
     private String generateTransactionID() {
-        return Util.md5(String.valueOf(System.currentTimeMillis()));
+        return UUID.randomUUID().toString();
     }
 
     private void removeResponseListeners() {
