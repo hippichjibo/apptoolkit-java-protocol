@@ -9,7 +9,6 @@ import com.jibo.apptoolkit.protocol.model.Header;
 import com.jibo.apptoolkit.protocol.utils.Commons;
 import com.jibo.apptoolkit.protocol.utils.LruCache;
 import com.jibo.apptoolkit.protocol.utils.StringUtils;
-import com.jibo.apptoolkit.protocol.utils.Util;
 
 import org.json.JSONObject;
 
@@ -301,7 +300,7 @@ public class CommandRequester {
     }
 
     private String generateTransactionID() {
-        return UUID.randomUUID().toString();
+        return UUID.randomUUID().toString().replace("-", "");
     }
 
     private void removeResponseListeners() {
