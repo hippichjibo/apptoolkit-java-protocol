@@ -7,7 +7,7 @@ public interface OnConnectionListener {
     public void onConnected();
 
     /** We've started sending commands to the robot */
-    public void onSessionStarted(CommandLibrary commandLibrary);
+    public void onSessionStarted(CommandRequester commandRequester);
 
     /** We were unable to connect from the robot */
     public void onConnectionFailed(Throwable throwable);

@@ -14,63 +14,64 @@ import static com.jibo.apptoolkit.protocol.model.EventMessage.EventType.*;
 /*
  * Created by Jibo, Inc. on 10.10.17.
  */
-/** Information returned with command messages */
+
+/** Event mapping */
 public class EventMessage extends BaseResponse {
 
     /** Enum of events */
     public enum EventType {
-        /** `onStart` */
+        /** `onStart` See {@link StartEvent} */
         @SerializedName("onStart")
         Start,
-        /** `onStop` */
+        /** `onStop` See {@link StopEvent} */
         @SerializedName("onStop")
         Stop,
-        /** `onError` */
+        /** `onError` See {@link ErrorEvent} */
         @SerializedName("onError")
         Error,
-        /** `onLookAtAchieved` */
+        /** `onLookAtAchieved` See {@link LookAtAchievedEvent} */
         @SerializedName("onLookAtAchieved")
         LookAtAchieved,
-        /** `onTrackEntityLost` */
+        /** @hide */
         @SerializedName("onTrackEntityLost")
         TrackEntityLost,
-        /** `onVideoReady` */
+        /** `onVideoReady` See {@link VideoReadyEvent} */
         @SerializedName("onVideoReady")
         VideoReady,
-        /** `onEntityUpdate` */
+        /** @hide */
         @SerializedName("onEntityUpdate")
         TrackUpdate,
-        /** `onEntityLost` */
+        /** @hide */
         @SerializedName("onEntityLost")
         TrackLost,
-        /** `onEntityGained` */
+        /** @hide */
         @SerializedName("onEntityGained")
         TrackGained,
-        /** `onTakePhoto` */
+        /** `onTakePhoto` See {@link TakePhotoEvent} */
         @SerializedName("onTakePhoto")
         TakePhoto,
-        /** `onTap` */
+        /** `onTap` See {@link TapEvent} */
         @SerializedName("onTap")
         Tap,
-        /** `onSwipe` */
+        /** `onSwipe` See {@link SwipeEvent} */
         @SerializedName("onSwipe")
         Swipe,
-        /** `onHotWordHeard` */
+        /** `onHotWordHeard` See {@link HotWordHeardEvent} */
         @SerializedName("onHotWordHeard")
         HotWordHeard,
-        /** `onListenResult` */
+        /** `onListenResult` See {@link ListenResultEvent} */
         @SerializedName("onListenResult")
         ListenResult,
-        /** `onMotionDetected` */
+        /** `onMotionDetected` See {@link MotionEvent} */
         @SerializedName("onMotionDetected")
         MotionDetected,
-        /** `onAssetFailed` */
+        /** `onAssetFailed` See {@link FetchAssetEvent} */
         @SerializedName("onAssetFailed")
         AssetFailed,
-        /** `onAssetReady` */
+        /** `onAssetReady` See {@link FetchAssetEvent} */
         @SerializedName("onAssetReady")
         AssetReady,
-        /** `onHeadTouch` */
+        /** `onHeadTouch` See {@link HeadTouchEvent} */
         @SerializedName("onHeadTouch")
         HeadTouched;
     }
@@ -121,17 +122,13 @@ public class EventMessage extends BaseResponse {
     }
     /** @hide */
     public interface FinalisingEvent {}
-    /** @hide */
     static public class StartEvent extends BaseEvent implements FinalisingEvent {}
-    /** @hide */
     static public class StopEvent extends BaseEvent implements FinalisingEvent {}
     /** Class for error events */
     static public class ErrorEvent extends BaseEvent implements FinalisingEvent {
         private ErrorData EventError;
 
-        /** Get info for the error that occured
-         * @return EventError {@link ErrorData}
-         */
+        /** Get info for the error that occured  */
         public ErrorData getEventError() {
             return EventError;
         }
@@ -159,7 +156,6 @@ public class EventMessage extends BaseResponse {
      */
     static public class EntityTrackEvent extends BaseEvent {
 
-        private EventType type;
         private TrackedEntity[] Tracks;
 
         /**
@@ -176,12 +172,7 @@ public class EventMessage extends BaseResponse {
             Unknown;
         }
 
-
-        public EventType getType() {
-            return type;
-        }
-
-        /**
+        /** 
          * Currently unsupported <br />
          * 
          * Get the tracks in Jibo's perceptual space
@@ -198,8 +189,8 @@ public class EventMessage extends BaseResponse {
         static public class TrackedEntity {
             private Long EntityID;
             private EntityType Type;
-            private float Confidence;
-            private float[] WorldCoords;
+            private int Confidence;
+            private int[] WorldCoords;
             private int[] ScreenCoords;
 
             /**
@@ -225,7 +216,7 @@ public class EventMessage extends BaseResponse {
              * Get Jibo's confidence in his identifcation of the person
              * @return Confidence `int` [0,1]
              */
-            public float getConfidence() {
+            public int getConfidence() {
                 return Confidence;
             }
 
@@ -234,7 +225,7 @@ public class EventMessage extends BaseResponse {
              * 3-number array in space where the face exists
              * @return WorldCoords `[x: meters forward, y: meters left, z: meters up]`
              */
-            public float[] getWorldCoords() {
+            public int[] getWorldCoords() {
                 return WorldCoords;
             }
 
@@ -249,11 +240,7 @@ public class EventMessage extends BaseResponse {
         }
     }
 
-    /**
-     * Jibo achieved his lookat command <br />
-     *
-     * {@link EventMessage.EventType} = {@code onLookAtAchieved}
-     */
+    /** `onLookAtAchieved` = Jibo achieved his lookat command   */
     static public class LookAtAchievedEvent extends BaseEvent implements FinalisingEvent {
         private int[] PositionTarget;
         private int[] AngleTarget;
@@ -275,7 +262,7 @@ public class EventMessage extends BaseResponse {
         }
     }
 
-    /** Jibo lost sight of the thing he was tracking */
+    /** @hide */
     static public class LookAtTrackLostEvent extends BaseEvent implements FinalisingEvent {
         private int[] PositionTarget;
         private int[] AngleTarget;
@@ -297,7 +284,7 @@ public class EventMessage extends BaseResponse {
         }
     }
 
-    /** The video stream is ready to capture */
+    /** `onVideoReady` = The video stream is ready to capture */
     static public class VideoReadyEvent extends BaseEvent implements FinalisingEvent {
         private String URI;
 
@@ -311,7 +298,7 @@ public class EventMessage extends BaseResponse {
     }
 
     /**
-     * Jibo took a photo
+     * `onTakePhoto` = Jibo took a photo
      */
     static public class TakePhotoEvent extends BaseEvent implements FinalisingEvent {
         private String URI;
@@ -356,19 +343,27 @@ public class EventMessage extends BaseResponse {
      * Enum of screen gesture events
      */
     public enum ScreenGestureEvents {
-        /** `onTap` for tap events. See {@link JiboTapEvent} */
         @SerializedName("onTap")
         Tap,
-        /** `onSwipe` for swipe events. See {@link JiboSwipeEvent} */
         @SerializedName("onSwipe")
         Swipe
     }
 
-    /** Someone tapped Jibo's screen */
-    public static class JiboTapEvent extends BaseEvent {
+    /** `onTap` = Someone tapped Jibo's screen */
+    static public class TapEvent extends BaseEvent {
+
+        @SerializedName("Event")
+        private ScreenGestureEvents event;
 
         @SerializedName("Coordinate")
         private int[] coordinate;
+
+        /** 
+         * Get the tap event info.
+         */
+        public ScreenGestureEvents getGestureEvent() {
+            return event;
+        }
 
         /** 
          * Get location of the tap
@@ -380,8 +375,8 @@ public class EventMessage extends BaseResponse {
 
     }
 
-    /** Someone swiped on Jibo's screen */
-    public static class JiboSwipeEvent extends BaseEvent {
+    /** `onSwipe` = Someone swiped on Jibo's screen */
+    static public class SwipeEvent extends BaseEvent {
 
         /** Enum of swipe directions */
         public enum SwipeDirection {
@@ -395,12 +390,20 @@ public class EventMessage extends BaseResponse {
             Left;
         }
 
+        @SerializedName("Event")
+        private ScreenGestureEvents event;
+
         @SerializedName("Direction")
         private SwipeDirection direction;
 
-        /**
+        /** 
+         * Get the swipe event info.
+         */
+        public ScreenGestureEvents getGestureEvent() {
+            return event;
+        }
+        /** 
          * Get the swipe direction
-         * @return direction See {@link SwipeDirection}
          */
         public SwipeDirection getSwipeDirection() {
             return direction;
@@ -429,8 +432,8 @@ public class EventMessage extends BaseResponse {
         }
     }
 
-    /** Info about what Jibo heard */
-    public static class ListenResultEvent extends BaseEvent implements FinalisingEvent {
+    /** `onListenResult` = Info about what Jibo heard */
+    static public class ListenResultEvent extends BaseEvent implements FinalisingEvent {
 
         @SerializedName("LanguageCode")
         private String languageCode;
@@ -455,7 +458,7 @@ public class EventMessage extends BaseResponse {
         }
     }
 
-    /** Info about motion Jibo saw */
+    /** `onMotionDetected` = Info about motion Jibo saw */
     static public class MotionEvent extends BaseEvent {
 
         /** Info for motion tracking */
@@ -478,17 +481,18 @@ public class EventMessage extends BaseResponse {
         @SerializedName("Motions")
         MotionEntity[] motions;
 
-        /** Get into for any motion Jibo sees
-         * @return motions {@link MotionEntity} info for all motions seen.*/
+        /** Get info for any motion Jibo sees
+         * @return motions Array of info for all motion Jibo saw
+         * */
         public MotionEntity[] getMotions() {
             return motions;
         }
     }
 
-    /** Currently unsupported */
+    /** `onHotWordHeard` = Jibo heard "Hey Jibo" */
     public static class HotWordHeardEvent extends BaseEvent {
 
-        /** @hide */
+        /** Position of the speaker*/
         public static class LPSPosition {
             @SerializedName("Position")
             private int[] position;
@@ -498,7 +502,7 @@ public class EventMessage extends BaseResponse {
             float confidence;
         }
 
-        /** @hide */
+        /** Currently unsupported */
         public static class SpeakerId {
             @SerializedName("Type")
             EntityTrackEvent.EntityType type;
@@ -506,7 +510,7 @@ public class EventMessage extends BaseResponse {
             float confidence;
         }
 
-        /** @hide */
+        /** Speaker information */
         public static class Speaker {
             @SerializedName("LPSPosition")
             LPSPosition lpsPosition;
@@ -523,7 +527,7 @@ public class EventMessage extends BaseResponse {
         }
     }
 
-    /** Info for getting an asset */
+    /** `onAssetFailed` or `onAssetReady` = Info for getting an asset */
     static public class FetchAssetEvent extends BaseEvent {
         /** Enum of events related to getting assets */
         public enum FetchAssetEvents {
@@ -542,7 +546,6 @@ public class EventMessage extends BaseResponse {
 
         /**
          * Get the fetch event
-         * @return event See {@link EventMessage.FetchAssetEvent.FetchAssetEvents}
          */
         public FetchAssetEvents getFetchEvent() {
             return event;
@@ -557,10 +560,10 @@ public class EventMessage extends BaseResponse {
     }
 
     /** 
-     * Info for head touch events
+     * `onHeadTouch` = Info for head touch events
      * <br /> See <a href="https://app-toolkit.jibo.com/images/JiboHeadSensors.png">Head Touch Sensors</a> for a diagram.
      */
-    private static class JiboHeadTouchEvent extends BaseEvent {
+    static public class HeadTouchEvent extends BaseEvent {
 
         /** Events fired if any one of Jibo's head touch sensors is touched */
         public enum HeadTouchEvents {
@@ -590,8 +593,19 @@ public class EventMessage extends BaseResponse {
             backRight
         }
 
+
+        @SerializedName("Event")
+        private HeadTouchEvents event;
+
         @SerializedName("Pads")
         private boolean[] pads;
+
+        /** Get the info for any head touches Jibo gets
+         * @return event `onHeadTouch`
+         */
+        public HeadTouchEvents getHeadTouchEvent() {
+            return event;
+        }
 
         /**
          * Details about the head touch Jibo got
@@ -600,106 +614,6 @@ public class EventMessage extends BaseResponse {
         public boolean[] getDetail() {
             return pads;
         }
-    }
-
-
-    /** Someone tapped Jibo's screen */
-    public static class TapEvent extends BaseEvent {
-
-        @SerializedName("gesture")
-        private JiboTapEvent gesture;
-
-        private TapEvent(JiboTapEvent event) {
-            gesture = event;
-            Event = event.Event;
-            gesture.Event = null;
-        }
-
-        public JiboTapEvent getGesture() {
-            return gesture;
-        }
-
-    }
-
-    /** Someone swiped on Jibo's screen */
-    public static class SwipeEvent extends BaseEvent {
-
-        @SerializedName("gesture")
-        private JiboSwipeEvent gesture;
-
-        private SwipeEvent(JiboSwipeEvent event) {
-            gesture = event;
-            Event = gesture.Event;
-            gesture.Event = null;
-        }
-
-        public JiboSwipeEvent getGesture() {
-            return gesture;
-        }
-
-    }
-
-    /** Info about what Jibo heard */
-    public static class ListenEvent extends BaseEvent implements FinalisingEvent {
-
-        private ListenResultEvent listen;
-
-        private ListenEvent(ListenResultEvent listen) {
-            this.listen = listen;
-            Event = listen.Event;
-            listen.Event = null;
-        }
-
-        public ListenResultEvent getListen() {
-            return listen;
-        }
-    }
-
-    /** Info for head touch events */
-    public static class HeadTouchEvent extends BaseEvent {
-
-        @SerializedName("HeadSensors")
-        private HeadSensors headSensors;
-
-        private HeadTouchEvent(JiboHeadTouchEvent event) {
-            Event = event.Event;
-
-            boolean[] sensors = event.getDetail();
-            headSensors = new HeadSensors();
-            headSensors.leftFront = sensors[0];
-            headSensors.leftMiddle = sensors[1];
-            headSensors.leftBack = sensors[2];
-            headSensors.rightFront = sensors[3];
-            headSensors.rightMiddle = sensors[4];
-            headSensors.rightBack = sensors[5];
-        }
-
-        public HeadSensors getHeadSensors() {
-            return headSensors;
-        }
-
-        public static class HeadSensors {
-
-            @SerializedName("leftFront")
-            private Boolean leftFront;
-
-            @SerializedName("leftMiddle")
-            private Boolean leftMiddle;
-
-            @SerializedName("leftBack")
-            private Boolean leftBack;
-
-            @SerializedName("rightFront")
-            private Boolean rightFront;
-
-            @SerializedName("rightMiddle")
-            private Boolean rightMiddle;
-
-            @SerializedName("rightBack")
-            private Boolean rightBack;
-
-        }
-
     }
 
     /****************THIS IS THE CLASS THAT MAPS RECEIVED JSON INTO FINAL EVENTMESSAGE****************/
@@ -721,14 +635,14 @@ public class EventMessage extends BaseResponse {
             mEventsMap.put(TrackGained, EntityTrackEvent.class);
             mEventsMap.put(TrackLost, EntityTrackEvent.class);
             mEventsMap.put(TakePhoto, TakePhotoEvent.class);
-            mEventsMap.put(Tap, JiboTapEvent.class);
-            mEventsMap.put(Swipe, JiboSwipeEvent.class);
+            mEventsMap.put(Tap, TapEvent.class);
+            mEventsMap.put(Swipe, SwipeEvent.class);
             mEventsMap.put(ListenResult, ListenResultEvent.class);
             mEventsMap.put(MotionDetected, MotionEvent.class);
             mEventsMap.put(HotWordHeard, HotWordHeardEvent.class);
             mEventsMap.put(AssetReady, FetchAssetEvent.class);
             mEventsMap.put(AssetFailed, FetchAssetEvent.class);
-            mEventsMap.put(HeadTouched, JiboHeadTouchEvent.class);
+            mEventsMap.put(HeadTouched, HeadTouchEvent.class);
         }
 
         public EventMessage parseEventMessage(String json) {
@@ -743,9 +657,6 @@ public class EventMessage extends BaseResponse {
 
                     BaseEvent event = (BaseEvent) gson.fromJson(jsonObject.getJSONObject("EventBody").toString(),
                             mEventsMap.get(eventMessage.EventBody.Event));
-
-                    event = convert(event);
-
                     eventMessage.setEventBody(event);
 
                     return eventMessage;
@@ -755,23 +666,6 @@ public class EventMessage extends BaseResponse {
             }
 
             return eventMessage;
-        }
-
-        private BaseEvent convert(BaseEvent event) {
-
-            if (event instanceof JiboSwipeEvent) return new SwipeEvent((JiboSwipeEvent) event);
-
-            if (event instanceof JiboTapEvent) return new TapEvent((JiboTapEvent) event);
-            
-            if (event instanceof ListenResultEvent) return new ListenEvent((ListenResultEvent) event);
-
-            if (event instanceof JiboHeadTouchEvent) return new HeadTouchEvent((JiboHeadTouchEvent) event);
-
-            if (event instanceof EntityTrackEvent) {
-                ((EntityTrackEvent) event).type = event.Event;
-            }
-
-            return event;
         }
     }
 
