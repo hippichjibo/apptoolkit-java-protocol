@@ -644,7 +644,7 @@ public class CommandRequester {
             }
 
             /**
-             * Get face entity. Currently unsupported
+             * Subscribe to face-detection events
              * <br /> See {@link EventMessage.EntityTrackEvent}
              */
             public String face(OnCommandResponseListener onCommandResponseListener) {
@@ -653,7 +653,7 @@ public class CommandRequester {
 
 
             /**
-             * Track motion in Jibo's perceptual space.
+             * Subscribe to motion-detection events
              * <br /> See {@link EventMessage.MotionEvent}
              */
             public String motion(OnCommandResponseListener onCommandResponseListener){
@@ -661,7 +661,7 @@ public class CommandRequester {
             }
 
             /**
-             * Listen for head touch
+             * Subscribe to head-touch events
              * <br /> See {@link EventMessage.HeadTouchEvent}
              */
             public String headTouch(OnCommandResponseListener onCommandResponseListener){
@@ -704,7 +704,7 @@ public class CommandRequester {
 
         /**
          * Start listening for speech input.
-         * <br /> See {@link EventMessage.ListenResultEvent} and {@link EventMessage.HotWordHeardEvent}
+         * <br /> See {@link EventMessage.ListenResultEvent}
          * @param maxSpeechTimeout Maximum amount of time Jibo should listen to speech. Default = 15. In seconds.
          * @param maxNoSpeechTimeout Maximum amount of time Jibo should wait for speech to begin. Default = 15. In seconds.
          * @param languageCode Language to listen for. Right now only english (`en_US`) is supported.
