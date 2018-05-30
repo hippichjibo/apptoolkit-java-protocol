@@ -469,18 +469,18 @@ public class Command {
          * 3D position targets
          */
         static public class PositionTarget extends BaseLookAtTarget{
-            private int[] Position;
+            private float[] Position;
 
             /**
              * Location for the base coordinate frame of the robot <br />
              * Defined as {@code [x: meters forward, y: meters left, z: meters up]}
              */
-            public PositionTarget(int[] position) {
+            public PositionTarget(float[] position) {
                 Position = position;
             }
 
             /** Get Jibo's current position */
-            public int[] getPosition() {
+            public float[] getPosition() {
                 return Position;
             }
         }
