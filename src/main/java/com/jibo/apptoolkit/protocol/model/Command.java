@@ -778,8 +778,6 @@ public class Command {
             /** URL to the image */
             @SerializedName("src")
             public String src;
-            @SerializedName("set")
-            String set;
         }
 
 
