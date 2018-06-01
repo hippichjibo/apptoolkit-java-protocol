@@ -156,7 +156,7 @@ public class EventMessage extends BaseResponse {
      */
     static public class EntityTrackEvent extends BaseEvent {
 
-        private TrackedEntity[] Tracks;
+        protected TrackedEntity[] Tracks;
 
         /**
          * Currently unsupported <br />
@@ -189,8 +189,8 @@ public class EventMessage extends BaseResponse {
         static public class TrackedEntity {
             private Long EntityID;
             private EntityType Type;
-            private int Confidence;
-            private int[] WorldCoords;
+            private float Confidence;
+            private float[] WorldCoords;
             private int[] ScreenCoords;
 
             /**
@@ -216,7 +216,7 @@ public class EventMessage extends BaseResponse {
              * Get Jibo's confidence in his identifcation of the person
              * @return Confidence `int` [0,1]
              */
-            public int getConfidence() {
+            public float getConfidence() {
                 return Confidence;
             }
 
@@ -225,7 +225,7 @@ public class EventMessage extends BaseResponse {
              * 3-number array in space where the face exists
              * @return WorldCoords `[x: meters forward, y: meters left, z: meters up]`
              */
-            public int[] getWorldCoords() {
+            public float[] getWorldCoords() {
                 return WorldCoords;
             }
 
@@ -352,18 +352,8 @@ public class EventMessage extends BaseResponse {
     /** `onTap` = Someone tapped Jibo's screen */
     static public class TapEvent extends BaseEvent {
 
-        @SerializedName("Event")
-        private ScreenGestureEvents event;
-
         @SerializedName("Coordinate")
         private int[] coordinate;
-
-        /** 
-         * Get the tap event info.
-         */
-        public ScreenGestureEvents getGestureEvent() {
-            return event;
-        }
 
         /** 
          * Get location of the tap
@@ -390,18 +380,8 @@ public class EventMessage extends BaseResponse {
             Left;
         }
 
-        @SerializedName("Event")
-        private ScreenGestureEvents event;
-
         @SerializedName("Direction")
         private SwipeDirection direction;
-
-        /** 
-         * Get the swipe event info.
-         */
-        public ScreenGestureEvents getGestureEvent() {
-            return event;
-        }
         /** 
          * Get the swipe direction
          */
@@ -593,19 +573,8 @@ public class EventMessage extends BaseResponse {
             backRight
         }
 
-
-        @SerializedName("Event")
-        private HeadTouchEvents event;
-
         @SerializedName("Pads")
         private boolean[] pads;
-
-        /** Get the info for any head touches Jibo gets
-         * @return event `onHeadTouch`
-         */
-        public HeadTouchEvents getHeadTouchEvent() {
-            return event;
-        }
 
         /**
          * Details about the head touch Jibo got
